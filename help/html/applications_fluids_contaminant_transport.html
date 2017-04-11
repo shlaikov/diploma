@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?applications_fluids_contaminant_transport.html"; }
+  else { parent.lazysync('applications_fluids_contaminant_transport.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>contaminant_transport</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sample_problems.html">Sample Problems</a> &gt; applications &gt; fluids&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">contaminant_transport</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="applications_fluids_channel.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="sample_problems.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="applications_fluids_coupled_contaminant.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">{ CONTAMINANT_TRANSPORT.PDE </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This example shows the use of sequenced equations in the calculation of steady-state </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;contaminant transport &nbsp;in which the fluid properties are independent of the contaminant </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;concentration. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Fluid equations are solved first on each grid refinement, then the contaminant </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;concentration is updated. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The problem is a modification of the example <a href="applications_fluids_channel.html">CHANNEL.PDE</a>. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">}</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">title</span><span class="f_T_samples"> </span><span class="f_T_string">'Contaminant transport in 2D channel'</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">select</span><span class="f_T_samples"> errlim = 0.005  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">variables</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; u(0.1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; v(0.01)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; p(1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; c(0.01)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">definitions</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; Lx = 5 &nbsp; &nbsp; &nbsp; Ly = 1.5  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; p0 = 2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; speed2 = u^2+v^2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; speed = sqrt(speed2)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; dens = 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; visc = 0.04  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; vxx = (p0/(2*visc*(2*Lx)))*y^2 &nbsp; </span><span class="f_T_comment">{ open-channel x-velocity }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; rball=0.4  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; cut = 0.1 &nbsp;  </span><span class="f_T_comment">{ value for bevel at the corners of the obstruction }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; penalty = 100*visc/rball^2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; Re = globalmax(speed)*(Ly/2)/(visc/dens)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; Kc = 0.01 &nbsp;  </span><span class="f_T_comment">{ contaminant diffusivity }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">initial</span><span class="f_T_samples"> </span><span class="f_T_reserved">values</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; u = &nbsp;vxx &nbsp; v=0 &nbsp;p = p0*x/Lx  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">equations</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; u: &nbsp;visc*div(grad(u)) - dx(p) = dens*(u*dx(u) + v*dy(u))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; v: &nbsp;visc*div(grad(v)) - dy(p) = dens*(u*dx(v) + v*dy(v))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; p: &nbsp;div(grad(p)) = penalty*(dx(u)+dy(v))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">then</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; c: &nbsp;u*dx(c) + v*dy(c) = div(Kc*grad(c))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">boundaries</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">region</span><span class="f_T_samples"> 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">start</span><span class="f_T_samples">(-Lx,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u) = 0 &nbsp; </span><span class="f_T_reserved">value</span><span class="f_T_samples">(v) = 0 &nbsp; </span><span class="f_T_reserved">load</span><span class="f_T_samples">(p) = 0  </span><span class="f_T_reserved">natural</span><span class="f_T_samples">(c)=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Lx/2-rball,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Lx/2-rball,rball) </span><span class="f_T_reserved">bevel</span><span class="f_T_samples">(cut)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Lx/2+rball,rball) </span><span class="f_T_reserved">bevel</span><span class="f_T_samples">(cut)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Lx/2+rball,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Lx,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">mesh_spacing</span><span class="f_T_samples">=Ly/20  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">load</span><span class="f_T_samples">(u) = 0  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(v) = 0  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(p) = p0  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(c) = Upulse(y,y-Ly/3)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Lx,Ly)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">mesh_spacing</span><span class="f_T_samples"> = 100  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">load</span><span class="f_T_samples">(p) = 0 </span><span class="f_T_reserved">natural</span><span class="f_T_samples">(c)=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (-Lx,Ly)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(p) = 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">monitors</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(speed)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(c)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">plots</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(c)  </span><span class="f_T_reserved">report</span><span class="f_T_samples">(Re)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u)  </span><span class="f_T_reserved">report</span><span class="f_T_samples">(Re)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(v)  </span><span class="f_T_reserved">report</span><span class="f_T_samples">(Re)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(speed) painted  </span><span class="f_T_reserved">report</span><span class="f_T_samples">(Re)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">vector</span><span class="f_T_samples">(u,v) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;flow&quot;</span><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">report</span><span class="f_T_samples">(Re)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(p)  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Pressure&quot;</span><span class="f_T_samples"> painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(dx(u)+dy(v)) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Continuity Error&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">from</span><span class="f_T_samples"> (-Lx,0) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (-Lx,Ly)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">from</span><span class="f_T_samples"> (0,0) &nbsp; </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (0,Ly)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">from</span><span class="f_T_samples"> (Lx/2,0)</span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Lx/2,Ly)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">from</span><span class="f_T_samples"> (Lx,0)  </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Lx,Ly)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">end</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?applications_fluids_contaminant_transport.html" target="_top">index.html?applications_fluids_contaminant_transport.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

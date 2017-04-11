@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?applications_magnetism_saturation.html"; }
+  else { parent.lazysync('applications_magnetism_saturation.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>saturation</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sample_problems.html">Sample Problems</a> &gt; applications &gt; magnetism&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">saturation</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="applications_magnetism_permanent_magnet.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="sample_problems.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="applications_magnetism_vector_helmholtz_coil.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">{ SATURATION.PDE </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;A NONLINEAR MAGNETOSTATIC PROBLEM </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This example considers the problem of determining the magnetic vector </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;potential A in a cyclotron magnet. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The problem domain consists of </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;1) a ferromagnetic medium - the magnet core, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;2) the surrounding air medium, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;3) a current-carrying copper coil. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;According to Maxwell's equations, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;curl H = J &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(1) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;div B = 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (2) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;with </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;B = mu*H </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;where B is the magnetic flux density </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;H is the magnetic field strength </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;J is the electric current density </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;and &nbsp;mu is the magnetic permeability of the material. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Maxwell's equations can be satisfied if we introduce a magnetic vector </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;potential A such that </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;B = curl A </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;therefore </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;curl( (curl A)/mu ) = J </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This equation is usually supplemented with the Coulomb Gauge condition </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;div A = 0. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;In most common 2D applications, magnet designers assume either </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;1) that the magnet is sufficiently long in the z direction or </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;2) that the magnet is axi-symmetric. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;In the first instance the current is assumed to flow parallel to the z axis, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;and in the latter it flows in the azimuthal direction. &nbsp;Under these conditions, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;only the z or the azimuthal component of A is present. (Henceforth, we will </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;simply refer to this component as A). </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;In the Cartesian case, the magnetic induction B takes the simple form, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;B = (dy(A), -dx(A), 0) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;and the magnetic field is given by </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;H = (dy(A)/mu, -dx(A)/mu, 0). </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;We can integrate equation (1) over the problem domain using the curl analog </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;of the Divergence Theorem, giving </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;Integral(curl(H))dV = Integral(n x H)dS </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;where dS is a differential surface area on the bounding surface of any region, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;and n is the outward surface normal unit vector. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Across interior boundaries between regions of different material properties, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;FlexPDE assumes cancellation of the surface integrals from the two sides of the </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;boundary. &nbsp;This implies continuity of (n X H). </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;At exterior boundaries, the same theorem defines the natural boundary condition </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;to be the value of (n x H). </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;For the present example, let us define the permeability mu by the </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;expression </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;mu = &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;in the air and the coil </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;mu = &nbsp;mumax/(1+C*grad(A)^2) + mumin &nbsp; &nbsp; in the core </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;where C = 0.05 gives a behaviour similar to transformer steel. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;We assume a symmetry plane along the X-axis, and impose the boundary value </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;A = 0 along the remaining sides. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The core consists of a &quot;C&quot;-shaped region enclosing a rectangular coil region. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The source J is zero everywhere except in the coil, where it is defined by </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; J = - (4*pi/10)*amps/area </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Note: </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This example uses scaled units. &nbsp;It is important for the user to validate </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;the dimensional consistency of his formulation. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">}</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">Title</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;A MAGNETOSTATIC PROBLEM&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">Select</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">{ Since the nonlinearity in this problem is driven </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp;by the GRADIENT of the system variable, we require </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp;a more accurate resolution of the solution: }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;errlim = 1e-4 &nbsp; &nbsp; </span><span class="f_T_comment"> </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">Variables</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;A  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">Definitions</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;rmu = 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;rmu0 = 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;mu0core = 5000  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;mu1core = 200  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;mucore = mu0core/(1+0.05*grad(A)^2) + mu1core  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;rmucore = 1/mucore  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;S = 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;current = 2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;y0 = 8  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">Initial</span><span class="f_T_samples"> </span><span class="f_T_reserved">Value</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">{ In nonlinear problems, a good starting value</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp;is sometimes essential for convergence }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;A = current*(400-(x-20)^2-(y-20)^2)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">Equations</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;A : curl(rmu*curl(A)) = S  </span></p>
+</td>
+<td valign="top" width="268" style="width:268px;"><p><img src="saturation07.png" width="258" height="270" border="0" alt=""></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">Boundaries</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">Region</span><span class="f_T_samples"> 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span class="f_T_comment">{ The IRON core }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;rmu = rmucore &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;rmu0 = 1/mu0core  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">start</span><span class="f_T_samples">(0,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">natural</span><span class="f_T_samples">(A) = 0 &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (40,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(A) = 0 &nbsp; </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (40,40) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (0,40) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">Region</span><span class="f_T_samples"> 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span class="f_T_comment">{ The AIR gap }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;rmu = 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">start</span><span class="f_T_samples"> (15,0) </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (40,0) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (40,y0) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (32,y0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">arc</span><span class="f_T_samples"> (</span><span class="f_T_reserved">center</span><span class="f_T_samples">=32,y0+2) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (30,y0+2)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_comment">{ short boundary segments force finer gridding: }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (30,19.5) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (30,20) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (29.5,20)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (15.5,20) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (15,20) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">Region</span><span class="f_T_samples"> 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span class="f_T_comment">{ The COIL }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;S = current  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;rmu = 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">start</span><span class="f_T_samples"> (15,12) </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (30,12) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (30,20) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (15,20) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">Monitors</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(A)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">Plots</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">grid</span><span class="f_T_samples">(x,y)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">vector</span><span class="f_T_samples">(dy(A),-dx(A)) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;FLUX DENSITY B&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">vector</span><span class="f_T_samples">(dy(A)*rmu, -dx(A)*rmu) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;MAGNETIC FIELD H&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(A)  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Az MAGNETIC POTENTIAL&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">surface</span><span class="f_T_samples">(A)  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Az MAGNETIC POTENTIAL&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(rmu/rmu0) painted </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Saturation: mu0/mu&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">End</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?applications_magnetism_saturation.html" target="_top">index.html?applications_magnetism_saturation.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

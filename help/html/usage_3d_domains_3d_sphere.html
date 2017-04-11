@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?usage_3d_domains_3d_sphere.html"; }
+  else { parent.lazysync('usage_3d_domains_3d_sphere.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>3d_sphere</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sample_problems.html">Sample Problems</a> &gt; usage &gt; 3D_domains&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">3d_sphere</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="3d_shells.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="sample_problems.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="usage_3d_domains_3d_spherebox.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">{ 3D_SPHERE.PDE </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This problem considers the construction of a spherical domain in 3D. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The heat equation is &nbsp;Div(-K*grad(U)) = h, wth U the temperature and </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;h the volume heat source. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;A sphere with uniform heat source h will generate a total amount of heat </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;H = (4/3)*Pi*R^3*h, from which &nbsp;h = 3*H/(4*Pi*R^3). </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The normal flux at the surface will be Fnormal = -K*grad(U) &lt;dot&gt; Normal, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;where Normal is the surface-normal unit vector. &nbsp;On the sphere, the unit </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;normal is [x/R,y/R,z/R]. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;At the surface, the flux will be uniform, so the surface integral of flux is </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;TOTAL = 4*pi*R^2*normal(-K*grad(U)) = H </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;or &nbsp;normal(-K*grad(u)) = H/(4*pi*R^2) &nbsp;= &nbsp;R*h/3. </span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;In the following, we set R=1 and H = 1, from which </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;h = 3/(4*pi) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;normal(-k*grad(u)) = 1/(4*pi) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">}</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">title</span><span class="f_T_samples"> </span><span class="f_T_string">'3D Sphere'</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">coordinates</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;cartesian3  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">variables</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;u  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">definitions</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;K = 0.1 &nbsp; </span><span class="f_T_comment">{ conductivity }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;R0 = 1 &nbsp;  </span><span class="f_T_comment">{ radius }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;H0 = 1 &nbsp;  </span><span class="f_T_comment">{ total heat }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">{ volume heat source }</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;heat =3*H0/(4*pi*R0^3) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">equations</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;U: div(K*grad(u)) + heat &nbsp; = 0  </span></p>
+</td>
+<td valign="top" width="175" style="width:175px;"><p><span style="font-size: 11px; font-family: 'MS Sans Serif';">&nbsp;</span></p>
+<p><img src="3d_sphere01.png" width="165" height="164" border="0" alt=""></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">extrusion</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">surface</span><span class="f_T_samples"> z = -</span><span class="f_T_reserved">SPHERE</span><span class="f_T_samples"> ((0,0,0),R0) &nbsp; &nbsp; &nbsp; </span><span class="f_T_comment">{ the bottom hemisphere }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">surface</span><span class="f_T_samples"> z = </span><span class="f_T_reserved">SPHERE</span><span class="f_T_samples"> ((0,0,0),R0) &nbsp; &nbsp; &nbsp;  </span><span class="f_T_comment">{ the top hemisphere }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">boundaries</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">surface</span><span class="f_T_samples"> 1 </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u) = 0 &nbsp; &nbsp; </span><span class="f_T_comment">{ fixed value on sphere surfaces }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">surface</span><span class="f_T_samples"> 2 </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u) = 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">Region</span><span class="f_T_samples"> 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">start</span><span class="f_T_samples">(R0,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">arc</span><span class="f_T_samples">(</span><span class="f_T_reserved">center</span><span class="f_T_samples">=0,0) </span><span class="f_T_reserved">angle</span><span class="f_T_samples">=360  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">plots</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">grid</span><span class="f_T_samples">(x,y,z)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">grid</span><span class="f_T_samples">(x,z) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> y=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> x=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(4*pi*magnitude(k*grad(u))) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> x=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(4*pi*magnitude(k*grad(u))) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> y=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(-4*pi*k*(x*dx(u)+y*dy(u)+z*dz(u))/sqrt(x^2+y^2+z^2)) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> x=0  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;normal flux&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(-4*pi*k*(x*dx(u)+y*dy(u)+z*dz(u))/sqrt(x^2+y^2+z^2)) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> y=0  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;normal flux&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">vector</span><span class="f_T_samples">(-grad(u)) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> x=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">vector</span><span class="f_T_samples">(-grad(u)) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> y=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(4*pi*normal(-k*grad(u))) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> </span><span class="f_T_reserved">surface</span><span class="f_T_samples"> 1  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;4*pi*Normal Flux=1&quot;</span><span class="f_T_samples">  </span><span class="f_T_comment">{ bottom surface }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(4*pi*normal(-k*grad(u))) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> </span><span class="f_T_reserved">surface</span><span class="f_T_samples"> 2  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;4*pi*Normal Flux=1&quot;</span><span class="f_T_samples">  </span><span class="f_T_comment">{ top surface }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">surface</span><span class="f_T_samples">(4*pi*normal(-k*grad(u))) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> </span><span class="f_T_reserved">surface</span><span class="f_T_samples"> 1  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;4*pi*Normal Flux=1&quot;</span><span class="f_T_samples">  </span><span class="f_T_comment">{ bottom surface }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">surface</span><span class="f_T_samples">(4*pi*normal(-k*grad(u))) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> </span><span class="f_T_reserved">surface</span><span class="f_T_samples"> 2  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;4*pi*Normal Flux=1&quot;</span><span class="f_T_samples">  </span><span class="f_T_comment">{ top surface }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">summary</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">report</span><span class="f_T_samples">(sintegral(normal(-k*grad(u)),1)) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Bottom current :: 0.5 &quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">report</span><span class="f_T_samples">(sintegral(normal(-k*grad(u)),2)) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Top current :: 0.5 &quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">report</span><span class="f_T_samples">(vintegral(heat)) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Total heat :: 1&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">report</span><span class="f_T_samples">(sintegral(normal(-k*grad(u)))) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Total Flux :: 1&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> </span><span class="f_T_reserved">end</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?usage_3d_domains_3d_sphere.html" target="_top">index.html?usage_3d_domains_3d_sphere.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?tableformat.html"; }
+  else { parent.lazysync('tableformat.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>TABLE File format</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="TABLE,TABLE File format">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a> &gt; <a href="definitions.html">Definitions</a> &gt; <a href="table_import_definitions.html">TABLE Import Definitions</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">TABLE File format</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="table_modifiers.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="table_import_definitions.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="tabulate_definitions.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Data <span style="color: #000000;">files for use in </span><span class="f_T_Code">TABLE</span><span style="color: #000000;"> or </span><span class="f_T_Code">TABLEDEF</span><span style="color: #000000;"> input must have the following form:</span></p>
+<p style="margin: 0px 60px 0px 60px;"><span style="font-weight: bold;">&nbsp;</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">{ comments }</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">name_coord1 &nbsp; datacount1</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code"> &nbsp; value1_coord1 &nbsp; value2_coord1 &nbsp; value3_coord1 …</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">name_coord2 &nbsp; datacount2</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code"> &nbsp; value1_coord2 &nbsp; value2_coord2 &nbsp; value3_coord1 …</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">name_coord3 &nbsp; datacount3</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code"> &nbsp; value1_coord3 &nbsp; value2_coord3 &nbsp; value3_coord3 …</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">data { comments }</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">data111 &nbsp; data211 &nbsp; data311 …</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">data121 &nbsp; data221 &nbsp; data321 …</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">data131 &nbsp; data231 &nbsp; data331 …</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code"> &nbsp;… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;…</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code"> &nbsp;… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;…</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">data112 &nbsp; data 212 &nbsp; data312 …</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">data122 &nbsp; data 222 &nbsp; data322 …</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">data132 &nbsp; data 232 &nbsp; data 332 …</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code"> &nbsp;… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;…</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code"> &nbsp;… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;…</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">where</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 33px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="126" style="width:126px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">name_coordN</span><span class="f_T_Code"> </span></p>
+</td>
+<td valign="top" width="541" style="width:541px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">is the coordinate name in the N direction. &nbsp;Names must match defined names in the importing script unless table coordinate redefinition is used.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="126" style="width:126px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">&nbsp;</span></p>
+</td>
+<td valign="top" width="541" style="width:541px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="126" style="width:126px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">valueN_coordM</span></p>
+</td>
+<td valign="top" width="541" style="width:541px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">is the Nth value of the Mth coordinate. These must be in monotonic increasing order.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="126" style="width:126px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">&nbsp;</span></p>
+</td>
+<td valign="top" width="541" style="width:541px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="126" style="width:126px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">datacountN</span><span class="f_T_Code"> </span></p>
+</td>
+<td valign="top" width="541" style="width:541px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">is the number of data points in the N direction.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="126" style="width:126px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">&nbsp;</span></p>
+</td>
+<td valign="top" width="541" style="width:541px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="126" style="width:126px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">DataJKL</span><span class="f_T_Code"> </span></p>
+</td>
+<td valign="top" width="541" style="width:541px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">is the data at coordinate point (J,K,L)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="126" style="width:126px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">&nbsp;</span></p>
+</td>
+<td valign="top" width="541" style="width:541px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="126" style="width:126px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code"> </span><span class="f_T_Code">…  </span></p>
+</td>
+<td valign="top" width="541" style="width:541px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">ellipses indicate extended data lists, which may be continued over multiple lines.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Note that in presenting data, </span><span class="f_T_Code">coord1</span><span style="color: #000000;"> is cycled first, then </span><span class="f_T_Code">coord1</span><span style="color: #000000;">, then </span><span class="f_T_Code">coord3</span><span style="color: #000000;">.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Coordinate lists and data lists are free-format, and may be arbitrarily spaced, indented or divided into lines.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Arial'; font-weight: bold; color: #000000;">Example:</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 33px;"><span class="f_T_Code">{ this is an example table. &nbsp;}</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">x &nbsp; 6</span></p>
+<p style="margin: 0px 60px 0px 50px;"><span class="f_T_Code">-0.01 2 4 6 8 10.01</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">y &nbsp; 6</span></p>
+<p style="margin: 0px 60px 0px 50px;"><span class="f_T_Code">-0.01 2 4 6 8 10.01</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code">data</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 60px 0px 50px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="46" style="width:46px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">1.1 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">2.1 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">3.1 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">4.1 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">5.1 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">6.1</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="46" style="width:46px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">1.2 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">2.2 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">3.2 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">4.2 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">5.2 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">6.2</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="46" style="width:46px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">1.3 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">2.3 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">3.3 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">4.3 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">5.3 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">6.3</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="46" style="width:46px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">1.4 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">2.4 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">3.4 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">4.4 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">5.4 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">6.4</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="46" style="width:46px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">1.5 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">2.5 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">3.5 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">4.5 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">5.5 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">6.5</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="46" style="width:46px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">1.6 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">2.6 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">3.6 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">4.6 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">5.6 </span></p>
+</td>
+<td valign="top" width="60" style="width:60px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">6.6</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 33px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?tableformat.html" target="_top">index.html?tableformat.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

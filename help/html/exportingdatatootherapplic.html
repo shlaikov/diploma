@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?exportingdatatootherapplic.html"; }
+  else { parent.lazysync('exportingdatatootherapplic.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Exporting Data to Other Applications</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="EXPORT,FORMAT,TABLE,TABLE output,Transferring Data,TRANSFER,TRANSFER Exporting Data,CDF output,TECPLOT output,VTK output,VisIt,Visualization,#">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="user_guide.html">User Guide</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Exporting Data to Other Applications</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="postprocessingwithflexpde.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="user_guide.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="importing_data_from_other_appl.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p><span style="color: #000000;">FlexPDE supports several mechanisms for exporting data to other applications or visualization software.  </span></p>
+<p><span class="f_Heading4">The </span><span class="f_Heading4">EXPORT</span><span class="f_Heading4"> Qualifier</span></p>
+<p><span style="color: #000000;">The simplest method is to append the modifier </span><span class="f_T_Code">&quot;EXPORT&quot;</span><span style="color: #000000;"> (or </span><span class="f_T_Code">&quot;PRINT&quot;</span><span style="color: #000000;">) to a plot command. &nbsp;In this case, the plot data will be written to a text file in a predefined format suitable for importing to another FlexPDE problem using the </span><span class="f_T_Code">TABLE</span><span style="color: #000000;"> input function. &nbsp;For </span><span class="f_T_Code">ELEVATIONS</span><span style="color: #000000;"> or </span><span class="f_T_Code">HISTORIES</span><span style="color: #000000;">, the output will consist of a list of the times or X-, Y- or Z- coordinates of the data followed by a list of the data values (see the description of the </span><span class="f_T_Code">TABLE</span><span style="color: #000000;"> input function). &nbsp;For 2D plots, a regular rectangular grid will be constructed, and the data written in </span><span class="f_T_Code">TABLE</span><span style="color: #000000;"> input format.</span></p>
+<p class="p_Heading4"><span class="f_Heading4">The </span><span class="f_Heading4">FORMAT</span><span class="f_Heading4"> String</span></p>
+<p class="p_Heading4"><span style="color: #000000;">The format of the text file created by the </span><span class="f_T_Code">EXPORT</span><span style="color: #000000;"> modifier may be controlled by the inclusion of the modifier </span><span class="f_T_Code">FORMAT &quot;string&quot;</span><span style="color: #000000;">.  </span></p>
+<p><span style="color: #000000;">If this modifier appears together with the </span><span class="f_T_Code">EXPORT</span><span style="color: #000000;"> or </span><span class="f_T_Code">PRINT</span><span style="color: #000000;"> modifier, then the file will contain one text line for each data point in the grid. &nbsp;The contents of the line will be exactly that specified by the </span><span class="f_CodeExample">string</span><span style="color: #000000;">.  </span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;">All characters except &quot;#&quot; will be copied literally into the output line.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;">&quot;#&quot; will be interpreted as an escape character, and various options will be selected by the character following the &quot;#&quot;:  </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;"> #x, #y, #z and #t will print the value of the spatial coordinates or time of the data point;  </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;"> #1 through #9 will print the value of the corresponding element of the plot function list; </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;"> #b will write a tab character;  </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;"> #r will cause the remainder of the format string to be repeated for each plot function in the plot list;  </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;"> #i inside a repeated string will print the value of the current element of the plot function list.  </span></td></tr></table></div><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">In all cases of </span><span class="f_T_Code">FORMATTED</span><span style="color: #000000;"> export, a header will be written containing descriptive information about the origin of the file. &nbsp;This header will be delimited by &quot;{&quot; and &quot;}&quot;. &nbsp;In 2D grids, table points which are outside the problem domain will also be bracketed by &quot;{&quot; and &quot;}&quot; and marked as &quot;exterior&quot;. &nbsp;If these commenting forms are unacceptable to the importing application, then the data files must be manually edited before import.</span></p>
+<p class="p_Heading4"><span class="f_Heading4">TABLE Output</span></p>
+<p class="p_Heading4"><span style="color: #000000;">The </span><span class="f_T_Code"><a href="tablefunction2.html">TABLE</a></span><span style="color: #000000;"> plot command may also be used to generate tabular export. &nbsp;This command is identical to a </span><span class="f_T_Code">CONTOUR</span><span style="color: #000000;"> command with an </span><span class="f_T_Code">EXPORT</span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;"> </span><span style="color: #000000;">qualifier, except that no graphical output is generated. &nbsp;The </span><span class="f_T_Code">FORMAT &quot;string&quot;</span><span style="color: #000000;"> qualifier may also be used with </span><span class="f_T_Code">TABLE</span><span style="color: #000000;"> output.</span><br>
+<span style="color: #000000;">&nbsp;</span></p>
+<p><span class="f_Heading4">Transferring Data to another FlexPDE problem</span></p>
+<p><span style="color: #000000;">FlexPDE supports the capability of direct transfer of data defined on the Finite Element mesh. &nbsp;The </span><span class="f_T_Code">TRANSFER</span><span style="color: #000000;"> output function writes the current mesh structure and the requested data values to an ASCII text file. &nbsp;Another FlexPDE problem can read this file with the </span><span class="f_CodeExample">TRANSFER</span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;"> </span><span style="color: #000000;">input function. &nbsp;The transferred data will be interpolated on the output mesh with the Finite Element basis of the creating problem. &nbsp;The </span><span class="f_T_Code">TRANSFER</span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;"> </span><span style="color: #000000;">input mesh need not be the same as the computation mesh, as long as it spans the necessary area.</span></p>
+<p><span style="color: #000000;">The data format of the </span><span class="f_T_Code">TRANSFER</span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;"> </span><span style="color: #000000;">file is similar to the </span><span class="f_T_Code">TECPLOT</span><span style="color: #000000;"> file described below. &nbsp;The </span><span class="f_T_Code">TRANSFER</span><span style="color: #000000;"> file, however, maintains the quadratic or cubic basis of the computation, while the </span><span class="f_CodeExample">TECPLOT</span><span style="color: #000000;"> format is converted to linear basis. &nbsp;Since this is an ASCII text file, it can also be used for data transfer to user-written applications. &nbsp;The format of the </span><span class="f_T_Code">TRANSFER</span><span style="color: #000000;"> file is described in the Problem Descriptor Reference chapter &quot;</span><a href="transferfileformat.html">Transfer File Format</a><span style="color: #000000;">&quot;</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span class="f_Heading4">Output to Visualization Software</span></p>
+<p><span style="color: #000000;">FlexPDE can export solution data to third-party visualization software. &nbsp;Data export is requested by what is syntactically a </span><span class="f_T_Code">PLOT</span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;"> </span><span style="color: #000000;">command, with the type of plot (such as </span><span class="f_T_Code">CONTOUR</span><span style="color: #000000;">) replaced by the format selector. &nbsp;Two formats are currently supported, </span><span class="f_T_Code">CDF</span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;"> </span><span style="color: #000000;">and </span><span class="f_T_Code">TECPLOT</span><span style="color: #000000;">.  </span></p>
+<p class="p_Heading4"><span class="f_Heading4">CDF</span><br>
+<span class="f_Heading4">&nbsp;</span></p>
+<p><span class="f_T_Code">CDF(arg1 [,arg2,…] )</span><span class="f_CodeExample"> </span><span style="color: #000000;"> selects output in netCDF version 3 format.  </span><span class="f_T_Code">CDF</span><span style="color: #000000;"> stands for &quot;common data format&quot;, and is supported by several software products including SlicerDicer (www.visualogic.com ). &nbsp;Information about </span><span class="f_T_Code">CDF</span><span style="color: #000000;">, including a list of software packages supporting it, can be viewed at the website www.unidata.ucar.edu/packages/netcdf .</span></p>
+<p><span class="f_T_Code">CDF</span><span style="color: #000000;"> data are constrained to be on a regular rectangular mesh, but in the case of irregular domains, parts of the rectangle can be absent. &nbsp;This regularity implies some loss of definition of material interfaces, so consider using a </span><span class="f_T_Code">ZOOMed</span><span style="color: #000000;"> domain to resolve small features.  </span></p>
+<p><span style="color: #000000;">The </span><span class="f_T_Code">CDF</span><span style="color: #000000;"> &quot;plot&quot; statement can be qualified by </span><span class="f_T_Code">ZOOM</span><span style="color: #000000;"> or  </span><span class="f_T_Code">&quot;ON SURFACE&quot;</span><span style="color: #000000;"> modifiers, and its density can be controlled by the </span><span class="f_T_Code">POINTS</span><span style="color: #000000;"> modifier. &nbsp;For global control of the grid size, use the statement </span><span class="f_T_Code">&quot;SELECT CDFGRID=n&quot;</span><span style="color: #000000;">, which sets all dimensions to n. &nbsp;The default gridsize is 50.</span></p>
+<p><span style="color: #000000;">Any number of arguments can be given, and all will be exported in the same file. &nbsp;The output file is by default &quot;&lt;problem&gt;_&lt;sequence&gt;.cdf&quot;, but specific filenames can be selected with the </span><span class="f_T_Code">FILE</span><span style="color: #000000;"> modifier.</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span class="f_Heading4">TECPLOT</span></p>
+<p><span class="f_T_Code">TECPLOT(arg1 [,arg2,…] )</span><span style="color: #000000;"> selects output in TecPlot format. &nbsp;TecPlot is a visualization package which supports finite element data format, and so preserves the material interfaces as defined in FlexPDE. &nbsp;No </span><span class="f_T_Code">ZOOM</span><span style="color: #000000;"> or </span><span class="f_T_Code">POINTS</span><span style="color: #000000;"> control can be imposed. &nbsp;The full computation mesh is exported, grouped by material number. &nbsp;TecPlot can selectively enable or disable these groups. &nbsp;Any number of arguments can be given, and all will be exported in the same file. &nbsp;The output file is by default &quot;&lt;problem&gt;_&lt;sequence&gt;.dat&quot;, but specific filenames can be selected with the </span><span class="f_T_Code">FILE</span><span style="color: #000000;"> modifier.</span></p>
+<p><span style="color: #000000;">Information about TecPlot can be viewed at www.amtec.com .</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span class="f_Heading4">VTK</span></p>
+<p><span class="f_T_Code">VTK(arg1 [,arg2,…] )</span><span class="f_CodeExample"> </span><span style="color: #000000;">selects output in Visual Tool Kit format.  </span><span class="f_T_Code">VTK</span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;"> </span><span style="color: #000000;">is a freely available library of visualization software, which is beginning to be used as the basis of many visualization packages. &nbsp;The file format can also be read by some visualization packages that are not based on </span><span class="f_T_Code">VTK</span><span style="color: #000000;">, such as VisIt (</span><span style="font-size: 15px; font-family: 'Times New Roman'; color: #007f00;">www.llnl.gov/visit</span><span style="color: #000000;">). &nbsp;The format preserves the mesh structure of the finite element method, and so preserves the material interfaces as defined in FlexPDE. &nbsp;No </span><span class="f_T_Code">ZOOM</span><span style="color: #000000;"> or </span><span class="f_T_Code">POINTS</span><span style="color: #000000;"> control can be imposed. &nbsp;The full computation mesh is exported. &nbsp;Particular characteristics of the visualization system are outside the control of FlexPE. &nbsp;Any number of arguments can be given, and all will be exported in the same file. &nbsp;The output file is by default &quot;&lt;problem&gt;_&lt;sequence&gt;.vtk&quot;, but specific filenames can be selected with the FILE modifier.</span></p>
+<p><span style="color: #000000;">The </span><span class="f_T_Code">VTK</span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;"> </span><span style="color: #000000;">format supports quadratic finite element basis directly, but not cubic. &nbsp;To export from cubic-basis computations, use </span><span class="f_T_Code">VTKLIN</span><span style="color: #000000;">.</span></p>
+<p><span class="f_T_Code">VTKLIN(arg1 [,arg2,…] )</span><span style="color: #000000;"> produces a </span><span class="f_T_Code">VTK</span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;"> </span><span style="color: #000000;">format file in which the native cells of the FlexPDE computation have been converted to a set of linear-basis finite element cells.  </span></p>
+<p><span style="color: #000000;">Information about </span><span class="f_T_Code">VTK</span><span style="color: #000000;"> can be viewed at </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #008000;">public.kitware.com/VTK/</span><span style="color: #000000;">.</span></p>
+<p class="p_Heading4"><span class="f_Heading4">Examples:</span></p>
+<p><a href="usage_import_export_export.html">Samples | Usage | Import-Export | Export.pde</a></p>
+<p><a href="usage_import_export_export_format.html">Samples | Usage | Import-Export | Export_Format.pde</a></p>
+<p><a href="usage_import_export_export_history.html">Samples | Usage | Import-Export | Export_History.pde</a></p>
+<p><a href="usage_import_export_transfer_export.html">Samples | Usage | Import-Export | Transfer_Export.pde</a></p>
+<p><a href="usage_import_export_transfer_import.html">Samples | Usage | Import-Export | Transfer_Import.pde</a></p>
+<p><a href="usage_import_export_table.html">Samples | Usage | Import-Export | Table.pde</a></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<hr noshade size=1 style="color : #000000"><p><span style="font-family: 'Arial'; font-style: italic; color: #000000;">Note: </span></p>
+<p><span style="font-family: 'Arial'; font-style: italic; color: #000000;">Reference to products from other suppliers does not constitute an endorsement by PDE Solutions Inc.</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p>&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?exportingdatatootherapplic.html" target="_top">index.html?exportingdatatootherapplic.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?material_interfaces.html"; }
+  else { parent.lazysync('material_interfaces.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Material Interfaces</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   Electromagnetic Applications &gt; <a href="chapter_3_waveguides.html">Waveguides</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Material Interfaces</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="boundary_conditions3.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="chapter_3_waveguides.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="references.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 14px 0px 10px 0px;">At a material interface, Maxwell’s equations require that the tangential components of <img src="image340.zoom33.png" width="16" height="23" border="0" alt=""> and <img src="image358.zoom33.png" width="20" height="23" border="0" alt=""> and the normal components of <img src="image409.zoom33.png" width="25" height="25" border="0" alt=""> and <img src="image411.zoom33.png" width="30" height="27" border="0" alt=""> must be continuous. </p>
+<p>The tangential continuity of components <img src="image413.zoom33.png" width="51" height="25" border="0" alt=""> and <img src="image415.zoom33.png" width="51" height="26" border="0" alt=""> is automatically satisfied, because FlexPDE stores only a single value of variables at the interface. &nbsp;Continuity of <img src="image417.zoom33.png" width="50" height="25" border="0" alt="">, which is always tangential, requires, using (3.12), <img src="image419.zoom33.png" width="146" height="31" border="0" alt="">. &nbsp;Continuity of <img src="image307.zoom33.png" width="19" height="25" border="0" alt=""> requires <img src="image422.zoom33.png" width="144" height="31" border="0" alt="">.</p>
+<p style="margin: 14px 0px 10px 0px;">Now consider the integrals (3.15) to be taken over each material independently. &nbsp;Each specifies in a general sense the “flux” of some quantity outward from the region. &nbsp;The sum of the two integrands, taking into account the reversed sign of the outward normal, specifies the conservation of the “flux”. &nbsp;In the usual case, the sum is zero, representing “flux” conservation. &nbsp;In our case, we must specify a jump in the flux in order to satisfy the requirements of Maxwell’s equations.</p>
+<p style="margin: 14px 0px 10px 0px;">For the <img src="image405.zoom33.png" width="23" height="25" border="0" alt=""><span class="f_ImageCaption" style="font-size: 7px; vertical-align: sub;"> </span>component equation we have, using the outward normals from region 1,</p>
+<p style="margin: 14px 0px 10px 0px;"> &nbsp; &nbsp; <img src="image425.zoom33.png" width="386" height="81" border="0" alt=""></p>
+<p style="margin: 14px 0px 10px 0px;">But the continuity requirements above dictate that the numerators be continuous, so the internal natural boundary condition becomes</p>
+<p style="margin: 14px 0px 10px 0px;"> &nbsp; &nbsp; <img src="image427.zoom33.png" width="290" height="81" border="0" alt=""> </p>
+<p style="margin: 14px 0px 10px 0px;">By a similar argument, the internal natural boundary condition for the <img src="image403.zoom33.png" width="25" height="26" border="0" alt=""> component equation is</p>
+<p style="margin: 14px 0px 10px 0px;"> &nbsp; &nbsp; <img src="image430.zoom33.png" width="290" height="81" border="0" alt=""></p>
+<p style="margin: 14px 0px 10px 0px;">Clearly, at an internal interface where <img src="image380.zoom33.png" width="18" height="25" border="0" alt=""> is continuous, the internal natural boundary condition reduces to zero, which is the default condition.</p>
+<p style="margin: 14px 0px 10px 0px;">In the example which follows, we consider a simple 2x1 metal box with dielectric material in the left half. &nbsp;Note that FlexPDE will compute the eigenvalues with lowest magnitude, regardless of sign, while negative eigenvalues correspond to modes with propagation constants below cutoff, and are therefore not physically realizable.</p>
+<p style="margin: 14px 0px 10px 0px;">See also <a href="usage_eigenvalues_filledguide.html">&quot;Samples | Usage | Eigenvalues | Filledguide.pde&quot;</a></p>
+<p class="p_Heading4"><span class="f_Heading4">Descriptor 3.2 Filledguide.pde</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span style="font-size: 11px; font-family: 'Courier New'; font-weight: bold; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code_reserved">title</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Filled Waveguide&quot;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code_reserved">select</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;modes = 8 &nbsp; &nbsp;  </span><span class="f_T_Code_comment">{ This is the number of Eigenvalues desired. }</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code_reserved">variables</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;Hx,Hy</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code_reserved">definitions</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;cm = 0.01 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span class="f_T_Code_comment">! conversion from cm to meters</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;b = 1*cm &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="f_T_Code_comment">! box height</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;L = 2*b &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="f_T_Code_comment">! box width</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;epsr</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;epsr1=1 &nbsp; &nbsp; &nbsp; &nbsp;epsr2=1.5</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;ejump = 1/epsr2-1/epsr1 &nbsp; &nbsp;  </span><span class="f_T_Code_comment">! the boundary jump parameter</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;eps0 = 8.85e-12 &nbsp; &nbsp;  </span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;mu0 = 4e-7*pi </span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;c = &nbsp;1/sqrt(mu0*eps0) </span><span class="f_T_Code_comment">! light speed</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;k0b = 4</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;k0 = k0b/b</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;k02 = k0^2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span class="f_T_Code_comment">! k0^2=omega^2*mu0*eps0</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;curlh = dx(Hy)-dy(Hx) </span><span class="f_T_Code_comment">! terms used in equations and BC’s</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;divh = dx(Hx)+dy(Hy)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code_reserved">equations</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;Hx: dx(divh)/epsr - dy(curlh/epsr) + k02*Hx - lambda*Hx/epsr = 0</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;Hy: dx(curlh/epsr) + dy(divh)/epsr + k02*Hy - lambda*Hy/epsr = 0</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code_reserved">boundaries</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">region</span><span class="f_T_Code"> 1 &nbsp;epsr=epsr1</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">start</span><span class="f_T_Code">(0,0)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">natural</span><span class="f_T_Code">(Hx) = 0  </span><span class="f_T_Code_reserved">value</span><span class="f_T_Code">(Hy)=0</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">line to</span><span class="f_T_Code"> (L,0)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">value</span><span class="f_T_Code">(Hx) = 0  </span><span class="f_T_Code_reserved">value</span><span class="f_T_Code">(Hy)=0  </span><span class="f_T_Code_reserved">natural</span><span class="f_T_Code">(Hy)=0</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">line to</span><span class="f_T_Code"> (L,b)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">natural</span><span class="f_T_Code">(Hx) = 0 </span><span class="f_T_Code_reserved">value</span><span class="f_T_Code">(Hy)=0</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">line to</span><span class="f_T_Code"> (0,b)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">value</span><span class="f_T_Code">(Hx) = 0  </span><span class="f_T_Code_reserved">natural</span><span class="f_T_Code">(Hy)=0</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">line to close</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">region</span><span class="f_T_Code"> 2 &nbsp;epsr=epsr2</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">start</span><span class="f_T_Code">(b,b)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">line to</span><span class="f_T_Code"> (0,b) </span><span class="f_T_Code_reserved">to</span><span class="f_T_Code"> (0,0) </span><span class="f_T_Code_reserved">to</span><span class="f_T_Code"> (b,0)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">natural</span><span class="f_T_Code">(Hx) = normal(-ejump*divh,ejump*curlh)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">natural</span><span class="f_T_Code">(Hy) = normal(-ejump*curlh,-ejump*divh)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">line to close</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">monitors</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp; &nbsp; </span><span class="f_T_Code_reserved">contour</span><span class="f_T_Code">(Hx) </span><span class="f_T_Code_reserved">range</span><span class="f_T_Code">=(-3,3)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp; &nbsp; </span><span class="f_T_Code_reserved">contour</span><span class="f_T_Code">(Hy) </span><span class="f_T_Code_reserved">range</span><span class="f_T_Code">=(-3,3)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">plots</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp; &nbsp; </span><span class="f_T_Code_reserved">contour</span><span class="f_T_Code">(Hx) </span><span class="f_T_Code_reserved">range</span><span class="f_T_Code">=(-3,3) </span><span class="f_T_Code_reserved">report</span><span class="f_T_Code">(k0b)</span></p>
+<p style="text-indent: 24px; margin: 0px -12px 0px 72px;"><span class="f_T_Code_reserved">report</span><span class="f_T_Code">(sqrt(abs(lambda))/k0)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp; &nbsp; </span><span class="f_T_Code_reserved">surface</span><span class="f_T_Code">(Hx) </span><span class="f_T_Code_reserved">range</span><span class="f_T_Code">=(-3,3) </span><span class="f_T_Code_reserved">report</span><span class="f_T_Code">(k0b)</span></p>
+<p style="text-indent: 24px; margin: 0px -12px 0px 72px;"><span class="f_T_Code_reserved">report</span><span class="f_T_Code">(sqrt(abs(lambda))/k0)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp; &nbsp; </span><span class="f_T_Code_reserved">contour</span><span class="f_T_Code">(Hy) </span><span class="f_T_Code_reserved">range</span><span class="f_T_Code">=(-3,3) </span><span class="f_T_Code_reserved">report</span><span class="f_T_Code">(k0b)</span></p>
+<p style="text-indent: 24px; margin: 0px -12px 0px 72px;"><span class="f_T_Code_reserved">report</span><span class="f_T_Code">(sqrt(abs(lambda))/k0)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp; &nbsp; </span><span class="f_T_Code_reserved">surface</span><span class="f_T_Code">(Hy) </span><span class="f_T_Code_reserved">range</span><span class="f_T_Code">=(-3,3) </span><span class="f_T_Code_reserved">report</span><span class="f_T_Code">(k0b)</span></p>
+<p style="text-indent: 24px; margin: 0px -12px 0px 72px;"><span class="f_T_Code_reserved">report</span><span class="f_T_Code">(sqrt(abs(lambda))/k0)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">summary</span><span class="f_T_Code">  </span><span class="f_T_Code_reserved">export</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp; &nbsp; </span><span class="f_T_Code_reserved">report</span><span class="f_T_Code">(k0b)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp; &nbsp; </span><span class="f_T_Code_reserved">report</span><span class="f_T_Code"> lambda</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code"> &nbsp; &nbsp; </span><span class="f_T_Code_reserved">report</span><span class="f_T_Code">(sqrt(abs(lambda))/k0)</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">end</span></p>
+<p style="margin: 0px -12px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 14px 0px 10px 0px;"><img src="filledguide31_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+<p style="margin: 14px 0px 10px 0px;"><img src="filledguide29_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+<p style="margin: 14px 0px 10px 0px;"><img src="filledguide48_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?material_interfaces.html" target="_top">index.html?material_interfaces.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?usage_periodicity_3d_xperiodic.html"; }
+  else { parent.lazysync('usage_periodicity_3d_xperiodic.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>3d_xperiodic</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sample_problems.html">Sample Problems</a> &gt; usage &gt; periodicity&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">3d_xperiodic</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="usage_periodicity_3d_antiperiodic.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="sample_problems.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="usage_periodicity_3d_zperiodic.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">{ &nbsp;3D_XPERIODIC.PDE &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This example shows the use of FlexPDE in 3D applications with periodic boundaries. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The <a href="periodicboundaries.html">PERIODIC</a> statement appears in the position of a boundary condition, but </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;the syntax is slightly different, and the requirements and implications are </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;more extensive. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The syntax is: </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;PERIODIC(X_mapping,Y_mapping) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The mapping expressions specify the arithmetic required to convert a point </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;(X,Y) in the immediate boundary to a point (X',Y') on a remote boundary. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The mapping expressions must result in each point on the immediate boundary </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;mapping to a point on the remote boundary. &nbsp;Segment endpoints must map to </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;segment endpoints. &nbsp;The transformation must be invertible; do not specify </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;constants as mapped coordinates, as this will create a singular transformation. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The periodic boundary statement terminates any boundary conditions in effect, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;and instead imposes equality of all variables on the two boundaries. &nbsp;It is </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;still possible to state a boundary condition on the remote boundary, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;but in most cases this would be inappropriate. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The periodic statement affects only the next following <a href="pathsandpathnames.html">LINE</a> or <a href="pathsandpathnames.html">ARC</a> path. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;These paths may contain more than one segment, but the next appearing </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;LINE or ARC statement terminates the periodic condition unless the periodic </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;statement is repeated. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;In this problem, we have a heat equation with an off=center source in an irregular </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;figure. &nbsp;The figure is periodic in X, with Y faces held at zero, and Z-faces insulated. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">}</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">title</span><span class="f_T_samples"> </span><span class="f_T_string">'3D X-PERIODIC BOUNDARY TEST'</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">coordinates</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;cartesian3  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">Variables</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;u  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">definitions</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;k = 0.1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;h=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;x0=0.5 &nbsp;y0=-0.2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;x1=1.1 &nbsp;y1 = 0.2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">equations</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;u : div(K*grad(u)) + h = 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">extrusion</span><span class="f_T_samples"> z=0,0.4,0.6,1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">boundaries</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">region</span><span class="f_T_samples"> 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">start</span><span class="f_T_samples">(-1,-1)  </span></p>
+</td>
+<td valign="top" width="238" style="width:238px;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 11px; font-family: 'MS Sans Serif';">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-size: 11px; font-family: 'MS Sans Serif';">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><img src="3d_xperiodic08.png" width="236" height="131" border="0" alt=""></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0 &nbsp; </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (1,-1) &nbsp; </span><span class="f_T_comment">{ Force U=0 on Y=-1 }</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_comment">{ The following arc is required to be a periodic image of an arc </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;two units to its left. (This image boundary has not yet been defined.) }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">periodic</span><span class="f_T_samples">(x-2,y) </span><span class="f_T_reserved">arc</span><span class="f_T_samples">(</span><span class="f_T_reserved">center</span><span class="f_T_samples">=-1,0) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (1,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0 &nbsp; </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (-1,1) &nbsp; &nbsp; &nbsp; </span><span class="f_T_comment">{ Force U=0 on Y=1 }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_comment">{ The following arc provides the required image boundary for the previous </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;periodic statement }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(u) &nbsp; </span><span class="f_T_comment">{ turn off the value BC }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">arc</span><span class="f_T_samples">(</span><span class="f_T_reserved">center</span><span class="f_T_samples">= -3,0)  </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">{ an off-center heat source in layer 2 provides the asymmetric conditions to </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;demonstrate the periodicity of the solution }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">limited</span><span class="f_T_samples"> </span><span class="f_T_reserved">region</span><span class="f_T_samples"> 2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">layer</span><span class="f_T_samples"> 2 h=10 k=10  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">start</span><span class="f_T_samples">(x0,y0) </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (x1,y0) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (x1,y1) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (x0,y1) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">monitors</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> z=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> z=0.5  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> z=1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> y=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">plots</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> z=0 &nbsp; painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> z=0.5 painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> z=1 &nbsp; painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> y=0 &nbsp; painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">end</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?usage_periodicity_3d_xperiodic.html" target="_top">index.html?usage_periodicity_3d_xperiodic.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

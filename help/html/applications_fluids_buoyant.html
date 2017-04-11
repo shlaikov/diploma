@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?applications_fluids_buoyant.html"; }
+  else { parent.lazysync('applications_fluids_buoyant.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>buoyant</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sample_problems.html">Sample Problems</a> &gt; applications &gt; fluids&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">buoyant</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="applications_fluids_buoyanttime_.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="sample_problems.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="applications_fluids_channel.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">{ &nbsp;BUOYANT.PDE &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This example addresses the problem of thermally driven buoyant flow </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;of a viscous liquid in a vessel in two dimensions. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;In the Boussinesq approximation, we assume that the fluid is incompressible, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;except for thermal expansion effects which generate a buoyant force. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The incompressible form of the Navier-Stokes equations for the flow of a fluid </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;can be written </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;dt(U) + U.grad(U) + grad(p) = nu*div(grad(U)) + F </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;div(U) = 0 </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;where U represents the velocity vector, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;p is the pressure, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;nu is the kinematic viscosity </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;and &nbsp; F is the vector of body forces. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The first equation expresses the conservation of momentum, while the second, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;or Continuity Equation, expresses the conservation of mass. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;If the flow is steady, we may drop the time derivative. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;If we take the curl of the (steady-state) momentum equation, we get </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;curl(U.grad(U)) + curl(grad(p)) = nu*curl(div(grad(U)) + curl(F) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Using div(U)=0 and div(curl(U))=0, and defining the vorticity W = curl(U), </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;we get </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;U.grad(W) = W.grad(U) + nu*div(grad(W)) + curl(F) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;W.grad(U) represents the effect of vortex stretching, and is zero in </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;two-dimensional systems. Furthermore, in two dimensions the velocity has </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;only two components, say u and v, and the vorticity has only one, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;which we shall write as w. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Consider now the continuity equation. &nbsp;If we define a scalar function psi </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;such that </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;u = dy(psi) &nbsp; &nbsp;v = -dx(psi) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;then div(U) = dx(dy(psi))-dy(dx(psi)) = 0, and the continuity equation is </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;satisfied exactly. &nbsp;We may write </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;div(grad(psi)) = -dx(v)+dy(u) = -w </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Using psi and w, we may write the final version of the Navier-Stokes </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;equations as </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;dy(psi)*dx(w) -dx(psi)*dy(w) = nu*div(grad(w)) + curl(F) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;div(grad(psi)) + w = 0 </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;If F is a gravitational force, then </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;F = (0,-g*rho) and </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;curl(F) = -g*dx(rho) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;where rho is the fluid density and g is the acceleration of gravity. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The temperature of the system may be found from the heat equation </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;rho*cp*[dt(T)+U.grad(T)] = div(k*grad(T)) + S </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Dropping the time derivative, approximating rho by rho0, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;and expanding U in terms of psi, we get </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;div(k*grad(T)) + S = rho0*cp*[dy(psi)*dx(temp) - dx(psi)*dy(temp)] </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;If we assume linear expansion of the fluid with temperature, then </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;rho = rho0*(1+alpha*(T-T0)) and </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;curl(F) = -g*rho0*alpha*dx(T) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;-------------------------- </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;In this problem, we define a trough filled with liquid, heated along a center </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;strip by &nbsp;an applied heat flux, and watch the convection pattern and the heat </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;distribution. &nbsp;We compute only half the trough, with a symmetry plane </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;in the center. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Along the symmetry plane, we assert w=0, since on this plane </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;dx(v) = 0 and u=0, so dy(u) = 0. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Applying the boundary condition psi=0 forces the stream lines to be parallel </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;to the boundary, enforcing no flow through the boundary. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;On the surface of the bowl, we apply a penalty function to enforce a &quot;no-slip&quot; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;boundary condition. &nbsp;We do this by using a natural BC to introduce a surface </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;source of vorticity to counteract the tangential velocity. The penalty weight </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;was arrived at by trial and error. &nbsp;Larger weights can force the surface </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;velocity closer to zero, but this has no perceptible effect on the temperature </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;distribution. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;On the free surface, the proper boundary condition for the vorticity is </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;problematic. We choose to apply NATURAL(w)=0, because this implies no vorticity </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;transport across the free surface. &nbsp; &nbsp;(11/16/99) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">TITLE</span><span class="f_T_samples"> </span><span class="f_T_string">'Buoyant Flow by Stream Function and Vorticity - No Slip'</span><span class="f_T_samples"> &nbsp; </span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="373" style="width:373px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">VARIABLES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; temp psi w  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">DEFINITIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; Lx = 1 &nbsp; Ly = 0.5  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; Rad = 0.5*(Lx^2+Ly^2)/Ly  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; Gy = 980  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_comment">{ surface heat loss coefficient }</span><span class="f_T_samples"> </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; sigma_top = 0.01 &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_comment">{ bowl heat loss coefficient }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; sigma_bowl = 1 &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_comment">{ thermal conductivity }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; k = 0.0004 &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_comment">{ thermal expansion coefficient }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; alpha = 0.001 &nbsp;  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; visc = 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; rho0 = 1 &nbsp;  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; heatin = 10  </span><span class="f_T_comment">{ heat source }</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; t0 = 50  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; dens = rho0*(1 - alpha*temp)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; cp = 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; penalty = 5000  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; u = dy(psi)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; v = -dx(psi)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">EQUATIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">&nbsp;</span></p>
+</td>
+<td valign="top" width="272" style="width:272px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_ImageCaption">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><img src="buoyant09.png" width="247" height="143" border="0" alt=""></p>
+<p style="margin: 0px 0px 0px 0px;"><img src="buoyant10.png" width="264" height="140" border="0" alt=""></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; temp: div(k*grad(temp)) = rho0*cp*(u*dx(temp) + v*dy(temp))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; psi: &nbsp;div(grad(psi)) + w = 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; w: &nbsp; &nbsp;u*dx(w) + v*dy(w) = visc*div(grad(w)) - Gy*dx(dens)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">BOUNDARIES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">region</span><span class="f_T_samples"> 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">{ on the arc of the bowl, set Psi=0, and apply a conductive loss to T. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;Apply a penalty function to w to force the tangential velocity to zero }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">start</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;outer&quot;</span><span class="f_T_samples"> (0,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">natural</span><span class="f_T_samples">(temp) = -sigma_bowl*temp  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(psi) = 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">natural</span><span class="f_T_samples">(w)= penalty*tangential(curl(psi))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">arc</span><span class="f_T_samples"> (</span><span class="f_T_reserved">center</span><span class="f_T_samples">=0,Rad) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Lx,Ly)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_comment">{ on the top, continue the Psi=0 BC, but add the heat in put term to T, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;and apply a natural=0 BC for w }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">natural</span><span class="f_T_samples">(w)=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">load</span><span class="f_T_samples">(temp) = heatin*exp(-(10*x/Lx)^2) - sigma_top*temp  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (0,Ly)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_comment">{ in the symmetry plane assert w=0, with a reflective BC for T }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(w)=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">load</span><span class="f_T_samples">(temp) = 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">MONITORS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(temp) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Temperature&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(psi)  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Stream Function&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(w) &nbsp;  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Vorticity&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">vector</span><span class="f_T_samples">(u,v) &nbsp; </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Flow Velocity&quot;</span><span class="f_T_samples"> norm  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">PLOTS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">grid</span><span class="f_T_samples">(x,y)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(temp) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Temperature&quot;</span><span class="f_T_samples"> &nbsp;painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(psi)  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Stream Function&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(w) &nbsp;  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Vorticity&quot;</span><span class="f_T_samples"> &nbsp;painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">vector</span><span class="f_T_samples">(u,v) &nbsp; </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Flow Velocity&quot;</span><span class="f_T_samples"> norm  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(dens) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Density&quot;</span><span class="f_T_samples"> &nbsp;painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(magnitude(u,v)) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Speed&quot;</span><span class="f_T_samples"> &nbsp;painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(magnitude(u,v)) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;outer&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(temp) </span><span class="f_T_reserved">on</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;outer&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">END</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?applications_fluids_buoyant.html" target="_top">index.html?applications_fluids_buoyant.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

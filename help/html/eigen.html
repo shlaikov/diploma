@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?eigen.html"; }
+  else { parent.lazysync('eigen.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Eigenvalues and Modal Analysis</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Eigenvalue,Eigenvalue Shifting,Modal Analysis">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   Technical Notes&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Technical Notes | &nbsp; &nbsp; &nbsp; Eigenvalues and Modal Analysis</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="nonlinear.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="flexpdehelp.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="discontinuities.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;">FlexPDE can solve eigenvalue problems involving an arbitrary number of equations. &nbsp;This type of problem is identified by the appearance of the selector <span class="f_T_Code">MODES=&lt;number&gt;</span> in the select section, and by use of the reserved word <span class="f_T_Code">LAMBDA</span> in the equations section. &nbsp;The <span class="f_T_Code">MODES</span> selector tells FlexPDE how many modes to calculate, and <span class="f_T_Code">LAMBDA</span> in the equations stands for the eigenvalue.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">FlexPDE uses the method of subspace iteration (see Bathe and Wilson, &quot;Numerical Methods in Finite Element Analysis&quot;, Prentice-Hall, 1976) &nbsp;to solve for a selected number of eigenvalues of lowest magnitude. &nbsp; In this method, the full problem is projected onto a subspace of much smaller dimension, and the eigenvalues and eigenvectors of this reduced system are found. &nbsp;This process is repeated until convergence of the eigenvalues is achieved. &nbsp;The eigenvectors of the full system are then recovered from expansion of the eigenvectors of the reduced system. &nbsp;As in a power-series expansion, there is some loss of accuracy in the higher modes due to truncation error. &nbsp;For this reason, FlexPDE solves a subspace of dimension min(n+8,2*n), where n is the number of requested modes.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">See the <a href="usage_eigenvalues_3d_oildrum.html">eigenvalue examples</a> for demonstrations of this use of FlexPDE.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p class="p_Heading4"><span class="f_Heading4">Eigenvalue Shifting</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">It is possible to examine eigenmodes which do not correspond to eigenvalues of the smallest magnitude by the technique of eigenvalue shifting. &nbsp;Consider the two systems</p>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">L(u) + lambda*u = 0</span></p>
+<p style="margin: 0px 0px 0px 0px;">And</p>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">L(u) + lambda*u + shift*u = 0.</span></p>
+<p style="margin: 0px 0px 0px 0px;">These systems will have the same eigenvectors, but the eigenvalues will differ by the value of &quot;shift&quot;. &nbsp;Given the latter problem, FlexPDE will find a set of eigenvalues corresponding to the eigenvalues closest above &quot;shift&quot; in the spectrum of the former problem. The sum &quot;lambda+shift&quot; will correspond to the eigenvalue of the former system.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">Eigenvalue shifting is demonstrated in the examples <a href="usage_eigenvalues_waveguide20.html">&quot;Samples | Usage | Eigenvalues | Waveguide20.pde&quot;</a> and <a href="usage_eigenvalues_shiftguide.html">&quot;Samples | Usage | Eigenvalues | Shiftguide.pde&quot;</a>.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?eigen.html" target="_top">index.html?eigen.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

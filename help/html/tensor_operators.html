@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?tensor_operators.html"; }
+  else { parent.lazysync('tensor_operators.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Tensor Operators</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Tensor Operators,Operators,Operators Tensor,DOTproduct,DOTproduct Tensor,Components,Components Tensor,XXCOMP,XYCOMP,XZCOMP,YXCOMP,YYCOMP,YZCOMP,ZXCOMP,ZYCOMP,ZZCOMP,TRANSPOSE,TRANSPOSE tensor">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="theelementsofadescriptor.html">The Elements of a Descriptor</a> &gt; Operators&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Tensor Operators</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="vectoroperators.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="theelementsofadescriptor.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="predefined.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>FlexPDE supports limited use of <span class="f_T_Code">TENSOR</span> quantities, to parallel the results of <span class="f_T_Code">GRAD(vector)</span>.</p>
+<p>A <span class="f_T_Code">TENSOR</span> is a vector of vectors, potentially 3 x 3 components.  </p>
+<p><span class="f_T_Code" style="font-weight: bold;">TENSOR( ( T11, T12, T13) , (T21, T22, T23) , (T31, T32, T33))</span></p>
+<p style="margin: 0px 0px 10px 24px;">This operator returns a <span class="f_T_Code">TENSOR</span> object with the indicated components. &nbsp;Each of the <span class="f_T_Code">Tij</span> may be any scalar expression.</p>
+<p><span class="f_T_Code" style="font-weight: bold;">DOT(vector, tensor)</span></p>
+<p style="margin: 0px 0px 10px 24px;">This operator returns a  <span class="f_T_Code">VECTOR</span> with components <span class="f_T_Code">( (V1*T11+V2*T21+V3*T31), (V1*T12+V2*T22+V3*T32), (V1*T13+V2*T23+V3*T33) ).</span></p>
+<p><span class="f_T_Code" style="font-weight: bold;">DOT(tensor, vector)</span></p>
+<p style="margin: 0px 0px 10px 24px;">This operator returns a  <span class="f_T_Code">VECTOR</span> with components <span class="f_T_Code">( (T11*V1+T12*V2+T13*V3), (T21*V1+T22*V2+T23*V3), (T31*V1+T32*V2+T33*V3) ).</span></p>
+<p><span class="f_T_Code" style="font-weight: bold;">DOT(tensor, tensor)</span></p>
+<p style="margin: 0px 0px 10px 24px;">This operator returns a  <span class="f_T_Code">TENSOR</span> representing the matrix product of the tensors. &nbsp;The operator ** can be used to produce the same result (i.e. tensor**tensor).</p>
+<p><span class="f_T_Code" style="font-weight: bold;">DIV(tensor)</span></p>
+<p style="margin: 0px 0px 10px 24px;">This operator returns a <span class="f_T_Code">VECTOR</span> value whose components depend on the metric coefficients of the selected problem geometry. &nbsp;In Cartesian geometry, the result is a <span class="f_T_Code">VECTOR</span> made up of the divergences of the tensor columns.</p>
+<p><span class="f_T_Code" style="font-weight: bold;">TRANSPOSE(tensor)</span></p>
+<p style="margin: 0px 0px 10px 24px;">This operator returns a <span class="f_T_Code">TENSOR</span> which is the transpose of the argument tensor.</p>
+<p><span class="f_T_Code" style="font-weight: bold;">vector * vector</span>  </p>
+<p style="margin: 0px 0px 10px 24px;">produces a tensor of all combinations of component products.</p>
+<p><span class="f_T_Code" style="font-weight: bold;">XXCOMP ( tensor ) &nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+<span class="f_T_Code" style="font-weight: bold;">XYCOMP ( tensor ) &nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+<span class="f_T_Code" style="font-weight: bold;">XZCOMP ( tensor ) &nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+<span class="f_T_Code" style="font-weight: bold;">YXCOMP ( tensor ) &nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+<span class="f_T_Code" style="font-weight: bold;">YYCOMP ( tensor ) &nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+<span class="f_T_Code" style="font-weight: bold;">YZCOMP ( tensor ) &nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+<span class="f_T_Code" style="font-weight: bold;">ZXCOMP ( tensor ) &nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+<span class="f_T_Code" style="font-weight: bold;">ZYCOMP ( tensor ) &nbsp; &nbsp; &nbsp; &nbsp;</span><br>
+<span class="f_T_Code" style="font-weight: bold;">ZZCOMP ( tensor ) &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">These operators returns a scalar whose value is the indicated component of the tensor argument ( X indicates the first coordinate component, Y the second and Z the third, regardless of the actual assigned names of the coordinates).</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?tensor_operators.html" target="_top">index.html?tensor_operators.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

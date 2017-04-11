@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?usage_moving_mesh_1d_stretchx.html"; }
+  else { parent.lazysync('usage_moving_mesh_1d_stretchx.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>1d_stretchx</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sample_problems.html">Sample Problems</a> &gt; usage &gt; moving_mesh&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">1d_stretchx</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="usage_mesh_control_resolve.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="sample_problems.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="usage_moving_mesh_2d_lagrangian_shock.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">{ 1D_STRETCHX </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This example demonstrates moving meshes in 1D. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;A Gaussian distribution is defined on a 1D mesh. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The mesh is &nbsp;then stretched to twice its initial size, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;while the Gaussian remains fixed in space. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Mesh motion is imposed by explicit positions of the endpoints. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">}</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">TITLE</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;stretching line&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">COORDINATES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;cartesian1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">VARIABLES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;u  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vx  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;xm = </span><span class="f_T_reserved">move</span><span class="f_T_samples">(x)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">DEFINITIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Hl = 1/2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;gwid = 0.15  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;u0= exp(-x^2/gwid^2)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;lmove = Hl + t  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">INITIAL</span><span class="f_T_samples"> </span><span class="f_T_reserved">VALUES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;u= u0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vx=x/Hl  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">EULERIAN</span><span class="f_T_samples"> </span><span class="f_T_reserved">EQUATIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;U: &nbsp; dt(u)=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Vx: &nbsp;div(grad(vx))=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Xm: &nbsp;dt(xm) = vx  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">BOUNDARIES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">REGION</span><span class="f_T_samples"> 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">{ In 1D, &quot;point&quot; boundary conditions must FOLLOW the point at which  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp;they are to be applied: }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">START</span><span class="f_T_samples">(-Hl) &nbsp; </span><span class="f_T_reserved">point</span><span class="f_T_samples"> </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0 </span><span class="f_T_reserved">point</span><span class="f_T_samples"> </span><span class="f_T_reserved">value</span><span class="f_T_samples">(vx)=-1 </span><span class="f_T_reserved">point</span><span class="f_T_samples"> </span><span class="f_T_reserved">value</span><span class="f_T_samples">(xm)= -lmove  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">Line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Hl) </span><span class="f_T_reserved">point</span><span class="f_T_samples"> </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0 </span><span class="f_T_reserved">point</span><span class="f_T_samples"> </span><span class="f_T_reserved">value</span><span class="f_T_samples">(vx)=1  </span><span class="f_T_reserved">point</span><span class="f_T_samples"> </span><span class="f_T_reserved">value</span><span class="f_T_samples">(xm)= lmove  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">TIME</span><span class="f_T_samples"> 0 </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> 0.5 </span><span class="f_T_reserved">by</span><span class="f_T_samples"> 0.01  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">MONITORS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">for</span><span class="f_T_samples"> cycle=1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(u,u0) </span><span class="f_T_reserved">from</span><span class="f_T_samples">(-10*Hl) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (10*Hl) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(dt(xm)) </span><span class="f_T_reserved">from</span><span class="f_T_samples">(-10*Hl) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (10*Hl) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">PLOTS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">for</span><span class="f_T_samples"> </span><span class="f_T_reserved">time</span><span class="f_T_samples">=0.1 </span><span class="f_T_reserved">by</span><span class="f_T_samples"> 0.1 </span><span class="f_T_reserved">to</span><span class="f_T_samples"> endtime  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(u,u0) &nbsp; </span><span class="f_T_reserved">from</span><span class="f_T_samples">(-10*Hl) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (10*Hl) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(vx) &nbsp; &nbsp; </span><span class="f_T_reserved">from</span><span class="f_T_samples">(-10*Hl) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (10*Hl) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(dt(xm)) </span><span class="f_T_reserved">from</span><span class="f_T_samples">(-10*Hl) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (10*Hl) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">END</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?usage_moving_mesh_1d_stretchx.html" target="_top">index.html?usage_moving_mesh_1d_stretchx.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

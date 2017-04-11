@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?3dmeshgenerationinversion.html"; }
+  else { parent.lazysync('3dmeshgenerationinversion.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>3D Mesh Generation</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   Technical Notes&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">3D Mesh Generation</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="smoothing.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="flexpdehelp.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="interpretingerrorestimates.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>FlexPDE version 4.0 introduced an entirely new mesh generator for 3D problems. &nbsp;With support for <span class="f_T_Code">LIMITED</span> <span class="f_T_Code">REGIONS</span>, it offers users much more flexibility in the creation of 3D domains. &nbsp;It is also a much more complex computation, and is sometimes in need of some user assistance to successfully create a mesh for complex 3D problems.</p>
+<p>The greatest challenge faced by the 3D mesh generator is the transition across wide ranges of feature sizes. &nbsp;Any help the user can give in easing this transition will be amply rewarded in a decreased incidence of mesh generation failure. &nbsp;We at PDE Solutions are also engaged in improving the intelligence of the mesh generator to also assist in reaching this goal.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-weight: bold; text-decoration: underline;">DOMAIN REVIEW</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">The first facility that users should be aware of is the &quot;Domain&quot; item on the main menu bar. &nbsp;Selecting this item instead of &quot;Run&quot; will give the user a step-by-step review of the mesh generation process. &nbsp;This review reflects the order of operations performed by the mesh generator.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The first sequence of displays shows the domain boundaries in the surfaces and layers of the extrusion. &nbsp;The first plot shows the domain boundaries present in the bottom surface; the next shows the boundaries which extend through the first layer; then the boundaries present in the second extrusion surface; and so on through entire domain, and ending with the top surface. &nbsp;You should examine each of these displays to determine that the structure is as you intended. &nbsp;Errors at this point can create serious trouble later.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>After the individual surfaces and layers are displayed, a composite 3D display is presented of the total domain, as represented by boundaries. This plot can be rotated to examine all aspects of the domain. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The next sequence of displays shows the triangular surface meshes created for the extrusion surfaces. &nbsp;These meshes are created in 3D space, but are displayed as projections into the (X,Y) base plane. &nbsp;This presentation reflects the fact that the surfaces are first meshed as independent surfaces in space. &nbsp;Following initial surface mesh creation, the meshes are refined to create sufficient resolution of surface curvature. &nbsp;They are then analyzed for proximity, and coarser meshes are refined due to influence from nearby dense meshes.  </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The next sequence of displays shows the creation of the tetrahedral 3D meshes for each of the regions and layers of the domain. &nbsp;Before a block is filled, the bounding surface is shown; after filling, the filled block is displayed (it looks the same). &nbsp;The sequence presents first the region blocks for layer 1, followed by a unified mesh of layer 1. &nbsp;This pattern is repeated through the layers of the domain, until finally a unified 3D mesh is displayed. &nbsp;At this point, the mesh is composed of linear (straight-sided) tetrahedra.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Once the domain is filled with linear tetrahedra, the additional nodes needed for quadratic or cubic interpolation. &nbsp;Cells are also bent at this point to conform to curved boundaries. &nbsp;This curving can create troubles in thin curved shells. &nbsp;The 3D mesh generator is not yet smart enough to compute shell thickness and curvature and automatically adapt the size. &nbsp;You may have to do it manually. &nbsp;Sqrt(Radius*thickness) is a good rule of thumb.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>This completes the mesh generation process, and solution should proceed promptly.</td></tr></table></div><p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-weight: bold; text-decoration: underline;">DEALING WITH FAILURE</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">The most common cause of failure is inability to make the transition from very small to very large feature sizes without tangling. &nbsp;If the mesh generation fails, the user has several options, all involving some kind of manual mesh density control.  </p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The simplest way of dealing with mesh generation failure is simply to increase the <span class="f_T_Code">NGRID</span> selector. &nbsp;This causes the entire mesh to be more dense, and also more regular. &nbsp;In some cases, it may create a mesh which is simply too large for effective computing with the available computer resources.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>A second approach is to use the <span class="f_T_Code">MESH_SPACING</span> control to increase the overall density in a troublesome region, layer or surface. &nbsp;Remember that <span class="f_T_Code">MESH_SPACING</span> can be specified as arbitrary functions of spatial coordinate, allowing dense meshes in specific locales. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The <span class="f_T_Code">ASPECT</span> control can be used to increase the cell sizes in thin components, thereby reducing the range of sizes that must be dealt with in surrounding media. &nbsp;Increasing <span class="f_T_Code">ASPECT</span> can create elongated cells in surrounding media, so you may need to balance its use by explicitly controlling <span class="f_T_Code">MESH_SPACING</span> in these regions.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>You can localize the problem areas by building your domain one layer at a time. &nbsp;Build the first layer and examine the regional meshes for compliance with your expectations. &nbsp;Then add the next layer. &nbsp;You might at this point want to delete the first layer, so you can deal with the second layer as an independent item.</td></tr></table></div><p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?3dmeshgenerationinversion.html" target="_top">index.html?3dmeshgenerationinversion.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

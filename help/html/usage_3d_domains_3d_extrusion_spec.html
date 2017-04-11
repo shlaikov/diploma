@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?usage_3d_domains_3d_extrusion_spec.html"; }
+  else { parent.lazysync('usage_3d_domains_3d_extrusion_spec.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>3d_extrusion_spec</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sample_problems.html">Sample Problems</a> &gt; usage &gt; 3D_domains&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">3d_extrusion_spec</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="usage_3d_domains_3d_ellipsoid_shell.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="sample_problems.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="usage_3d_domains_3d_fillet.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">{ 3D_EXTRUSION_SPEC.PDE </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This descriptor is a demonstration of the grammar of 3D extrusions. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;It is a completion of the 3D specification example shown in </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  <a href="extrusion_spec.html">&quot;Help | Technical Notes | Extrusions in 3D&quot;</a>. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;It describes a strip capacitor fabricated as a sandwich of </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;air | metal | glass | metal | air. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Click <a href="thecontrolsmenu.html">&quot;Controls-&gt;Domain Review&quot;</a> to watch the domain construction process. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;See the sample problem <a href="applications_electricity_3d_capacitor.html">&quot;3D_Capacitor&quot;</a> for a somewhat more complicated </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;and interesting version. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">}</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">TITLE</span><span class="f_T_samples"> </span><span class="f_T_string">'3D Extrusion Spec'</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">SELECT</span><span class="f_T_samples"> regrid=</span><span class="f_T_reserved">off</span><span class="f_T_samples"> </span><span class="f_T_comment">{ for quicker solution }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">COORDINATES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;CARTESIAN3  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">DEFINITIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Kdiel= 6  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Kmetal=1e6  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Kair=1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;K = Kair &nbsp; &nbsp;  </span><span class="f_T_comment">{ default to Kair }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;V0 = 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;V1 = 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">VARIABLES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;V  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">EQUATIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;V: &nbsp;DIV(K*GRAD(V)) = 0  </span></p>
+</td>
+<td valign="top" width="267" style="width:267px;"><p style="margin: 0px 0px 0px 0px;"><img src="3d_extrusion_spec02.png" width="259" height="167" border="0" alt=""></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">EXTRUSION</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">SURFACE</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Bottom&quot;</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Z=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Bottom Air&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">SURFACE</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Bottom Air - Metal&quot;</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Z=0.9  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Bottom Metal&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">SURFACE</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Bottom Metal - Dielectric&quot;</span><span class="f_T_samples"> &nbsp; &nbsp; Z=1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Dielectric&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">SURFACE</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Top Metal - Dielectric&quot;</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; &nbsp;Z=2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Top Metal&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">SURFACE</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Top Metal - Air&quot;</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z=2.1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Top Air&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">SURFACE</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; </span><span class="f_T_string">&quot;Top&quot;</span><span class="f_T_samples"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z=3  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">BOUNDARIES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">SURFACE</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Bottom&quot;</span><span class="f_T_samples"> </span><span class="f_T_reserved">VALUE</span><span class="f_T_samples">(V)=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">SURFACE</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Top&quot;</span><span class="f_T_samples"> </span><span class="f_T_reserved">VALUE</span><span class="f_T_samples">(V)=1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">REGION</span><span class="f_T_samples"> 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span class="f_T_comment">{ this is the outer boundary of the system }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Dielectric&quot;</span><span class="f_T_samples"> K = Kdiel  </span><span class="f_T_comment">{ all other layers default to Kair }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">START</span><span class="f_T_samples">(0,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LINE</span><span class="f_T_samples"> </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> (5,0)  </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> (5,5)  </span><span class="f_T_reserved">TO</span><span class="f_T_samples">(0,5)  </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">LIMITED</span><span class="f_T_samples"> </span><span class="f_T_reserved">REGION</span><span class="f_T_samples"> 2 &nbsp; &nbsp; </span><span class="f_T_comment">{ this region exists only in the &quot;bottom metal&quot; layer,  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; and describes the larger plate }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Bottom Metal&quot;</span><span class="f_T_samples"> K = Kmetal  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">START</span><span class="f_T_samples">(1,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Bottom Metal&quot;</span><span class="f_T_samples"> </span><span class="f_T_reserved">VALUE</span><span class="f_T_samples">(V)=V0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LINE</span><span class="f_T_samples"> </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> (4,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Bottom Metal&quot;</span><span class="f_T_samples"> </span><span class="f_T_reserved">NATURAL</span><span class="f_T_samples">(V)=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">Line</span><span class="f_T_samples"> </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> (4,5) </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> (1,5) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">LIMITED</span><span class="f_T_samples"> </span><span class="f_T_reserved">REGION</span><span class="f_T_samples"> 3 &nbsp; &nbsp; </span><span class="f_T_comment">{ this region exists only in layer &quot;Top Metal&quot;,  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; and describes the smaller plate }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Top Metal&quot;</span><span class="f_T_samples"> K = Kmetal  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">START</span><span class="f_T_samples">(2,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LINE</span><span class="f_T_samples"> </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> (3,0) </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> (3,5)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Top Metal&quot;</span><span class="f_T_samples"> </span><span class="f_T_reserved">VALUE</span><span class="f_T_samples">(V)=V1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LINE</span><span class="f_T_samples"> </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> (2,5)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Top Metal&quot;</span><span class="f_T_samples"> </span><span class="f_T_reserved">NATURAL</span><span class="f_T_samples">(V)=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">LINE</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">SELECT</span><span class="f_T_samples"> painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">PLOTS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">CONTOUR</span><span class="f_T_samples">(V) </span><span class="f_T_reserved">ON</span><span class="f_T_samples"> X=2.5 </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;V on X-cut&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">CONTOUR</span><span class="f_T_samples">(V) </span><span class="f_T_reserved">ON</span><span class="f_T_samples"> Y=2.5 </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;V on Y-cut&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">CONTOUR</span><span class="f_T_samples">(V) </span><span class="f_T_reserved">ON</span><span class="f_T_samples"> Z=1.5 </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;V on Z-cut&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">GRID</span><span class="f_T_samples">(x,z) </span><span class="f_T_reserved">ON</span><span class="f_T_samples"> Y=2.5 paintregions nolines </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Region Map&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">GRID</span><span class="f_T_samples">(x,z) </span><span class="f_T_reserved">ON</span><span class="f_T_samples"> Y=2.5 paintmaterials nolines </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Material Map&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">GRID</span><span class="f_T_samples">(x,y,z) </span><span class="f_T_reserved">ON</span><span class="f_T_samples"> </span><span class="f_T_reserved">LAYER</span><span class="f_T_samples"> 2 </span><span class="f_T_reserved">ON</span><span class="f_T_samples"> </span><span class="f_T_reserved">REGION</span><span class="f_T_samples"> 2 </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Bottom Plate&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">GRID</span><span class="f_T_samples">(x,y,z) </span><span class="f_T_reserved">ON</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Top Metal&quot;</span><span class="f_T_samples"> </span><span class="f_T_reserved">ON</span><span class="f_T_samples"> </span><span class="f_T_reserved">REGION</span><span class="f_T_samples"> 3 </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Top Plate&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">END</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?usage_3d_domains_3d_extrusion_spec.html" target="_top">index.html?usage_3d_domains_3d_extrusion_spec.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

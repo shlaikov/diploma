@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?histories.html"; }
+  else { parent.lazysync('histories.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Histories</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="AT,AUTOHIST,VERSUS,HISTORIES,HISTORIES Section,HISTORIES Staged Problems,HISTORIES Windowing,WINDOW">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">The Histories Section</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="monitorexamples.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="thesectionsofadescriptor.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="end.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p><span style="color: #000000;">The </span><span class="f_T_Code" style="font-weight: bold;">HISTORIES</span><span style="color: #000000;"> section, which is optional, specifies values for which a time history is desired. &nbsp;While multiple </span><span class="f_T_Code" style="font-weight: bold;">HISTORY</span><span style="font-family: 'Courier'; color: #000000;"> </span><span style="color: #000000;">statements can be listed they must all be of the form:</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">HISTORY ( arg1 [ ,arg2,...] &nbsp;) </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">HISTORY ( arg1 [ ,arg2,...] &nbsp;) &nbsp;AT &nbsp;(X1,Y1) [ (X2,Y2)...]</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">The coordinates specify locations in the problem at which the history is to be recorded. &nbsp;If no coordinate is given, the </span><span class="f_T_Code">arg</span><span style="color: #000000;"> must evaluate to a scalar.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">The modifiers and reports available to </span><span class="f_T_Code">PLOTS</span><span style="color: #000000;"> and </span><span class="f_T_Code">MONITORS</span><span style="color: #000000;"> may also be applied to </span><span class="f_T_Code">HISTORY</span><span style="color: #000000;"> statements.</span></p>
+<p><span style="color: #000000;">The display of </span><span class="f_T_Code">HISTORIES</span><span style="font-weight: bold;"> </span><span style="font-family: 'Courier'; color: #000000;">i</span><span style="color: #000000;">s controlled by the </span><span class="f_T_Code">AUTOHIST</span><span style="color: #000000;"> select switch, which defaults to </span><span class="f_T_Code">ON</span><span style="color: #000000;">. &nbsp;With the default setting all </span><span class="f_T_Code">HISTORIES</span><span style="color: #000000;"> are automatically refreshed and displayed with the update of any </span><span class="f_T_Code">MONITORS</span><span style="color: #000000;"> or </span><span class="f_T_Code">PLOTS</span><span style="color: #000000;">.</span></p>
+<p><span style="color: #000000;">If desired, </span><span class="f_T_Code">HISTORY</span><span style="color: #000000;"> statements can be included directly in the </span><span class="f_T_Code">MONITORS</span><span style="color: #000000;"> section or </span><span class="f_T_Code">PLOTS</span><span style="font-weight: bold;"> </span><span style="color: #000000;">section.</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Histories in Staged Problems</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code">HISTORY</span><span style="color: #000000;"> statements may be used in </span><span class="f_T_Code">STAGED</span><span style="color: #000000;"> problems as well as in time-dependent problems.  </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">In this case, the default abscissa will be stage number. &nbsp;You can select a different value for the abscissa quantity by appending the clause</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 33px;"><span class="f_T_Code" style="font-weight: bold;">VERSUS expression</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">In this case, the values of the given expression in the various stages will be used as the plot axis.</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Windowing History Plots</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">HISTORY</span><span style="color: #000000;"> plots by default display the total time range of the problem run. &nbsp;Specific time ranges can be specified in several ways. A global window specifier can be set in the </span><span class="f_T_Code">SELECT</span><span style="color: #000000;"> section:</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code" style="font-weight: bold;">SELECT HISTORY_WINDOW = time</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">This command causes all histories to display only the most recent </span><span class="f_T_Code" style="font-weight: bold;">time</span><span style="color: #000000;"> interval of the data.</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">Individual </span><span class="f_T_Code">HISTORY</span><span style="color: #000000;"> plots can be windowed by the two plot qualifier forms:</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px;"><p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">WINDOW = time</span></p>
+</td>
+<td valign="top" width="451" style="width:451px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;"> selects a moving window containing the most recent </span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;">time</span><span style="color: #000000;"> interval</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px;"><p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">WINDOW ( time1 , time2 )</span></p>
+</td>
+<td valign="top" width="451" style="width:451px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;"> selects a fixed time range, plotting the time between </span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;">time1</span><span style="color: #000000;"> and </span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;">time2</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 24px;"><span style="font-family: 'Arial'; font-weight: bold; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">See the sample problem <a href="usage_two_histories.html">&quot;Samples | Usage | Two_Histories.pde&quot;</a> for an example.</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?histories.html" target="_top">index.html?histories.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

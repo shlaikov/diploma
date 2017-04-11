@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?magnetic_vector_potential.html"; }
+  else { parent.lazysync('magnetic_vector_potential.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Magnetic Vector Potential</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="user_guide.html">User Guide</a> &gt; <a href="vector_variables2.html">Vector Variables</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Magnetic Vector Potential</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="curvilinear_coordinates.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="vector_variables2.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="variables_inactive_in_some_reg.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Our <a href="example.html">Cylindrical torus problem</a> can easily be converted to a model of a current-carrying torus inside a box.</p>
+<p>The geometry is unchanged, but we now solve for the magnetic vector potential <span class="f_T_Code">A</span>. &nbsp;We will also move the location slightly outward in radius to avoid the singularity at <span class="f_T_Code">R=0</span>.</p>
+<p>Maxwell's equation for the magnetic field can be expressed in terms of the magnetic vector potential as</p>
+<p style="margin: 0px 0px 10px 24px;"><span class="f_T_Code">Curl(Curl(A)/mu) = J</span></p>
+<p>Here <span class="f_T_Code">J</span> is the vector current density and mu is the magnetic permeability.</p>
+<p>The script becomes</p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">TITLE</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'Magnetic Field around a Current-Carrying Torus'</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">COORDINATES</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">YCYLINDER</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code_comment">{ implicitly R,Z,Phi }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">VARIABLES</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">A = </span><span class="f_T_Code_reserved">VECTOR</span><span class="f_T_Code">(0,0,Aphi) &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">DEFINITIONS</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">J = </span><span class="f_T_Code_reserved">VECTOR</span><span class="f_T_Code">(0,0,0) &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ default current density }</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">mu = 1</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">Rad = 0.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ blob radius (renamed)}</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">EQUATIONS</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">A:  </span><span class="f_T_Code_reserved">CURL</span><span class="f_T_Code">(</span><span class="f_T_Code_reserved">CURL</span><span class="f_T_Code">(A)/mu)) = J</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">BOUNDARIES</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 1 </span><span class="f_T_Code_string">'box'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(1,-1) </span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(A)=</span><span class="f_T_Code_reserved">VECTOR</span><span class="f_T_Code">(0,0,0)</span> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (3,-1) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (3,1) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1,1) </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">'blob'</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code_comment">{ the torus }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code">J = </span><span class="f_T_Code_reserved">VECTOR</span><span class="f_T_Code">(0,0,1) &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ current in the torus }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'ring'</span><span class="f_T_Code"> (2,Rad) </span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">ARC</span><span class="f_T_Code">(</span><span class="f_T_Code_reserved">CENTER</span><span class="f_T_Code">=2,0) </span><span class="f_T_Code_reserved">ANGLE</span><span class="f_T_Code">=360 </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">CLOSE</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">PLOTS</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">CONTOUR</span><span class="f_T_Code">(Aphi)  </span><span class="f_T_Code_reserved">as</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Vector Potential&quot;</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">VECTOR</span><span class="f_T_Code">(</span><span class="f_T_Code_reserved">CURL</span><span class="f_T_Code">(A)) </span><span class="f_T_Code_reserved">as</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Magnetic Induction&quot;</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">ELEVATION</span><span class="f_T_Code">(Aphi) </span><span class="f_T_Code_reserved">ON</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'ring'</span><span class="f_T_Code"> </span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">END</span></p>
+<p style="margin: 0px 0px 10px 24px;">&nbsp;</p>
+<p>The resulting plots are:</p>
+<p style="text-align: center;"><img src="ex1101_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><img src="ex1102_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+<p style="text-align: center;"><img src="ex1104_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?magnetic_vector_potential.html" target="_top">index.html?magnetic_vector_potential.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

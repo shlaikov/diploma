@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?analyticfunctions.html"; }
+  else { parent.lazysync('analyticfunctions.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Analytic Functions</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Analytic Functions,Bessel Function,Error,Error Function,logarithm,trigonometric functions,ABS function,ARCCOS function,ARCSIN function,ARCTAN function,ATAN2 function,BESSJ function,BESSY function,COS function,COSH function,ERF function,ERFC function,EXP function,Exponential Integral - EXPINT,GAMMA function,LOG10 function,LN function,SIN function,SINH function,SQRT function,TAN function,TANH function,Functions,Functions Analytic">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="theelementsofadescriptor.html">The Elements of a Descriptor</a> &gt; <a href="built_infunctions.html">Built-in Functions</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Analytic Functions</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="built_infunctions.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="built_infunctions.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="nonanalyticfunctions.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;">The following analytic functions are supported by FlexPDE:</p>
+<p style="margin: 0px 0px 0px 67px;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 33px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px; height:24px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Function</span></p>
+</td>
+<td valign="top" width="372" style="width:372px; height:24px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Comments</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">ABS(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Absolute value</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">ARCCOS(x) </span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Inverse cosine (returns radians)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">ARCSIN(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Inverse sine (returns radians)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">ARCTAN(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Inverse tangent (returns radians)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">ATAN2(y,x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Arctan(y/x) with numerically safe implementation</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">BESSI(order,x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Modified Bessel function I for real x</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">BESSJ(order,x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Bessel Function J</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">BESSK(order,x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Modified Bessel function K for real x</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">BESSY(order,x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Bessel Function Y</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">COS(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">cosine of x (angle in radians)*</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">COSH(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Hyperbolic cosine</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">ERF(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Error Function</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">ERFC(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Complementary Error Function</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">EXP(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Exponential function</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">EXPINT(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Exponential Integral Ei(x) for real x&gt;0 **</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">EXPINT(n,x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Exponential Integral En(x) for n&gt;=0, real x&gt;0 **</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">GAMMAF(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Gamma function for real x&gt;0</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">GAMMAF(a,x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Incomplete gamma function for real a&gt;0, x&gt;0</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">LOG10(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Base-10 logarithm</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">LN(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Natural logarithm</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">SIN(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">sine of x (angle in radians)*</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">SINH(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Hyperbolic sine</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">SQRT(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Square Root</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">TAN(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">tangent of x (angle in radians)*</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="179" style="width:179px;"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code" style="font-weight: bold;">TANH(x)</span></p>
+</td>
+<td valign="top" width="372" style="width:372px;"><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Hyperbolic tangent</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">* &nbsp;Use for example <span class="f_T_Code">COS(x DEGREES)</span> to convert arguments to radians.</p>
+<p style="margin: 0px 0px 0px 0px;">** as defined in Abramowitz &amp; Stegun, &quot;Handbook of Mathematical Functions&quot;. &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Examples:</span></p>
+<p style="margin: 0px 0px 0px 0px;"><a href="usage_standard_functions.html">Samples | Usage | Standard_Functions.pde</a></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Arial'; color: #000000; text-decoration: underline;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; font-weight: bold; color: #000000;">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?analyticfunctions.html" target="_top">index.html?analyticfunctions.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

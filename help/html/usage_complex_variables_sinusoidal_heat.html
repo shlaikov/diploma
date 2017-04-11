@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?usage_complex_variables_sinusoidal_heat.html"; }
+  else { parent.lazysync('usage_complex_variables_sinusoidal_heat.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>sinusoidal_heat</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sample_problems.html">Sample Problems</a> &gt; usage &gt; complex_variables&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">sinusoidal_heat</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="usage_complex_variables_complex_variables.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="sample_problems.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="usage_constraints_3d_constraint_.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">{ SINUSOIDAL_HEAT.PDE </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This example demonstrates the use of <a href="complex_variables2.html">COMPLEX</a> variables and <a href="arraydefinitions.html">ARRAY</a> definitions </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;to compute the time-sinusoidal behavior of a rod in a box. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The heat equation is </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;div(k*grad(temp)) = cp*dt(temp) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;If we assume that the sources and solutions are in steady oscillation at a frequency </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;omega, then we can write </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;temp(x,y,t) = phi(x,y)*exp(i*omega*t) = phi(x,y)*(cos(omega*t) + i*sin(omega*t)) </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Substituting this into the heat equation and dividing the exp(i*omega*t) out of the </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;result leaves </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;div(k*grad(phi)) - i*omega*cp*phi = 0 </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;The temperature temp(x,y,t) can be reconstructed at any time by expanding the above </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;definition. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;In this example, we construct an array of sample times and the associated arrays </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;of sine and cosine factors. &nbsp;These arrays are then used to display a time history of </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;temperature at various points in the domain. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">}</span><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">TITLE</span><span class="f_T_samples"> </span><span class="f_T_string">'Time Sinusoidal Heat flow around an Insulating blob '</span><span class="f_T_samples"> &nbsp; &nbsp;  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">VARIABLES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">! define the complex amplitude function phi and its real and imaginary components </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;phi=</span><span class="f_T_reserved">complex</span><span class="f_T_samples">(phir,phii)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">DEFINITIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;k=1 &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;ts = </span><span class="f_T_reserved">array</span><span class="f_T_samples"> (0 </span><span class="f_T_reserved">by</span><span class="f_T_samples"> pi/20 </span><span class="f_T_reserved">to</span><span class="f_T_samples"> 2*pi) </span><span class="f_T_comment">! an array of sample times </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;fr = cos(ts) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span class="f_T_comment">! sine and cosine arrays </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;fi = sin(ts)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">! define a function for evaluating a time array of temp(px,py,t) at a point </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;temp(px, py) = </span><span class="f_T_reserved">eval</span><span class="f_T_samples">(phir,px,py)*fr + </span><span class="f_T_reserved">eval</span><span class="f_T_samples">(phii,px,py)*fi  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">EQUATIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;phi: &nbsp; &nbsp;Div(k*grad(phi)) - </span><span class="f_T_reserved">complex</span><span class="f_T_samples">(0,1)*phi= 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">BOUNDARIES</span><span class="f_T_samples"> &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">REGION</span><span class="f_T_samples"> 1  </span><span class="f_T_string">'box'</span><span class="f_T_samples"> &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">START</span><span class="f_T_samples">(-1,-1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">VALUE</span><span class="f_T_samples">(Phi)=</span><span class="f_T_reserved">complex</span><span class="f_T_samples">(0,0) &nbsp; </span><span class="f_T_reserved">LINE</span><span class="f_T_samples"> </span><span class="f_T_reserved">TO</span><span class="f_T_samples">(1,-1) &nbsp; </span><span class="f_T_comment">{ Phi=0 in base line }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">NATURAL</span><span class="f_T_samples">(Phi)=</span><span class="f_T_reserved">complex</span><span class="f_T_samples">(0,0) </span><span class="f_T_reserved">LINE</span><span class="f_T_samples"> </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> (1,1) &nbsp; </span><span class="f_T_comment">{ normal derivative =0 on right side }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">VALUE</span><span class="f_T_samples">(Phi)=</span><span class="f_T_reserved">complex</span><span class="f_T_samples">(1,0) &nbsp; </span><span class="f_T_reserved">LINE</span><span class="f_T_samples"> </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> (-1,1)  </span><span class="f_T_comment">{ Phi = 1 on top }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">NATURAL</span><span class="f_T_samples">(Phi)=</span><span class="f_T_reserved">complex</span><span class="f_T_samples">(0,0) </span><span class="f_T_reserved">LINE</span><span class="f_T_samples"> </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> </span><span class="f_T_reserved">CLOSE</span><span class="f_T_samples"> &nbsp; </span><span class="f_T_comment">{ normal derivative =0 on left side }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">REGION</span><span class="f_T_samples"> 2  </span><span class="f_T_string">'rod'</span><span class="f_T_samples"> &nbsp; </span><span class="f_T_comment">{ the embedded circular rod }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;k=0.01  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">START</span><span class="f_T_samples"> </span><span class="f_T_string">'ring'</span><span class="f_T_samples"> (1/2,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp;  </span><span class="f_T_reserved">ARC</span><span class="f_T_samples">(</span><span class="f_T_reserved">CENTER</span><span class="f_T_samples">=0,0) </span><span class="f_T_reserved">ANGLE</span><span class="f_T_samples">=360  </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> </span><span class="f_T_reserved">FINISH</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">PLOTS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">CONTOUR</span><span class="f_T_samples">(Phir) &nbsp; &nbsp; &nbsp; </span><span class="f_T_comment">! plot the real part of phi </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">REPORT</span><span class="f_T_samples">(k)  </span><span class="f_T_reserved">REPORT</span><span class="f_T_samples">(INTEGRAL(Phir, </span><span class="f_T_string">'rod'</span><span class="f_T_samples">))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">CONTOUR</span><span class="f_T_samples">(Phii) &nbsp; &nbsp; &nbsp; </span><span class="f_T_comment">! plot the imaginary part of phi </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">REPORT</span><span class="f_T_samples">(k)  </span><span class="f_T_reserved">REPORT</span><span class="f_T_samples">(INTEGRAL(Phii, </span><span class="f_T_string">'rod'</span><span class="f_T_samples">))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">! reconstruct the temperature distribution at a few selected times </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">REPEAT</span><span class="f_T_samples"> tx=0 </span><span class="f_T_reserved">by</span><span class="f_T_samples"> pi/2 </span><span class="f_T_reserved">to</span><span class="f_T_samples"> 2*pi </span><span class="f_T_comment"> </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">SURFACE</span><span class="f_T_samples">(phir*cos(tx)+phii*sin(tx)) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Phi at t=&quot;</span><span class="f_T_samples">+$[4]tx  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">ENDREPEAT</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">! plot the time history at a few selected positions </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">ELEVATION</span><span class="f_T_samples">(temp(0,0), temp(0,0.2), temp(0,0.4), temp(0,0.5)) </span><span class="f_T_reserved">vs</span><span class="f_T_samples"> ts  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Histories&quot;</span><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">VECTOR</span><span class="f_T_samples">(-k*grad(Phir)) &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">! plot a lineout of phir and phii through the domain </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">ELEVATION</span><span class="f_T_samples">(Phi) </span><span class="f_T_reserved">FROM</span><span class="f_T_samples"> (0,-1) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (0,1) &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">! plot the real component of flux on the surface of the rod </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">ELEVATION</span><span class="f_T_samples">(Normal(-k*grad(Phir))) </span><span class="f_T_reserved">ON</span><span class="f_T_samples"> </span><span class="f_T_string">'ring'</span><span class="f_T_samples"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">END</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?usage_complex_variables_sinusoidal_heat.html" target="_top">index.html?usage_complex_variables_sinusoidal_heat.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

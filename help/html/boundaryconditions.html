@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?boundaryconditions.html"; }
+  else { parent.lazysync('boundaryconditions.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Boundary Conditions</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="VALUE,NATURAL,LOAD,CONTACT,VELOCITY,NOBC,Dirichlet Boundary Conditions,Flux Boundary Conditions,Boundary Conditions,Boundary Conditions Remain in effect,Boundary Conditions Terminating,Boundary Conditions Default,Boundary Conditions VALUE,Boundary Conditions NATURAL,Boundary Conditions LOAD,Boundary Conditions CONTACT,Boundary Conditions VELOCITY,Boundary Conditions NOBC,Boundary Conditions Dirichlet,Boundary Conditions Flux">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a> &gt; <a href="boundaries.html">Boundaries</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Boundary Conditions</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="filletsandbevels.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="boundaries.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="segmentboundarycondit.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;">The following forms of boundary condition specification may be applied to boundary segments:</p>
+<p style="margin: 0px 60px 0px 60px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">VALUE ( variable ) = expression</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">NATURAL ( variable ) = expression</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">LOAD ( variable ) = expression</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">CONTACT ( variable ) = expression</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">VELOCITY ( variable ) = expression</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">NOBC ( variable )</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p>The <span class="f_T_Code">variable</span> designated in the boundary condition specification identifies (by explicit association) the equation &nbsp;to which this boundary condition is to be applied.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Dirichlet &nbsp;(Value) Boundary Conditions</span></p>
+<p style="margin: 0px 0px 0px 17px;">A <span class="f_T_Code" style="font-weight: bold;">VALUE</span> segment boundary condition forces the solution of the equation for the associated variable to the value of <span class="f_T_Code">expression</span> on a continuous series of one or more boundary segments. &nbsp;The <span class="f_T_Code">expression</span> may be an explicit specification of value, involving only constants and coordinates, or it may be an implicit relation involving values and derivatives of system variables.</p>
+<p style="margin: 0px 0px 0px 17px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Generalized Flux (Natural) Boundary Conditions</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">NATURAL</span> and <span class="f_T_Code" style="font-weight: bold;">LOAD</span> segment boundary conditions are synonymous. &nbsp;They represent a generalized flux boundary condition derived from the divergence theorem. &nbsp;The <span class="f_T_Code">expression</span> may be an explicit specification, involving only constants and coordinates, or it may be an implicit relation involving values and derivatives of system variables. &nbsp;The Natural boundary condition reduces to the Neumann boundary condition in the special case of &nbsp;the Poisson equation. &nbsp;See the User Guide chapter <a href="naturalboundaryconditions2.html">Natural Boundary Conditions</a> for information on the implementation of Natural boundary conditions.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Contact Resistance (Discontinuous Variable) Boundary Conditions</span></p>
+<p style="margin: 0px 0px 0px 17px;">Interior boundaries can be defined to have a contact resistance using the <span class="f_T_Code" style="font-weight: bold;">CONTACT(variable)</span> boundary condition. &nbsp;See &quot;<a href="jumpboundaries.html">Jump Boundaries</a>&quot; in the next section.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Velocity (Time Derivative) Boundary Conditions</span></p>
+<p style="margin: 0px 0px 0px 17px;">This boundary condition imposes a specified time derivative on a boundary value (time-dependent problems only). &nbsp;This condition is especially useful in specifying moving boundaries, by applying it to the surrogate coordinate variable. &nbsp;If you have declared a velocity variable which is applied to a coordinate, then you should lock the surrogate coordinate to the mesh velocity variable at the boundary using a <span class="f_T_Code" style="font-weight: bold;">VELOCITY()</span> boundary condition.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Terminating the current BC</span></p>
+<p style="margin: 0px 0px 0px 17px;">Boundary conditions, once stated, remain in effect until explicitly changed or until the end of the path.  <span class="f_T_Code">NOBC(VARIABLE)</span><span style="font-weight: bold;"> </span>can be used to turn off a previously specified boundary condition on the current path. &nbsp;It is equivalent in effect to <span class="f_T_Code">NATURAL(VARIABLE)=0</span> &nbsp;(the default boundary condition), except that it will not lead to &quot;Multiple Boundary Condition Specification&quot; diagnostics.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Default Boundary Conditions</span></p>
+<p style="margin: 0px 0px 0px 17px;">The default boundary condition for FlexPDE is <span class="f_T_Code">NATURAL(VARIABLE)=0</span>.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p class="p_Notes"><span class="f_Notes" style="font-weight: bold;">Note</span><span class="f_Notes">: </span><span class="f_Notes">The NEUMANN, DNORMAL and DTANGENTIAL boundary conditions supported in earlier versions have been deleted due to unreliable behavior. &nbsp;They may be restored in later versions. &nbsp;In most cases, derivative boundary conditions are more appropriately applied through the NATURAL boundary condition facility. </span></p>
+<p class="p_Notes"><span class="f_Notes">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?boundaryconditions.html" target="_top">index.html?boundaryconditions.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

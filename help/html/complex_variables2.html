@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?complex_variables2.html"; }
+  else { parent.lazysync('complex_variables2.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Complex Variables</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="COMPLEX,COMPLEX Variables,VARIABLES,VARIABLES Complex">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="user_guide.html">User Guide</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Complex Variables</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="moreadvancedplotcontrols.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="user_guide.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="the_time_sinusoidal_canister.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>In previous versions of FlexPDE, it has been possible to treat complex variables and equations by declaring each component as a <span class="f_T_Code">VARIABLE</span> and writing a real PDE for each complex component.</p>
+<p>In version 6, FlexPDE understands complex variables and makes provision for treating them conveniently.</p>
+<p>The process starts by declaring a variable to be <span class="f_T_Code">COMPLEX</span>, and naming its components:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">VARIABLES</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">C = </span><span class="f_T_Code_reserved">COMPLEX</span><span class="f_T_Code">(Cr,Ci)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p>Subsequently, the complex variable <span class="f_CodeExample">C</span> can be referenced by name, or its components can be accessed independently by their names.</p>
+<p>In the <span class="f_T_Code">EQUATIONS</span> section, each complex variable can be given an equation, which will be interpreted as dealing with complex quantities. &nbsp;The complex equation will be processed by FlexPDE and reduced to two real component equations, by taking the real and imaginary parts of the resulting complex equation.</p>
+<p>For example, the time-harmonic representation of the heat equation can be presented as</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">EQUATIONS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">C: &nbsp; </span><span class="f_T_Code_reserved">DIV</span><span class="f_T_Code">(k*</span><span class="f_T_Code_reserved">GRAD</span><span class="f_T_Code">(C)) - </span><span class="f_T_Code_reserved">COMPLEX</span><span class="f_T_Code">(0,1)*C = 0</span></p>
+<p class="p_CodeExample"><span class="f_T_Code">&nbsp;</span></p>
+<p>Alternatively, the individual components can be given real equations:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">EQUATIONS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">Cr:  </span><span class="f_T_Code_reserved">DIV</span><span class="f_T_Code">(k*</span><span class="f_T_Code_reserved">GRAD</span><span class="f_T_Code">(Cr)) + Ci = 0</span><br>
+<span class="f_T_Code">Ci:  </span><span class="f_T_Code_reserved">DIV</span><span class="f_T_Code">(k*</span><span class="f_T_Code_reserved">GRAD</span><span class="f_T_Code">(Ci)) - Cr = 0</span></p>
+<p style="margin: 0px 0px 10px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p>In a similar way, boundary conditions may be assigned either to the complex equation or to each component equation individually:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(C) = </span><span class="f_T_Code_reserved">COMPLEX</span><span class="f_T_Code">(1,0)  &nbsp; &nbsp; &nbsp; &nbsp;</span>assigns <span class="f_T_Code">1</span> to the real part and <span class="f_T_Code">0</span> to the imaginary part of <span class="f_T_Code">C</span> </p>
+<p>or</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(Cr) = 0 &nbsp; </span><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(Ci) = 0</span><br>
+<span class="f_T_Code">&nbsp;</span></p>
+<p>Any parameter definition in the <span class="f_T_Code_reserved">DEFINITIONS</span> section may be declared <span class="f_T_Code_reserved">COMPLEX</span> as well:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">DEFINITIONS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">complexname = </span><span class="f_T_Code_reserved">COMPLEX</span><span class="f_T_Code">(realpart, imaginarypart)</span></p>
+<p><span class="f_T_Code">&nbsp;</span></p>
+<p>FlexPDE recognizes several fundamental <a href="complex_operators.html">complex operators</a>:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="171" style="width:171px;"><p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">REAL ( complex )</span></p>
+</td>
+<td valign="top" width="471" style="width:471px;"><p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">Extracts the real part of the complex number.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="171" style="width:171px;"><p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">IMAG ( complex )</span> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+</td>
+<td valign="top" width="471" style="width:471px;"><p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">Extracts the imaginary part of the complex number.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="171" style="width:171px;"><p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">CARG ( complex )</span> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+</td>
+<td valign="top" width="471" style="width:471px;"><p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">Computes the Argument (or angular component) of the complex number, implemented as </span><span class="f_T_Code">CARG(complex(x,y)) = Atan2(y,x)</span><span style="color: #000000;">. &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="171" style="width:171px;"><p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">CONJ ( complex )</span></p>
+</td>
+<td valign="top" width="471" style="width:471px;"><p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">Returns the complex conjugate of the complex number. &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="171" style="width:171px;"><p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">CEXP ( complex )</span> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+</td>
+<td valign="top" width="471" style="width:471px;"><p style="margin: 0px 0px 0px 24px;"><span style="color: #000000;">Computes the complex exponential of the complex number, given by </span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">CEXP(complex(x,y)) = exp(x+iy) = exp(x)*(cos(y)+i*sin(y))</span><span style="color: #000000;">.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><span class="f_T_Code">COMPLEX</span><span style="color: #000000;"> quantities can be the arguments of </span><span class="f_T_Code">PLOT</span><span style="color: #000000;"> commands, as well. &nbsp;Occurrence of a complex quantity in a </span><span class="f_T_Code">PLOT</span><span style="color: #000000;"> statement will be interpreted as if the real and imaginary parts had been entered separately in the </span><span class="f_CodeExample">PLOT</span><span style="color: #000000;"> command.</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">ELEVATION</span><span class="f_T_Code">(C) </span><span class="f_T_Code_reserved">FROM</span><span class="f_T_Code"> A </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> B</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="color: #000000;">will produce a plot with two traces, the real and imaginary parts of C. &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?complex_variables2.html" target="_top">index.html?complex_variables2.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

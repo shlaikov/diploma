@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?using_multiple_processors.html"; }
+  else { parent.lazysync('using_multiple_processors.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Using Multiple Processors</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Threads,Multiple processors">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="user_guide.html">User Guide</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Using Multiple Processors</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="solvingnonlinearproblems.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="user_guide.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="runningflexpdefromthecommandli.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>FlexPDE version 6 uses multi-threaded computation to support modern multi-core and multi-processor hardware configurations. &nbsp;Only shared-memory multi-processors are supported, not clusters.</p>
+<p>Each opened problem runs in its own computation thread, and can use up to eight additional computation threads. &nbsp;A single main thread controls the graphic interface and screen display.</p>
+<p>Matrix construction, residual calculations and linear system solvers are all multi-threaded. &nbsp;Mesh generation and plot functions are not, although graphics load is shared between the problem thread and the main graphics thread.</p>
+<p class="p_Heading4"><span class="f_Heading4">Individual Problem Control</span></p>
+<p>Each individual script can declare the number of worker threads to be used in the computation:</p>
+<p style="margin: 0px 0px 10px 24px;"><span class="f_T_Code" style="font-weight: bold;">SELECT THREADS = &lt;number&gt;</span></p>
+<p>requests that <span class="f_T_Code">&lt;number&gt;</span> worker threads be used, in addition to the main graphics thread and the individual problem thread.</p>
+<p class="p_Heading4"><span class="f_Heading4">Setting the Default</span></p>
+<p>The default number of worker threads can be set by manually editing the configuration file &quot;flexpde6.ini&quot; in the &quot;flexpde6user&quot; folder. &nbsp;This folder resides in the &quot;My Documents&quot; folder under Windows, and the user's &quot;home&quot; folder under Linux and MacOSX. &nbsp;Edit the line:</p>
+<p style="margin: 0px 0px 10px 24px;"><span class="f_T_Code" style="font-weight: bold;">[THREADS] 1</span></p>
+<p>to reflect the desired default number of worker threads.</p>
+<p class="p_Heading4"><span class="f_Heading4">Command-Line Control</span></p>
+<p>If you run FlexPDE6 from a command line and include the switch <span class="f_T_Code">-T&lt;number&gt;</span>, the default thread count will be set to <span class="f_T_Code">&lt;number&gt;</span>. &nbsp;For example, the command line</p>
+<p style="margin: 0px 0px 10px 24px;"><span class="f_T_Code" style="font-weight: bold;">flexpde6 -T4 problem</span></p>
+<p>will set the default to 4 threads and load the script file &quot;problem.pde&quot;. &nbsp;The selected thread count will be written to the flexpde6.ini file on conclusion of the flexpde6 session.</p>
+<p class="p_Heading4"><span class="f_Heading4">Speed Effects of Multiple Processors</span></p>
+<p>There are many factors that will influence the timing of a multi-thread run. </p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The dominant factor is the memory bandwidth. If the memory cannot keep up with the processor speed, then more threads will run slower due to the overhead of constructing and synchronizing threads and merging data. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The size of the problem will also affect the speedup, because with a larger problem a smaller proportion of data can be held in cache memory. The memory bandwidth limitation will therefore be greater with a larger problem. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Graphics <span style="font-style: italic;">construction</span> is not multi-threaded in FlexPDE V6. Too many complex plots will therefore drive the performance to 1-thread levels. &nbsp;(Graphic <span style="font-style: italic;">redraw</span> is handled in a separate thread).</td></tr></table></div><p>The following chart shows our experience with speeds in versions 5 and 6. These tests were run on a 4-core AMD Phenom with 667 MHz 128-bit memory. Notice that the Black_Oil problem is significantly faster in version 6, even though it is taking many more timesteps. This timestep count indicates that the timestep control in V6 is more pessimistic than V5. &nbsp;The speedup with V6 1 thread is partly due to the fact that graphic redraws are run in a separate thread in V6 but not in V5. </p>
+<p>Notice that in this machine, the memory saturates at 3 threads, so that the fourth thread produces no significant speed improvement (and in fact may be slower).</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table width="395" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><br>
+</td>
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p>&nbsp;</p>
+</td>
+<td colspan="2" valign="middle" style="border: solid 1px #000000;"><p style="text-align: center;">Black_Oil.pde</p>
+</td>
+<td valign="middle" width="126" style="width:126px; border: solid 1px #000000;"><p style="text-align: center;">3D_FlowBox.pde</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">Version</p>
+</td>
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">Threads</p>
+</td>
+<td valign="middle" width="79" style="width:79px; border: solid 1px #000000;"><p style="text-align: center;">CPU time</p>
+</td>
+<td valign="middle" width="85" style="width:85px; border: solid 1px #000000;"><p style="text-align: center;">timesteps</p>
+</td>
+<td valign="middle" width="126" style="width:126px; border: solid 1px #000000;"><p style="text-align: center;">CPU time</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">5</p>
+</td>
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">1</p>
+</td>
+<td valign="middle" width="79" style="width:79px; border: solid 1px #000000;"><p style="text-align: right;">14:37</p>
+</td>
+<td valign="middle" width="85" style="width:85px; border: solid 1px #000000;"><p style="text-align: right;">534</p>
+</td>
+<td valign="middle" width="126" style="width:126px; border: solid 1px #000000;"><p style="text-align: right;">8:15</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">5</p>
+</td>
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">2</p>
+</td>
+<td valign="middle" width="79" style="width:79px; border: solid 1px #000000;"><p style="text-align: right;">12:17</p>
+</td>
+<td valign="middle" width="85" style="width:85px; border: solid 1px #000000;"><p style="text-align: right;">540</p>
+</td>
+<td valign="middle" width="126" style="width:126px; border: solid 1px #000000;"><p style="text-align: right;">6:09</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">&nbsp;</p>
+</td>
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">&nbsp;</p>
+</td>
+<td valign="middle" width="79" style="width:79px; border: solid 1px #000000;"><p style="text-align: right;">&nbsp;</p>
+</td>
+<td valign="middle" width="85" style="width:85px; border: solid 1px #000000;"><p style="text-align: right;">&nbsp;</p>
+</td>
+<td valign="middle" width="126" style="width:126px; border: solid 1px #000000;"><p style="text-align: right;">&nbsp;</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">6</p>
+</td>
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">1</p>
+</td>
+<td valign="middle" width="79" style="width:79px; border: solid 1px #000000;"><p style="text-align: right;">10:21</p>
+</td>
+<td valign="middle" width="85" style="width:85px; border: solid 1px #000000;"><p style="text-align: right;">688</p>
+</td>
+<td valign="middle" width="126" style="width:126px; border: solid 1px #000000;"><p style="text-align: right;">8:06</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">6</p>
+</td>
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">2</p>
+</td>
+<td valign="middle" width="79" style="width:79px; border: solid 1px #000000;"><p style="text-align: right;">6:58</p>
+</td>
+<td valign="middle" width="85" style="width:85px; border: solid 1px #000000;"><p style="text-align: right;">684</p>
+</td>
+<td valign="middle" width="126" style="width:126px; border: solid 1px #000000;"><p style="text-align: right;">4:14</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">6</p>
+</td>
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">3</p>
+</td>
+<td valign="middle" width="79" style="width:79px; border: solid 1px #000000;"><p style="text-align: right;">6:16</p>
+</td>
+<td valign="middle" width="85" style="width:85px; border: solid 1px #000000;"><p style="text-align: right;">696</p>
+</td>
+<td valign="middle" width="126" style="width:126px; border: solid 1px #000000;"><p style="text-align: right;">3:30</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">6</p>
+</td>
+<td valign="middle" width="51" style="width:51px; border: solid 1px #000000;"><p style="text-align: center;">4</p>
+</td>
+<td valign="middle" width="79" style="width:79px; border: solid 1px #000000;"><p style="text-align: right;">7:13</p>
+</td>
+<td valign="middle" width="85" style="width:85px; border: solid 1px #000000;"><p style="text-align: right;">703</p>
+</td>
+<td valign="middle" width="126" style="width:126px; border: solid 1px #000000;"><p style="text-align: right;">3:22</p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?using_multiple_processors.html" target="_top">index.html?using_multiple_processors.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

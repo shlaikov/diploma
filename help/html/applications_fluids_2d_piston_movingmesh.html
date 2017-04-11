@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?applications_fluids_2d_piston_movingmesh.html"; }
+  else { parent.lazysync('applications_fluids_2d_piston_movingmesh.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>2d_piston_movingmesh</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sample_problems.html">Sample Problems</a> &gt; applications &gt; fluids&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">2d_piston_movingmesh</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="applications_fluids_2d_eulerian_shock.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="sample_problems.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="applications_fluids_3d_flowbox.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">{ &nbsp;2D_PISTON_MOVINGMESH.PDE </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This problem models the flow of a </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;perfect gas in a compressor </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;cylinder. The initial gas pressure </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;is chosen as 1e-4 Atm, to show </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;interesting swirling. The </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;boundaries of the domain are</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;moved according to the oscillation </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;of the piston, while the interior </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;mesh is tensioned within the </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;moving boundaries. This results </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;in a mixed Lagrange/Eulerian </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;model, in that the mesh is moving, </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;but with different velocity </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;than the fluid. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">}</span><span class="f_T_samples">  </span></p>
+</td>
+<td valign="top" width="201" style="width:201px;"><p style="text-align: center; margin: 0px 0px 0px 0px;"><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+        codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+        width="140" height="406">
+        <param name="movie" value="mesh5_768.swf">
+        <param name="quality" value="high">
+        <param name="bgcolor" value="#FFFFFF">
+        <param name="loop" value="True">
+        <EMBED src="mesh5_768.swf" quality="high" bgcolor="#FFFFFF" width="140" height="406" loop="1" type="application/x-shockwave-flash"
+               pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+        </EMBED>
+</OBJECT><span class="f_T_reserved"></span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">TITLE</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Piston&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">COORDINATES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Ycylinder  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">SELECT</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;regrid=</span><span class="f_T_reserved">off</span><span class="f_T_samples"> &nbsp;  </span><span class="f_T_comment">{ disable the adaptive mesh refinement }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;painted &nbsp; &nbsp; &nbsp; </span><span class="f_T_comment">{ paint all contours }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">DEFINITIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;my_ngrid = 30 </span><span class="f_T_comment">{ later applied to the NGRID control and smoother }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;stroke = 8 &nbsp;  </span><span class="f_T_comment">{ cylinder stroke cm }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;rad = 4 &nbsp; &nbsp; &nbsp; </span><span class="f_T_comment">{ cylinder bore radius cm }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;zraise = 1 &nbsp; &nbsp; &nbsp;  </span><span class="f_T_comment">{ raised height of piston center }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;rraise = 3*rad/4  </span><span class="f_T_comment">{ radius or raised piston center }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;gap = 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="f_T_comment">{ piston/head clearance }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;gamma = 1.4  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;rho0 = 0.001  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;P0 = 100 &nbsp; &nbsp;  </span><span class="f_T_comment">{ initial pressure (dyne/cm2) = 1e-4 Atm }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;visc = 0.15 &nbsp; </span><span class="f_T_comment">{ kinematic viscosity, cm^2/sec }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;rpm = 1000 &nbsp; &nbsp; &nbsp;  </span><span class="f_T_comment">{ compressor speed }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;period = 60/rpm &nbsp; </span><span class="f_T_comment">{ seconds }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vpeak = (pi*stroke/period)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_comment">{ velocity profile: }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vprofile =vpeak*sin(2*pi*t/period)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples" style="font-size: 12px;">  </span><span class="f_T_comment" style="font-size: 12px;">{ the piston shape: }</span><span class="f_T_samples" style="font-size: 12px;">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples" style="font-size: 12px;"> &nbsp;zpiston = </span><span class="f_T_reserved" style="font-size: 12px;">if</span><span class="f_T_samples" style="font-size: 12px;"> r&lt;rraise then</span><span class="f_T_samples"> zraise </span><span class="f_T_reserved">else</span><span class="f_T_samples"> zraise*(rad-r)/(rad-rraise)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_comment">{ the time-dependent piston profile: }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;zprofile = zpiston+0.5*stroke*(1-cos(2*pi*t/period))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;ztop = stroke+gap+zraise  </span><span class="f_T_comment">{ maximum z postion }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">VARIABLES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;rho(rho0/10) &nbsp; &nbsp;  </span><span class="f_T_comment">{ gas density }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;u(vpeak/10) &nbsp; &nbsp; &nbsp; </span><span class="f_T_comment">{ radial velocity }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;v(vpeak/10) &nbsp; &nbsp; &nbsp; </span><span class="f_T_comment">{ axial velocity }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;P(P0/10) &nbsp; &nbsp; &nbsp; &nbsp;  </span><span class="f_T_comment">{ pressure }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vm(vpeak/10) &nbsp; &nbsp;  </span><span class="f_T_comment">{ mesh velocity }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;zm=</span><span class="f_T_reserved">move</span><span class="f_T_samples">(z) &nbsp; &nbsp; &nbsp;  </span><span class="f_T_comment">{ mesh position }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">DEFINITIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_comment">{ sound speed }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;cspeed = sqrt(gamma*P/rho)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;cspeed0 = sqrt(gamma*P0/rho0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_comment">{ a smoothing coefficient: }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;smoother = cspeed0*(rad/my_ngrid)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;evisc = max(visc,smoother)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">SELECT</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;ngrid= my_ngrid  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">INITIAL</span><span class="f_T_samples"> </span><span class="f_T_reserved">VALUES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;rho = rho0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;u = 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;v = 0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;P = P0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">EULERIAN</span><span class="f_T_samples"> </span><span class="f_T_reserved">EQUATIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_comment">{ Eulerian gas equations: (FlexPDE will add motion terms) }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;rho: dt(rho) + dr(rho*u*r)/r + dz(rho*v) = smoother*div(grad(rho))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;u: &nbsp; dt(u) + u*dr(u)+v*dz(u) + dr(P)/rho &nbsp;= evisc*div(grad(u))-evisc*u/r^2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;v: &nbsp; dt(v) + u*dr(v)+v*dz(v) + dz(P)/rho &nbsp;= evisc*div(grad(v))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;P: &nbsp; dt(P) + u*dr(P)+v*dz(P) + gamma*P*(dr(r*u)/r+dz(v)) = smoother*div(grad(P))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vm: &nbsp;dzz(vm)=0 &nbsp;  </span><span class="f_T_comment">{ balance mesh velocities in z only }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;zm: &nbsp;dt(zm)=vm &nbsp;  </span><span class="f_T_comment">{ node positions - move only in z }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">BOUNDARIES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_comment">{ use a piston and compression chamber with beveled edge, to create a swirl }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">REGION</span><span class="f_T_samples"> 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">START</span><span class="f_T_samples">(0,zraise)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0 </span><span class="f_T_reserved">value</span><span class="f_T_samples">(v)=vprofile </span><span class="f_T_reserved">value</span><span class="f_T_samples">(vm)=vprofile dt(zm)=vprofile  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (rraise,zraise) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (rad,0)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0 </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(v) </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(vm) </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(zm)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (rad,stroke+gap)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0 </span><span class="f_T_reserved">value</span><span class="f_T_samples">(v)=0 </span><span class="f_T_reserved">value</span><span class="f_T_samples">(vm)=0 dt(zm)=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (rraise,ztop) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (0,ztop)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0 </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(v) </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(vm) </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(zm)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_comment">{ add a diagonal feature to help control cell shapes at upper corner }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">FEATURE</span><span class="f_T_samples"> </span><span class="f_T_reserved">start</span><span class="f_T_samples">(rraise,zraise) </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (rad,stroke+gap)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">TIME</span><span class="f_T_samples"> 0 </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> 2*period </span><span class="f_T_reserved">by</span><span class="f_T_samples"> 1e-6  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">PLOTS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">for</span><span class="f_T_samples"> t=0 </span><span class="f_T_reserved">by</span><span class="f_T_samples"> period/120 </span><span class="f_T_reserved">to</span><span class="f_T_samples"> endtime  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_comment">{ control the frame size and data scaling to create a useable movie </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp;( the movie can be created by replaying the .PG5 file and selecting </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp;EXPORT MOVIE, or we could add PNG() commands here to create </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp; &nbsp; &nbsp;it directly) }</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">grid</span><span class="f_T_samples">(r,z) </span><span class="f_T_reserved">frame</span><span class="f_T_samples">(0,0, rad,ztop)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(rho) </span><span class="f_T_reserved">frame</span><span class="f_T_samples">(0,0, rad,ztop) </span><span class="f_T_reserved">fixed</span><span class="f_T_samples"> </span><span class="f_T_reserved">range</span><span class="f_T_samples">(0,0.01) contours=50 &nbsp;nominmax  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">frame</span><span class="f_T_samples">(0,0, rad,ztop) </span><span class="f_T_reserved">fixed</span><span class="f_T_samples"> </span><span class="f_T_reserved">range</span><span class="f_T_samples">(-500,500) contours=50  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(v) </span><span class="f_T_reserved">frame</span><span class="f_T_samples">(0,0, rad,ztop) </span><span class="f_T_reserved">fixed</span><span class="f_T_samples"> </span><span class="f_T_reserved">range</span><span class="f_T_samples">(-550,550) contours=50  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(P) </span><span class="f_T_reserved">frame</span><span class="f_T_samples">(0,0, rad,ztop) </span><span class="f_T_reserved">fixed</span><span class="f_T_samples"> </span><span class="f_T_reserved">range</span><span class="f_T_samples">(0,2300) contours=50 &nbsp;nominmax  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">vector</span><span class="f_T_samples">(u,v) </span><span class="f_T_reserved">frame</span><span class="f_T_samples">(0,0, rad,ztop) </span><span class="f_T_reserved">fixed</span><span class="f_T_samples"> </span><span class="f_T_reserved">range</span><span class="f_T_samples">(0,550)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(cspeed) </span><span class="f_T_reserved">frame</span><span class="f_T_samples">(0,0, rad,ztop) </span><span class="f_T_reserved">fixed</span><span class="f_T_samples"> </span><span class="f_T_reserved">range</span><span class="f_T_samples">(0,600)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(magnitude(u,v)/cspeed) </span><span class="f_T_reserved">frame</span><span class="f_T_samples">(0,0, rad,ztop) </span><span class="f_T_reserved">fixed</span><span class="f_T_samples"> </span><span class="f_T_reserved">range</span><span class="f_T_samples">(0,1.1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">history</span><span class="f_T_samples">(vprofile/vpeak,zprofile/stroke) </span><span class="f_T_reserved">range</span><span class="f_T_samples">(-1,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp; &nbsp; &nbsp;  </span><span class="f_T_reserved">report</span><span class="f_T_samples">(vpeak) </span><span class="f_T_reserved">report</span><span class="f_T_samples">(stroke)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">history</span><span class="f_T_samples">(globalmax(P), globalmin(P))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">history</span><span class="f_T_samples">(integral(P))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">history</span><span class="f_T_samples">(globalmax(rho), globalmin(rho))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">history</span><span class="f_T_samples">(integral(rho))  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">history</span><span class="f_T_samples">(</span><span class="f_T_reserved">deltat</span><span class="f_T_samples">)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">END</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?applications_fluids_2d_piston_movingmesh.html" target="_top">index.html?applications_fluids_2d_piston_movingmesh.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

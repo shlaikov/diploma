@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?contactresistance.html"; }
+  else { parent.lazysync('contactresistance.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Contact Resistance</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Contact Resistance">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="user_guide.html">User Guide</a> &gt; <a href="addressingmoredifficultprob.html">Addressing More Difficult Problems</a> &gt; <a href="discontinuousvariables2.html">Discontinuous Variables</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Contact Resistance</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="discontinuousvariables2.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="discontinuousvariables2.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="decoupling.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p><span style="color: #000000;">The problem of contact resistance between two conductors is a typical one requiring discontinuity of the modeled variable.  </span></p>
+<p><span style="color: #000000;">In this problem, a very thin resistive layer causes a jump in the temperature or voltage on the two sides of an interface. &nbsp;The magnitude of the jump is proportional to the heat flux or electric current flowing across the resistive film. &nbsp;In microscopic analysis, of course, there is a physical extent to the resistive material. But its dimensions are such as to make true modelling of the thickness inconvenient in a finite element simulation.</span></p>
+<p><span style="color: #000000;">In the contact resistance case, the heat flux across a resistive interface between materials '1' and '2' as seen from side '1' is given by </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code">F1 = -K1*dn(T) = -(T2-T1)/R</span><span style="color: #000000;">  </span><br>
+<span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">where F1 is the value of the outward heat flux, K1 is the heat conductivity, </span><span class="f_T_Code">dn(T)</span><span style="color: #000000;"> is the outward normal derivative of </span><span class="f_T_Code">T</span><span style="color: #000000;">, </span><span class="f_T_Code">R</span><span style="color: #000000;"> is the resistance of the interface film, and </span><span class="f_T_Code">T1</span><span style="color: #000000;"> and </span><span class="f_T_Code">T2</span><span style="color: #000000;"> are the two values of the temperature at the interface.  </span></p>
+<p><span style="color: #000000;">As seen from material '2', </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code">F2 = -K2*dn(T) = -(T1-T2)/R = -F1</span><br>
+<span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">Here the normal has reversed sign, so that the outflow from '2' is the negative of the outflow from '1', imposing energy conservation.</span></p>
+<p><span style="color: #000000;">The Natural Boundary Condition for the heat equation </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code">div(-K*grad(T)) = H </span><br>
+<span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">is given by the divergence theorem as</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code">Natural(T) = -K*dn(T), </span><br>
+<span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">representing the outward heat flux.</span></p>
+<p><span style="color: #000000;">This flux can be related to a discontinuous variable by use of the </span><span class="f_T_Code">CONTACT</span><span style="color: #000000;"> boundary condition in place of the </span><span class="f_T_Code">NATURAL</span><span style="color: #000000;">.</span></p>
+<p><span style="color: #000000;">The FlexPDE expression </span><span class="f_T_Code">JUMP(T)</span><span style="color: #000000;"> is defined as </span><span class="f_T_Code">(T2-T1)</span><span style="color: #000000;"> in material '1' and </span><span class="f_T_Code">(T1-T2)</span><span style="color: #000000;"> in material '2'.</span></p>
+<p><span style="color: #000000;">The representation of the contact resistance boundary condition is therefore</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code">CONTACT(T) = -JUMP(T)/R</span><br>
+<span class="f_T_Code">&nbsp;</span></p>
+<p><span style="color: #000000;">This statement means the same thing in both of the materials sharing the interface. &nbsp;[Notice that the sign applied to the </span><span class="f_T_Code">JUMP</span><span style="color: #000000;"> reflects the sign of the divergence term.]</span></p>
+<p><span style="color: #000000;">We can modify our previous example problem to demonstrate this, by adding a heat source to drive the jump, and cooling the sidewalls. &nbsp;The restated script is:</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">TITLE</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'Contact Resistance on a heated blob'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">VARIABLES</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">Phi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ the temperature }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">DEFINITIONS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">K = 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ default conductivity }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">R = 0.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ blob radius }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">H = 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ internal heat source }</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code" style="font-style: italic; font-weight: bold;">Res = 0.5 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment" style="font-style: italic; font-weight: bold;">{ contact resistance }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">EQUATIONS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">Div(-k*grad(phi)) = H</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">BOUNDARIES</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 1 </span><span class="f_T_Code_string">'box'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(-1,-1) </span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(Phi)=0 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ cold outer walls }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1,-1) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1,1) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (-1,1) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">CLOSE</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">'blob'</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code_comment">{ the embedded blob }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code">H = 1 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ heat generation in the blob }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'ring'</span><span class="f_T_Code"> (R,0) </span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">CONTACT</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(phi) = -</span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">JUMP</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(phi)/Res</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">ARC</span><span class="f_T_Code">(</span><span class="f_T_Code_reserved">CENTER</span><span class="f_T_Code">=0,0) </span><span class="f_T_Code_reserved">ANGLE</span><span class="f_T_Code">=360 </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">CLOSE</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">PLOTS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">CONTOUR</span><span class="f_T_Code">(Phi)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code">(Phi)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">VECTOR</span><span class="f_T_Code">(-k*grad(Phi))</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">ELEVATION</span><span class="f_T_Code">(Phi) </span><span class="f_T_Code_reserved">FROM</span><span class="f_T_Code"> (0,-1) </span><span class="f_T_Code_reserved">to</span><span class="f_T_Code"> (0,1)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">ELEVATION</span><span class="f_T_Code">(Normal(-k*grad(Phi))) </span><span class="f_T_Code_reserved">ON</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'ring'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">END</span></p>
+<p class="p_CodeExample"><span class="f_T_Code">&nbsp;</span></p>
+<p><span style="color: #000000;">The surface plot generated by running this problem shows the discontinuity in temperature:</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p style="text-align: center; margin: 0px 0px 0px 0px;"><img src="ex802_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?contactresistance.html" target="_top">index.html?contactresistance.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

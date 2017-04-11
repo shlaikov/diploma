@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?integralsinthreedimensions.html"; }
+  else { parent.lazysync('integralsinthreedimensions.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Integrals in Three Dimensions</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Integrals,Integrals 3D,Volume Integrals,Surface Integrals">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="user_guide.html">User Guide</a> &gt; <a href="usingflexpdeinthree_dimensi.html">Using FlexPDE in Three-Dimensional Problems</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Integrals in Three Dimensions</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="surface_generating_functions.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="usingflexpdeinthree_dimensi.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="moreadvancedplotcontrols.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p><span style="color: #000000;">In three-dimensional problems, volume integrals may be computed over volume compartments selected by region and layer.</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = VOL_INTEGRAL(&lt;integrand&gt;)</span></td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over the entire domain.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = VOL_INTEGRAL(&lt;integrand&gt;, &lt;region name&gt;)</span></td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over all layers of the specified region.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = VOL_INTEGRAL(&lt;integrand&gt;, &lt;layer name&gt;)</span></td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over all regions of the specified layer.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = VOL_INTEGRAL(&lt;integrand&gt;, &lt;region name&gt;, &lt;layer name&gt;)</span></td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over the compartment specified by the region and layer names.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = VOL_INTEGRAL(&lt;integrand&gt;, &lt;region number&gt;, &lt;layer number&gt;)</span></td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over the compartment specified by the region and layer numbers.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">Surface integrals may be computed over selected surfaces. &nbsp;From the classification of various qualifying names, FlexPDE tries to infer what surfaces are implied in a surface integral statement. In the case of non-planar surfaces, integrals are weighted by the actual surface area.</span></p>
+<p style="text-indent: -30px; margin: 0px 0px 0px 60px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = SURF_INTEGRAL(&lt;integrand&gt;)</span> &nbsp; &nbsp; &nbsp; &nbsp;</td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over the outer bounding surface of the total domain.</span></p>
+<p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = SURF_INTEGRAL(&lt;integrand&gt;, &lt;surface name&gt; {, &lt;layer_name&gt;} )</span><span class="f_T_Code"> </span><span style="color: #000000;"> </span></td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over all regions of the named extrusion surface. If &nbsp;the optional </span><span class="f_T_Code">&lt;layer_name&gt;</span><span style="color: #000000;"> appears, it will dictate the layer in which the computation is performed.</span></p>
+<p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = SURF_INTEGRAL(&lt;integrand&gt;, &lt;surface name&gt;, &lt;region name&gt; {, &lt;layer_name&gt;} )</span><span class="f_CodeExample"> </span><span class="f_CodeExample"> </span></td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over the named extrusion surface, restricted to the named region. &nbsp;If &nbsp;the optional </span><span class="f_T_Code">&lt;layer_name&gt;</span><span style="color: #000000;"> appears, it will dictate the layer in which the computation is performed.</span></p>
+<p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = SURF_INTEGRAL(&lt;integrand&gt;, &lt;region name&gt;, &lt;layer name&gt;)</span><span class="f_CodeExample"> </span><span class="f_CodeExample"> </span></td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over all surfaces of the compartment specified by the region and layer names. &nbsp;Evaluation will be made inside the named compartment.</span></p>
+<p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = SURF_INTEGRAL(&lt;integrand&gt;, &lt;boundary name&gt; {, &lt;region_name&gt;} )</span><span class="f_CodeExample"> </span><span style="color: #000000;"> </span></td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over all layers of the sidewall generated by the extrusion of the named base-plane curve. If the optional </span><span class="f_T_Code">&lt;region name&gt;</span><span style="color: #000000;"> argument appears, it controls on which side of the surface the integral is evaluated. &nbsp;Portions of the surface that do not adjoin the named layer will not be computed.</span></p>
+<p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_T_Code" style="font-weight: bold;">Result = SURF_INTEGRAL(&lt;integrand&gt;, &lt;boundary name&gt;, &lt;layer name&gt; {, &lt;region_name&gt;} )</span><span class="f_CodeExample"> </span><span style="color: #000000;"> </span></td></tr></table></div><p style="margin: 0px 0px 0px 33px;"><span style="color: #000000;">Computes the integral of the integrand over the sidewall generated by the extrusion of the named base-plane curve, restricted to the named layer. &nbsp;If the optional </span><span class="f_T_Code">&lt;region name&gt;</span><span style="color: #000000;"> argument appears, it controls on which side of the surface the integral is evaluated. Portions of the surface that do not adjoin the named layer will not be computed.</span></p>
+<p style="margin: 0px 0px 0px 60px;"><span style="color: #000000;">&nbsp;</span></p>
+<p class="p_Notes"><span class="f_Notes" style="font-weight: bold;">Note</span><span class="f_Notes">: The example problem &quot;</span><span class="f_Notes"><a href="usage_3d_domains_3d_integrals.html">Samples | Usage | 3D_Integrals.pde</a></span><span class="f_Notes">&quot; demonstrates several forms of integral in a three-dimensional problem.</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">Let us modify our Canister problem to contain a heat source, and compare the volume integral of the source with the surface integral of the flux, as checks on the accuracy of the solution:</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">TITLE</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'Heat flow from an Insulating Canister'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">COORDINATES</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">Cartesian3</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">VARIABLES</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">Phi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ the temperature }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">DEFINITIONS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">K = 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ default conductivity }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">R = 0.5 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ blob radius }</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code" style="font-style: italic; font-weight: bold;">S = 0</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">EQUATIONS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">Div(-k*grad(phi)) = </span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">S</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">EXTRUSION</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'Bottom'</span><span class="f_T_Code"> &nbsp;z=-1/2</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'underneath'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'Can Bottom'</span><span class="f_T_Code"> &nbsp;z=-1/4</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'Can'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'Can Top'</span><span class="f_T_Code"> &nbsp;z=1/4</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'above'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'Top'</span><span class="f_T_Code">   &nbsp; &nbsp; &nbsp; &nbsp;z=1/2</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">BOUNDARIES</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 1 </span><span class="f_T_Code_string">'box'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(-1,-1) </span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(Phi)=0 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (1,-1)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(Phi)=0 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (1,1)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(Phi)=1 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (-1,1)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(Phi)=0 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_reserved">LINE TO CLOSE</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">'blob'</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code_comment">{ option: could be LIMITED }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 2 k = 0.001 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ the canister only }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code" style="font-style: italic; font-weight: bold;">S = 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment" style="font-style: italic; font-weight: bold;">{ still the canister }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'ring'</span><span class="f_T_Code"> (R,0) </span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">ARC</span><span class="f_T_Code">(</span><span class="f_T_Code_reserved">CENTER</span><span class="f_T_Code">=0,0) </span><span class="f_T_Code_reserved">ANGLE</span><span class="f_T_Code">=360 </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">CLOSE</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">PLOTS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">GRID</span><span class="f_T_Code">(y,z) </span><span class="f_T_Code_reserved">on</span><span class="f_T_Code"> x=0</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">CONTOUR</span><span class="f_T_Code">(Phi) </span><span class="f_T_Code_reserved">on</span><span class="f_T_Code"> x=0</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">VECTOR</span><span class="f_T_Code">(-k*grad(Phi)) </span><span class="f_T_Code_reserved">on</span><span class="f_T_Code"> x=0</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">ELEVATION</span><span class="f_T_Code">(Phi) </span><span class="f_T_Code_reserved">FROM</span><span class="f_T_Code"> (0,-1,0) </span><span class="f_T_Code_reserved">to</span><span class="f_T_Code"> (0,1,0)</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">SUMMARY</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">REPORT</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(Vol_Integral(S,</span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'blob'</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">,</span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'can'</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">)) </span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">AS</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'Source Integral'</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">REPORT</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(Surf_Integral(NORMAL(-k*grad(Phi)),</span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'blob'</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">,</span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'can'</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">)) </span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">AS</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'Can Heat Loss'</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">REPORT</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(Surf_Integral(NORMAL(-k*grad(Phi))))</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">AS</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> 'Box Heat Loss'</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">REPORT</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(Vol_Integral(S,</span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'blob'</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">,</span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'can'</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">)-Surf_Integral(NORMAL(-k*grad(Phi))))</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">AS</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> 'Energy Error'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">END</span></p>
+<p><span class="f_T_Code">&nbsp;</span></p>
+<p><span style="color: #000000;">The contour plot is as follows:</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p style="text-align: center; margin: 0px 0px 0px 0px;"><img src="3ex502_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">The summary page shows the integral reports:</span></p>
+<p style="margin: 0px 0px 0px 17px;"><img src="3ex505.png" width="186" height="113" border="0" alt=""></p>
+<p class="p_Notes" style="margin: 0px 0px 10px 24px;"><span class="f_Notes" style="font-weight: bold;">Note</span><span class="f_Notes">: The &quot;Integral&quot; reported at the bottom of the contour plot is the default Area_Integral(Phi) reported by the plot processor.</span></p>
+<p class="p_Notes"><span class="f_Notes">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?integralsinthreedimensions.html" target="_top">index.html?integralsinthreedimensions.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* Text Styles */
+hr { color: #000000}
+body, table /* Normal */
+{
+ font-size: 13px;
+ font-family: 'Georgia';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.f_BodyText /* Body Text */
+{
+}
+span.f_CodeExample /* Code Example */
+{
+ font-family: 'Courier New';
+ font-weight: bold;
+}
+span.f_Comment /* Comment */
+{
+}
+span.f_Heading1 /* Heading1 */
+{
+ font-size: 21px;
+ font-weight: bold;
+ color: #ffffff;
+}
+span.f_Heading2 /* Heading2 */
+{
+ font-size: 19px;
+ font-style: italic;
+ font-weight: bold;
+ color: #000080;
+}
+span.f_Heading3 /* Heading3 */
+{
+ font-size: 16px;
+ font-weight: bold;
+ color: ;
+}
+span.f_Heading4 /* Heading4 */
+{
+ font-weight: bold;
+ color: ;
+ text-decoration: underline;
+}
+span.f_ImageCaption /* Image Caption */
+{
+ font-size: 12px;
+ font-family: 'Verdana';
+ font-style: italic;
+}
+span.f_Notes /* Notes */
+{
+ font-style: italic;
+}
+span.f_T_Code /* T_Code */
+{
+ font-family: 'Verdana';
+}
+span.f_T_Code_comment /* T_Code_comment */
+{
+ font-family: 'Verdana';
+ color: #008000;
+}
+span.f_T_Code_reserved /* T_Code_reserved */
+{
+ font-family: 'Verdana';
+ color: #993300;
+}
+span.f_T_Code_string /* T_Code_string */
+{
+ font-family: 'Verdana';
+ color: #0000ff;
+}
+span.f_T_comment /* T_comment */
+{
+ font-size: 11px;
+ font-family: 'Lucida Console';
+ color: #006400;
+}
+span.f_T_reserved /* T_reserved */
+{
+ font-size: 11px;
+ font-family: 'Lucida Console';
+ color: #cb0000;
+}
+span.f_T_samples /* T_samples */
+{
+ font-size: 11px;
+ font-family: 'Lucida Console';
+ color: #000000;
+}
+span.f_T_string /* T_string */
+{
+ font-size: 11px;
+ font-family: 'Lucida Console';
+ color: #0000cd;
+}
+/* Paragraph styles */
+p /* Normal */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 10px 0px;
+}
+.p_BodyText /* Body Text */
+{
+ text-align: center;
+ margin: 0px 0px 18px 0px;
+}
+.p_CodeExample /* Code Example */
+{
+ margin: 0px 0px 0px 0px;
+}
+.p_Comment /* Comment */
+{
+ text-align: center;
+}
+.p_Heading1 /* Heading1 */
+{
+ margin: 0px 0px 0px 0px;
+}
+.p_Heading2 /* Heading2 */
+{
+ margin: 19px 0px 10px 0px;
+}
+.p_Heading3 /* Heading3 */
+{
+ margin: 10px 0px 0px 0px;
+}
+.p_Heading4 /* Heading4 */
+{
+ margin: 10px 0px 0px 0px;
+}
+.p_ImageCaption /* Image Caption */
+{
+}
+.p_Notes /* Notes */
+{
+ margin: 0px 0px 10px 18px;
+}

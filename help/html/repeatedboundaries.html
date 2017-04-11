@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?repeatedboundaries.html"; }
+  else { parent.lazysync('repeatedboundaries.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Repeated Text</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="REPEAT,ENDREPEAT,Repeated Text">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="theelementsofadescriptor.html">The Elements of a Descriptor</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Repeated Text</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="expressions.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="theelementsofadescriptor.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="thesectionsofadescriptor.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p><span style="font-family: 'Arial';">The </span><span class="f_T_Code">REPEAT..ENDREPEAT</span><span style="font-family: 'Arial';"> construct allows the repetition of sections of input text.  </span></p>
+<p><span style="font-family: 'Arial';">The syntax looks like a </span><span class="f_T_Code">FOR</span><span style="font-family: 'Arial';"> loop in procedural languages, but we emphasize that in FlexPDE this feature constitutes a </span><span style="font-style: italic;">textual</span><span style="font-family: 'Arial';"> repetition, not a procedural repetition.</span></p>
+<p><span style="font-family: 'Arial';">The form of a repeat clause is</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">REPEAT name = initial TO final</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">REPEAT name = initial BY delta TO final</span><br>
+<span class="f_T_Code" style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-family: 'Arial';">These statements specify that the following lines of descriptor text should be repeated a number of times. &nbsp;The given </span><span class="f_T_Code">name</span><span style="font-family: 'Arial';"> is defined as if it had appeared in the </span><span class="f_T_Code">DEFINITIONS</span><span style="font-family: 'Arial';"> section, and is given the value specified by </span><span class="f_T_Code">initial</span><span style="font-family: 'Arial';">.</span></p>
+<p><span style="font-family: 'Arial';">The repeated section of text is terminated by the statement</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">ENDREPEAT</span></p>
+<p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-family: 'Arial';">At this point, the value of </span><span class="f_T_Code">name</span><span style="font-family: 'Arial';"> is incremented by </span><span class="f_T_Code">delta</span><span style="font-family: 'Arial';"> (or by one, if no </span><span class="f_T_Code">delta</span><span style="font-family: 'Arial';"> is given). &nbsp;If the new value is not greater than </span><span class="f_T_Code">final</span><span style="font-family: 'Arial';">, the repeated text is scanned again with the new value in place of </span><span class="f_T_Code">name</span><span style="font-family: 'Arial';">. &nbsp;If </span><span class="f_T_Code">delta</span><span style="font-family: 'Arial';"> is negative, the value of </span><span class="f_T_Code">name</span><span style="font-family: 'Arial';"> is decremented and the termination test is modified accordingly.</span></p>
+<p><span style="font-family: 'Arial';">The </span><span class="f_T_Code">REPEAT</span><span style="font-weight: bold;"> </span><span style="font-family: 'Arial';">statement can appear in the following locations:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-family: 'Arial';">in </span><span class="f_T_Code">BATCH</span><span style="font-family: 'Arial';"> file lists</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-family: 'Arial';">in </span><span class="f_T_Code">VARIABLE</span><span style="font-family: 'Arial';"> lists</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-family: 'Arial';">in </span><span class="f_T_Code">EXTRUSION</span><span style="font-family: 'Arial';"> lists</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-family: 'Arial';">in</span><span style="font-family: 'Arial'; font-weight: bold;"> </span><span class="f_T_Code">INITIAL</span><span style="font-family: 'Arial'; font-weight: bold;"> </span><span class="f_T_Code">VALUE</span><span style="font-family: 'Arial';"> lists</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-family: 'Arial';">anywhere the </span><span class="f_T_Code">REGION</span><span style="font-family: 'Arial';">, </span><span class="f_T_Code">START</span><span style="font-family: 'Arial';"> or </span><span class="f_T_Code">LINE</span><span style="font-family: 'Arial';"> keywords are legal.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-family: 'Arial';">around any plot command or group of plot commands.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-family: 'Arial';">around any </span><span class="f_T_Code">DEFINITION</span><span style="font-family: 'Arial';"> or group of </span><span class="f_T_Code">DEFINITIONS</span><span style="font-family: 'Arial';">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-family: 'Arial';">around any </span><span class="f_T_Code">REPORT</span><span style="font-family: 'Arial';"> command or group of </span><span class="f_T_Code">REPORT</span><span style="font-family: 'Arial';"> commands.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-family: 'Arial';">around </span><span class="f_T_Code">AT</span><span style="font-family: 'Arial';"> points in a </span><span class="f_T_Code">HISTORY</span><span style="font-family: 'Arial';"> list</span></td></tr></table></div><p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-family: 'Arial';">Use of </span><span class="f_T_Code">ARRAYS</span><span style="font-family: 'Arial';"> and the </span><span class="f_T_Code">$integer</span><span style="font-family: 'Arial';"> string function can extend the power of the </span><span class="f_T_Code">REPEAT</span><span style="font-family: 'Arial';"> loop.</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Examples:</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">REPEAT</span><span class="f_CodeExample"> </span><span class="f_CodeExample" style="font-weight: normal;">xc=1/4</span><span class="f_CodeExample"> </span><span class="f_T_Code_reserved">by</span><span class="f_CodeExample"> </span><span class="f_CodeExample" style="font-weight: normal;">1/4</span><span class="f_CodeExample"> </span><span class="f_T_Code_reserved">to</span><span class="f_CodeExample"> </span><span class="f_CodeExample" style="font-weight: normal;">7/4</span><span class="f_CodeExample"> </span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REPEAT</span><span class="f_T_Code"> yc=1/4 </span><span class="f_T_Code_reserved">by</span><span class="f_T_Code"> 1/4 </span><span class="f_T_Code_reserved">to</span><span class="f_T_Code"> 7/4 </span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_CodeExample" style="font-weight: normal;">(xc+rad,yc)  </span><span class="f_T_Code_reserved">ARC</span><span class="f_CodeExample" style="font-weight: normal;">(</span><span class="f_T_Code_reserved">CENTER</span><span class="f_CodeExample" style="font-weight: normal;">=xc,yc) </span><span class="f_T_Code_reserved">ANGLE</span><span class="f_CodeExample" style="font-weight: normal;">=360 </span><span class="f_T_Code_reserved">CLOSE</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">ENDREPEAT</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">ENDREPEAT</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">This double loop constructs a 7 x 7 array of circles, all part of the same </span><span class="f_T_Code">REGION</span><span style="font-family: 'Arial';">.</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-family: 'Arial';">See the sample problems:</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';"><a href="usage_repeat.html">Samples | Usage | Repeat.pde</a></span></p>
+<p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p class="p_Notes"><span class="f_Notes" style="font-weight: bold;">Note</span><span class="f_Notes">:  </span><span class="f_T_Code">REPEAT..ENDREPEAT</span><span class="f_Notes"> replaces the older </span><span class="f_T_Code">FOR..ENDFOR</span><span class="f_Notes"> facility used in earlier versions of FlexPDE. &nbsp;The older facility is no longer supported, and will produce parsing errors.</span></p>
+<p class="p_Notes"><span class="f_Notes">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?repeatedboundaries.html" target="_top">index.html?repeatedboundaries.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

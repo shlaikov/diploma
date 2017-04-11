@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?periodicboundaries.html"; }
+  else { parent.lazysync('periodicboundaries.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Periodic Boundaries</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="PERIODIC Boundary Conditions,ANTIPERIODIC Boundary Conditions,Boundary Conditions,Boundary Conditions PERIODIC,Boundary Conditions ANTIPERIODIC">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a> &gt; <a href="boundaries.html">Boundaries</a> &gt; <a href="boundaryconditions.html">Boundary Conditions</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Periodic Boundaries</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="jumpboundaries.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="boundaryconditions.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="complex_and_vector_boundary_co.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p><span style="font-family: 'Arial';">FlexPDE supports periodic and antiperiodic boundary conditions in one, two or three dimensions.  </span></p>
+<p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Periodicity in the X-Y Plane</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">Periodicity in a two-dimensional problem, or in the extrusion walls of a three-dimensional problem, is invoked by the </span><span class="f_T_Code">PERIODIC</span><span style="font-family: 'Arial';"> or </span><span class="f_T_Code">ANTIPERIODIC</span><span style="font-family: 'Arial';"> statement.  </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">The </span><span class="f_T_Code">PERIODIC</span><span style="font-family: 'Arial';"> statement appears in the position of a boundary condition, but the syntax is slightly different, and the requirements and implications are more extensive.  </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">  </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">The syntax is:</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code" style="font-weight: bold;">PERIODIC ( X_mapping, Y_mapping )</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code" style="font-weight: bold;">ANTIPERIODIC ( X_mapping, Y_mapping )</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">The mapping expressions specify the arithmetic required to convert a point (X,Y) in the immediate boundary to a point (X',Y') on a remote boundary. &nbsp;The mapping expressions must result in each point on the immediate boundary being mapped to a point on the remote boundary. &nbsp;Segment endpoints must map to segment endpoints. &nbsp;The transformation must be invertible; do not specify &nbsp;constants as mapped coordinates, as this will create a singular transformation.</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">  </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">The periodic boundary statement terminates any boundary conditions in effect, and instead imposes equality of all variables on the two boundaries. &nbsp;It is still possible to state a boundary condition on the remote boundary, but in most cases this would be inappropriate.</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">  </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">The periodic statement affects only the next following </span><span class="f_T_Code">LINE</span><span style="font-family: 'Arial';"> or </span><span class="f_T_Code">ARC</span><span style="font-family: 'Arial';"> path. &nbsp;These paths may contain more than one segment, but the next appearing </span><span class="f_T_Code">LINE</span><span style="font-family: 'Arial';"> or </span><span class="f_T_Code">ARC</span><span style="font-family: 'Arial';"> statement terminates the periodic condition unless the periodic statement is repeated.</span></p>
+<p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Periodicity in 1D</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">Periodicity in a one-dimensional problem is invoked by the </span><span class="f_T_Code">POINT </span><span class="f_T_Code">PERIODIC</span><span style="font-family: 'Arial';"> or </span><span class="f_T_Code">POINT </span><span class="f_T_Code">ANTIPERIODIC</span><span style="font-family: 'Arial';"> statement. All other aspects are similar to the description above for X-Y periodicity.  </span></p>
+<p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Periodicity in the Z-Dimension</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">Periodicity In the extruded dimension is invoked by the modifier </span><span class="f_T_Code">PERIODIC</span><span style="font-family: 'Arial';"> or </span><span class="f_T_Code">ANTIPERIODIC</span><span style="font-family: 'Arial';"> before the </span><span class="f_T_Code">EXTRUSION</span><span style="font-family: 'Arial';"> statement, for example,</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 33px;"><span class="f_T_Code" style="font-weight: bold;">PERIODIC EXTRUSION &nbsp;Z=0,1,2</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">In this case, the top and bottom extrusion surfaces are assumed to be conformable, and the values are forced equal (or sign-reversed) along these surfaces.</span></p>
+<p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Restrictions</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="font-family: 'Arial';">Each node in the finite element mesh can have at most one periodic image. &nbsp;This means that two-way or three-way periodicity cannot be directly implemented. &nbsp;Usually it is sufficient to introduce a small gap in the periodic boundaries, so that each corner is periodic with only one other corner of the mesh.</span></p>
+<p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Example Problems:</span></p>
+<p><span style="font-family: 'Arial';"><a href="usage_periodicity_periodic.html">&quot;Samples | Usage | Periodicity | periodic.pde&quot; </a></span><br>
+<span style="font-family: 'Arial';"><a href="usage_periodicity_azimuthal_periodic.html">&quot;Samples | Usage | Periodicity | azimuthal_periodic.pde&quot; </a></span><br>
+<span style="font-family: 'Arial';"><a href="usage_periodicity_antiperiodic.html">&quot;Samples | Usage | Periodicity | antiperiodic.pde&quot;</a></span><br>
+<span style="font-family: 'Arial';"><a href="usage_periodicity_3d_xperiodic.html">&quot;Samples | Usage | Periodicity | 3d_xperiodic.pde&quot;</a></span><br>
+<span style="font-family: 'Arial';"><a href="usage_periodicity_3d_zperiodic.html">&quot;Samples | Usage | Periodicity | 3d_zperiodic.pde&quot;</a></span><br>
+<span style="font-family: 'Arial';"><a href="usage_periodicity_3d_antiperiodic.html">&quot;Samples | Usage | Periodicity | 3d_antiperiodic.pde&quot; </a></span></p>
+<p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-family: 'Times New Roman';">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?periodicboundaries.html" target="_top">index.html?periodicboundaries.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

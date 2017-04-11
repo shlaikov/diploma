@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?naturalboundaryconditions2.html"; }
+  else { parent.lazysync('naturalboundaryconditions2.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Natural Boundary Conditions</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="NATURAL,NATURAL Boundary Condition,Boundary Conditions,Boundary Conditions NATURAL">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="user_guide.html">User Guide</a> &gt; <a href="addressingmoredifficultprob.html">Addressing More Difficult Problems</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Natural Boundary Conditions</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="complicationsassociatedwithnon.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="addressingmoredifficultprob.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="sometypicalcases.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p><span style="color: #000000;">The term &quot;natural boundary condition&quot; usually arises in the calculus of variations, and since the finite element method is fundamentally one of minimization of an error functional, the term arises also in this context.</span></p>
+<p><span style="color: #000000;">The term has a much more intuitive interpretation, however, and it is this which we will try to present.</span></p>
+<p><span style="color: #000000;">Consider a </span><span style="font-weight: bold;">Laplace equation</span><span style="color: #000000;">, </span></p>
+<p style="margin: 0px 0px 0px 33px;"><img src="laplace.png" width="74" height="20" border="0" alt=""></p>
+<p style="margin: 0px 0px 0px 33px;"><span style="font-size: 11px; font-family: 'MS Sans Serif';">&nbsp;</span></p>
+<p><span style="color: #000000;">The </span><span style="font-weight: bold;">Divergence Theorem</span><span style="color: #000000;"> says that the integral of this equation over all space is equal merely to the integral over the bounding surface of the normal component of the flux, </span></p>
+<p style="margin: 0px 0px 0px 33px;"><img src="nbc1.png" width="265" height="45" border="0" alt=""></p>
+<p><span style="color: #000000;">(we have presented the equation in two dimensions, but it is valid in three dimensions as well).</span></p>
+<p><span style="color: #000000;">The</span><span style="font-size: 21px; font-family: 'Times New Roman'; color: #000000;"> </span><span style="color: #000000;">surface value of  </span><img src="ngradu.png" width="81" height="24" border="0" alt=""><span style="color: #000000;"> is in fact the &quot;natural boundary condition&quot; for the Laplace (and Poisson) equation. &nbsp;It is the way in which the system </span><span style="font-family: 'Arial'; font-style: italic; color: #000000;">inside</span><span style="color: #000000;"> interacts with the system </span><span style="font-family: 'Arial'; font-style: italic; color: #000000;">outside</span><span style="color: #000000;">. &nbsp;It is the (negative of the) flux of the quantity u that crosses the system boundary.</span></p>
+<p><span style="color: #000000;">The </span><span style="font-weight: bold;">Divergence Theorem</span><span style="color: #000000;"> is a particular manifestation of the more general process of </span><span style="font-weight: bold;">Integration by Parts</span><span style="color: #000000;">. &nbsp;You will remember the basic rule,</span></p>
+<p style="margin: 0px 0px 0px 33px;"><img src="parts.png" width="156" height="38" border="0" alt=""></p>
+<p><span style="color: #000000;">The term </span><img src="uv.png" width="22" height="16" border="0" alt=""><span style="color: #000000;"> is evaluated at the ends of the integration interval and gives rise to surface terms. &nbsp;Applied to the integration of a divergence, integration by parts produces the Divergence Theorem.</span></p>
+<p><span style="color: #000000;">FlexPDE applies integration by parts to all terms of the partial differential equations that contain second-order derivatives of the system variables. &nbsp;In the Laplace equation, of course, this means the only term that appears.</span></p>
+<p><span style="color: #000000;">In order for a solution of the Laplace equation (for example) to be achieved, one must specify at all points of the boundary either the value of the variable (in this case, </span><img src="u.png" width="14" height="16" border="0" alt=""><span style="color: #000000;">) or the value of  </span><img src="ngradu.png" width="81" height="24" border="0" alt=""><span style="color: #000000;">.</span></p>
+<p><span style="color: #000000;">In the notation of FlexPDE, </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(u)=u1</span><span class="f_CodeExample"> </span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">supplies the former, and </span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(u)=F</span><span style="color: #000000;">  &nbsp; &nbsp; &nbsp; &nbsp;supplies the latter.  </span></p>
+<p style="margin: 0px 0px 0px 67px;"><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">In other words,</span></p>
+<p><span style="font-weight: bold;">The NATURAL boundary condition statement in FlexPDE supplies the value of the surface flux, as that flux is defined by the integration of the second-order terms of the PDE by parts. The default boundary condition for FlexPDE is </span><span class="f_T_Code" style="font-weight: bold;">NATURAL(VARIABLE)=0</span><span style="font-weight: bold;">.</span></p>
+<p><span style="color: #000000;">Note: &nbsp;On an internal boundary the NATURAL defines the difference in flux between the two adjacent regions, producing a source or sink at that boundary.</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">Consistent with our discussion of nonlinear equations, the value given for the surface flux may be a nonlinear value.  </span></p>
+<p><span style="color: #000000;">The radiation loss from a hot body, for example, is proportional to the fourth power of temperature, and the statement</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(u) = -k*u^4</span></p>
+<p><span style="color: #000000;">is a perfectly legal boundary condition for the Laplace equation in FlexPDE.</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?naturalboundaryconditions2.html" target="_top">index.html?naturalboundaryconditions2.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

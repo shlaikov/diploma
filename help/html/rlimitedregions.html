@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?rlimitedregions.html"; }
+  else { parent.lazysync('rlimitedregions.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Limited Regions in 3D</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="LIMITED REGIONS">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a> &gt; <a href="boundaries.html">Boundaries</a> &gt; <a href="regions.html">Regions</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Limited Regions in 3D</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="regionalparametervaluesin3.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="regions.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="emptylayersin3d.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p><span style="font-family: 'Arial';">In three dimensional problems, many figures to not fit readily into the extrusion model. &nbsp;In particular, there are frequently features that in reality exist only at very restricted positions in the extrusion dimension, and which create poor meshes when extruded throughout the domain.</span></p>
+<p><span style="font-family: 'Arial';">FlexPDE implements the concept of</span><span style="font-family: 'Arial'; font-weight: bold;"> </span><span class="f_T_Code" style="font-weight: bold;">LIMITED REGIONS</span><span style="font-family: 'Arial';"> to accommodate this situation.</span></p>
+<p><span style="font-family: 'Arial';">A </span><span class="f_T_Code">LIMITED REGION</span><span style="font-family: 'Arial';"> is defined as one that is considered to exist only in specified layers or surfaces of the domain, and is absent in all other layers and surfaces.  </span></p>
+<p><span style="font-family: 'Arial';">The </span><span class="f_T_Code">LIMITED REGION</span><span style="font-family: 'Arial';"> will be constructed only in layers and surfaces specifically stated in the body of the </span><span class="f_T_Code">REGION</span><span style="font-family: 'Arial';"> definition.</span></p>
+<p><span style="font-family: 'Arial';">An example of this type of structure might be a transistor, where the junction structure of the device is present only in a very thin layer of the domain, while the substrate occupies the majority of the volume.  </span></p>
+<p><span style="font-family: 'Arial';">In earlier versions of FlexPDE, the shape of the junction structure was propagated and meshed throughout the extrusion dimension. &nbsp;Since version 4, the structure can be restricted, or </span><span class="f_T_Code">LIMITED</span><span style="font-family: 'Arial';">, to a single layer or a few layers.</span></p>
+<p><span style="font-family: 'Arial';">For example, the following descriptor fragment defines a 3-unit cube with a 0.2-unit cubical structure in the center. &nbsp;The small structure is present in the layer 2 mesh only.</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code_reserved">EXTRUSION</span><span class="f_T_Code"> &nbsp;Z=0, 1.4, 1.6, 3</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code_reserved">BOUNDARIES</span><span class="f_T_Code"> </span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 1</span></p>
+<p style="margin: 0px 60px 0px 50px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(0,0) </span><span class="f_T_Code_reserved">LINE</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (3,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (3,3) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (3,0) </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code_reserved">LIMITED</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2</span></p>
+<p style="margin: 0px 60px 0px 50px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 2 K=9</span></p>
+<p style="margin: 0px 60px 0px 50px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(1.4,1.4) </span></p>
+<p style="margin: 0px 60px 0px 50px;"><span class="f_T_Code_reserved">LINE</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1.6,1.4) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1.6,1.6) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1.4,1.4) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">CLOSE</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p style="margin: 0px 60px 0px 0px;"><span style="font-family: 'Arial';">See the User Guide section &quot;</span><a href="limitedregions.html">Limited Regions</a><span style="font-family: 'Arial';">&quot; for a graphical example of this facility.</span></p>
+<p style="margin: 0px 60px 0px 0px;"><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Examples:</span></p>
+<p><span style="font-family: 'Arial';"><a href="usage_3d_domains_3d_limited_region.html">Samples | Usage | 3D_Domains | 3D_Limited_Region.pde</a></span></p>
+<p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Arial';">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?rlimitedregions.html" target="_top">index.html?rlimitedregions.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

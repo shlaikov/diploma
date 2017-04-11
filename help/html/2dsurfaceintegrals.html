@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?2dsurfaceintegrals.html"; }
+  else { parent.lazysync('2dsurfaceintegrals.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>2D Surface Integrals</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Integrals,Integrals Surface,SINTEGRAL,SURF_INTEGRAL">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="theelementsofadescriptor.html">The Elements of a Descriptor</a> &gt; Operators &gt; <a href="integraloperators.html">Integral Operators</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">2D Surface Integrals</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="lineintegrals.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="integraloperators.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="3dsurfaceintegrals.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">The synonymous prototype forms of surface integral functions in 2D are:</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Arial'; font-weight: bold; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">SINTEGRAL ( integrand, named_boundary )</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">SURF_INTEGRAL ( integrand, named_boundary )</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code">&nbsp;</span></p>
+<p><span style="color: #000000;">Here </span><span class="f_T_Code">named_</span><span class="f_T_Code">boundary</span><span style="color: #000000;"> may be specified </span><span style="font-family: 'Arial'; font-style: italic; color: #000000;">by name</span><span style="color: #000000;">, or it can be omitted, in which case the entire outer boundary of the domain is implied.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">In two-dimensional Cartesian problems, the surface element is formed by extending the two-dimensional line element a single unit in the Z-direction, so that the surface element is </span><span class="f_T_Code">dl*1</span><span style="color: #000000;">. &nbsp;In this case, the surface integral is the same as the line integral.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">In two-dimensional cylindrical problems, the surface element is formed as </span><span class="f_T_Code">2*pi*r*dl</span><span style="color: #000000;">, so the surface integral is NOT the same as the line integral.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">The region in which the evaluation is made can be controlled by providing a third argument, as in</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Arial'; font-weight: bold; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">SURF_INTEGRAL ( &nbsp;integrand, named_boundary, named_region )</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier'; font-weight: bold; color: #000000;">&nbsp;</span></p>
+<p><span class="f_T_Code">named_region</span><span style="color: #000000;"> must be one of the regions bounded by the selected surface.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier'; font-weight: bold; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?2dsurfaceintegrals.html" target="_top">index.html?2dsurfaceintegrals.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

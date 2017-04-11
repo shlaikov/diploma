@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?smoothing.html"; }
+  else { parent.lazysync('smoothing.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Smoothing Operators in PDE's</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Operators,Operators Smoothing">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   Technical Notes&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Smoothing Operators in PDE's</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="em.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="flexpdehelp.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="3dmeshgenerationinversion.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">The Laplacian Operator as a Bandpass Filter Function</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Assume that we have a function v(x) which we wish to smooth. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">The Fourier expansion of this function is &nbsp; &nbsp; &nbsp;v(x) = &nbsp; &nbsp;  </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> V</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k x).</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Let the smoothed function be &nbsp; &nbsp; u(x) = &nbsp; &nbsp; </span><span style="font-size: 21px; font-family: 'Arial'; color: #000000;"> </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> &nbsp;U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k x), &nbsp;with k the angular velocity in radians per unit distance;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">then the Laplacian of u is &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&nabla;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> u &nbsp;=  </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> (- k</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> ) U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k x).</span></p>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">We define u from the relation &nbsp; &nbsp;u &nbsp;-  </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&nabla;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> u &nbsp; = &nbsp; v</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">then &nbsp; &nbsp; &nbsp;  </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> &nbsp;U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k x) ( 1 + </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> k</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">) &nbsp; &nbsp; = &nbsp;  </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> &nbsp;V</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k x).</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Component by component, &nbsp; U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k x) ( 1 + </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> k</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">) &nbsp; &nbsp; = &nbsp; &nbsp; &nbsp;V</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k x)</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Or, &nbsp;U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> &nbsp;= &nbsp;V</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> /(1 + </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> k</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">)</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">so that the kth frequency component is attenuated by a factor of &nbsp; &nbsp;1/(1 + </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> k</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">).</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">The Sampling Theorem states (McGillem and Cooper, &quot;Continuous and Discrete Signal and System Analysis&quot;, p 164):</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&quot; A band-limited signal can be uniquely represented by a set of samples taken at intervals spaced 1/2W seconds apart, where W is the signal bandwidth in Hz.&quot;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">The sampled signal is the product of the input signal and the sampling function, and the spectrum of the sampled signal is the convolution of the two transforms. &nbsp;The spectrum of the sampling function is a series of impulses at the harmonics of the sampling frequency (2W), and the convolution leads to a replication of the signal spectrum around each of these harmonics. If the signal bandwidth exceeds the harmonic spacing 2W, then the harmonics will overlap, and aliasing will occur.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">From this we infer that if spatial data are available at a spacing of D meters, then the maximum bandwidth in the defined signal will be W = 1/(2D) cycles per meter, corresponding to k = 2</span><span style="font-size: 16px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&pi;</span><span style="color: #000000;">W radians per meter.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">Combining these two items, we wish to infer a value of  </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> &nbsp;that will damp components of U with frequencies above W. &nbsp;However, the Laplacian filter does not have a sharp cutoff at any frequency, so we have some latitude in assigning </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;">.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">Let us find </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> such that the frequency component at frequency W is attenuated by a factor N, ie. &nbsp;  </span></p>
+<p style="margin: 0px -15px 0px 24px;"><span style="color: #000000;">1/(1 + </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> 4</span><span style="font-size: 16px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&pi;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">W</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">) &nbsp; = &nbsp; 1/N, &nbsp; with &nbsp; 1/(2W) = D.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">Then &nbsp;  </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> = (N-1)/(4</span><span style="font-size: 16px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&pi;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">W</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">) &nbsp;= &nbsp;D</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">(N-1)/</span><span style="font-size: 16px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&pi;</span><span style="color: #000000;">2.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">Arbitrarily choosing a frequency attenuation factor of N=2, we get </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> = &nbsp;D</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> /</span><span style="font-size: 16px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&pi;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span class="f_Heading4">Smoothing Steady-state Solutions</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span class="f_Heading4">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">In the solution of partial differential equation systems, it sometimes happens that auxiliary equations must be solved simultaneously with the PDE, and that these auxiliary equations have no spatial coupling, being point relations or other zero-order equations. &nbsp;In these cases, the finite element method works poorly, because the discretization is based on integrals over space, and oscillatory solutions can satisfy the integrals. &nbsp;In such systems, we are justified in adding to the equation a diffusion operator to impose a smoothing on the solution. &nbsp;If we have, for example,</span></p>
+<p style="margin: 0px -15px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">U = F(..)</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">then we can replace this equation with  </span></p>
+<p style="margin: 0px -15px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">U - (D</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">/</span><span style="font-family: 'Lucida Bright Math Italic'; color: #000000;">;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">)</span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&nabla;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> U &nbsp;= &nbsp;F(..), &nbsp; with D the approximate spatial wavelength of acceptable oscillations.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span class="f_Heading4">Damping Time-dependent Systems</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">A similar analysis can be applied to time-dependent partial differential equations.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">Suppose we have a system &nbsp; </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&part;</span><span style="color: #000000;">v/</span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&part;</span><span style="color: #000000;">t = f, in which the discretized equations support high frequency solutions which destabilize the numerical solution process. &nbsp;We wish to damp high frequency components.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Assume that v can be expanded as &nbsp; &nbsp; &nbsp;v(x,t) = &nbsp; &nbsp;  </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> &nbsp;V</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k (x-ct)), &nbsp; where c is a propagation velocity.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Let the smoothed function be &nbsp; &nbsp; u(x,t) = &nbsp; &nbsp;  </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k (x-ct)),</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">then the Laplacian of u is &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&nabla;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> u &nbsp;=  </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> (- k</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> ) U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k (x-ct)), </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">while the time derivative is  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&part;</span><span style="color: #000000;">u/</span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&part;</span><span style="color: #000000;">t = </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> (- ikc ) U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k (x-ct)).</span></p>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">We define u from the relation &nbsp;  </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&part;</span><span style="color: #000000;">u/</span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&part;</span><span style="color: #000000;">t &nbsp;-  </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&nabla;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> u &nbsp; = &nbsp; </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&part;</span><span style="color: #000000;">v/</span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&part;</span><span style="color: #000000;">t</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">then &nbsp; &nbsp; &nbsp;  </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> &nbsp;U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(ik(x-ct)) ( -ikc + </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> k</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">) &nbsp; &nbsp; = &nbsp;  </span><span style="font-size: 19px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&sum;</span><span style="color: #000000;"> &nbsp;V</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> exp(i k (x-ct))(-ikc).</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Component by component, &nbsp; U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> &nbsp;= V</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> (-ikc)/(</span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> k</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> - ikc)</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Or, &nbsp;|U</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;">| = &nbsp;|V</span><span style="font-size: 9px; color: #000000; vertical-align: sub;">k</span><span style="color: #000000;"> |/sqrt(1 + </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> k</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">/c</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">)</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">so that the kth frequency component is attenuated by a factor of &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 60px;"><span style="color: #000000;">1/sqrt(1 + </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> k</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">/c</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">).</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">Again defining W = 1/(2D) and seeking an attenuation factor of 2, we get</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> = (N</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">-1)c</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">/(4</span><span style="font-size: 16px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&pi;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">W</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">) &nbsp;= &nbsp;D</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">(N</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">-1)c</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">/</span><span style="font-size: 16px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&pi;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> &nbsp;= &nbsp;3D</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">c</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">/</span><span style="font-size: 16px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&pi;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;">,</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">or approximately, &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> = &nbsp;2Dc/</span><span style="font-size: 16px; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&pi;</span><span style="color: #000000;">.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">We can now solve the equation &nbsp; &nbsp; </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&part;</span><span style="color: #000000;">u/</span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&part;</span><span style="color: #000000;">t - </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&nabla;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> u = f, &nbsp; &nbsp;with the expectation that u will be a frequency-filtered representation of v.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span class="f_Heading4">Steady-state limits of Time-dependent Equations</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">In some cases, &nbsp;a steady-state limit of a known time-dependent system is desired, but while the time-dependent equation itself is stable, the steady-state equation which results from merely setting the time derivative to zero is not. &nbsp;In these cases, we can replace the time derivative by -</span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&epsilon;</span><span style="color: #000000;"> </span><span style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&nabla;</span><span style="font-size: 9px; color: #000000; vertical-align: super;">2</span><span style="color: #000000;"> u, again with the expectation that u will be a frequency-filtered representation of v.</span></p>
+<p style="margin: 0px -15px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?smoothing.html" target="_top">index.html?smoothing.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

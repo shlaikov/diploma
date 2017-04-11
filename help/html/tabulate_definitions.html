@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?tabulate_definitions.html"; }
+  else { parent.lazysync('tabulate_definitions.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>TABULATE definitions</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="TABULATE definitions">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a> &gt; <a href="definitions.html">Definitions</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">TABULATE definitions</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="tableformat.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="definitions.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="transfer_import_definitions.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>The <span class="f_T_Code">TABULATE</span> statement can be used to generate a <span class="f_T_Code">TABLE</span> internally from arithmetic expressions. &nbsp;The result is a <span class="f_T_Code">TABLE</span> identical to one produced externally and read by the <span class="f_T_Code">TABLE</span> or <span class="f_T_Code">TABLEDEF</span> statements.</p>
+<p>This facility can be used to tabulate parameters that are very expensive to compute, resulting in an improvement in the efficiency of the system solution.</p>
+<p>The <span class="f_T_Code">TABULATE</span> statement has a syntax identical to that of <span class="f_T_Code">ARRAY</span> and <span class="f_T_Code">MATRIX</span> definition, with the addition of a possible third table dimension.</p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">name = TABULATE FOR param1 (first1 BY step1 TO final1 ) : expression</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">name = TABULATE FOR param1 (first1 BY step1 TO final1 ) </span></p>
+<p style="margin: 0px 0px 0px 24px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code" style="font-weight: bold;">FOR param2 (first2 BY step2 TO final2 ) : expression</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">name = TABULATE FOR param1 (first1 BY step1 TO final1 ) </span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;FOR param2 (first2 BY step2 TO final2 ) </span></p>
+<p style="margin: 0px 0px 0px 24px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code" style="font-weight: bold;">FOR param3 (first3 BY step3 TO final3 ) : expression</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p>These statements define <span class="f_T_Code">name</span> to be a <span class="f_T_Code">TABLE</span> of values generated by evaluating <span class="f_T_Code">expression</span> at all combinations of the specified parameters.  <span class="f_T_Code">param1</span>, <span class="f_T_Code">param2</span> and <span class="f_T_Code">param3</span> must be names already defined in the script, and they become the coordinate values of the table.</p>
+<p>As with <span class="f_T_Code">MATRICES</span> and <span class="f_T_Code">ARRAYS</span>, table points can be stated explicitly</p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">name = TABULATE FOR param1 ( p11 , p12 { , p13 ...} ) : expression</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-weight: bold;">&nbsp;</span></p>
+<p>The two forms of coordinate definition can be mixed at will, as in</p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">name = TABULATE FOR param1 ( p1 , p2 , p3 BY step TO final , pN ) : &nbsp;expression</span></p>
+<p><span class="f_T_Code">&nbsp;</span></p>
+<p>Interpretation of the resulting table can be modified as with the <span class="f_T_Code">TABLE</span> statement, by prefixing the <span class="f_T_Code">TABULATE</span> clause by the modifiers <span class="f_T_Code">SPLINE</span>, <span class="f_T_Code">BLOCK</span> or <span class="f_T_Code">SMOOTH</span>.</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?tabulate_definitions.html" target="_top">index.html?tabulate_definitions.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

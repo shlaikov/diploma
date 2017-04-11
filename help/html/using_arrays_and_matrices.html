@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?using_arrays_and_matrices.html"; }
+  else { parent.lazysync('using_arrays_and_matrices.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Using ARRAYS and MATRICES</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="ARRAYS,ARRAYS Using,MATRICES,MATRICES Using">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="user_guide.html">User Guide</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Using ARRAYS and MATRICES</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="importing_data_from_other_appl.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="user_guide.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="solvingnonlinearproblems.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>FlexPDE version 6 includes expanded capabilities for using <span class="f_T_Code">ARRAYS</span> and <span class="f_T_Code">MATRICES</span>.</p>
+<p class="p_CodeExample"><span class="f_T_Code"><a href="arraydefinitions.html">ARRAYS</a></span> and <span class="f_T_Code"><a href="matrix_definitions.html">MATRICES</a> </span>differ from other objects in FlexPDE, such as <span class="f_T_Code">VARIABLES</span> or <span class="f_T_Code">VECTORS</span>, in that no assumptions are made about associations between the <span class="f_T_Code">ARRAY</span> or <span class="f_T_Code">MATRIX</span> and the geometry or mesh structure of the PDE model.  <span class="f_T_Code">ARRAYS</span> and <span class="f_T_Code">MATRICES</span> are simply lists of numbers which can be defined, manipulated and accessed independently of any domain definition or coordinate geometry.</p>
+<p>Typically, an <span class="f_T_Code">ARRAY</span> is created and filled with data using one of the available declaration statements, e.g.,</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">A = </span><span class="f_T_Code_reserved">array</span><span class="f_T_Code">(1,2,3,4,5,6,7,8,9,10)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">B = </span><span class="f_T_Code_reserved">array</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">for</span><span class="f_T_Code"> x(0 </span><span class="f_T_Code_reserved">by</span><span class="f_T_Code"> 0.1 </span><span class="f_T_Code_reserved">to</span><span class="f_T_Code"> 10) &nbsp;: sin(x)+1.1</span><br>
+<span class="f_CodeExample">&nbsp;</span></p>
+<p>New <span class="f_T_Code">ARRAYS</span> can be created by performing arithmetic operations on existing arrays:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">C = exp(A) &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ each element of C is the exponential of the corresponding element of A }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">D = C+A &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ each element of D is the sum of the corresponding elements of C and A }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">E = 100*B &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ each element of E is 100 times the corresponding element of B }</span><br>
+<span class="f_T_Code">&nbsp;</span></p>
+<p>Elements can be accessed individually by indexing operations:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">E[12] = B[3]+9</span><br>
+<span class="f_CodeExample">&nbsp;</span></p>
+<p><span class="f_T_Code">ARRAYS</span> can be used in <span class="f_T_Code">PLOT</span> statements:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">ELEVATION (D) VS A</span><br>
+<span class="f_CodeExample">&nbsp;</span></p>
+<p>Similarly, <span class="f_T_Code">MATRICES</span> can be created and filled with data using one of the available declaration statements, e.g.,</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">M = MATRIX((1,2,3),(4,5,6),(7,8,9))</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">N = MATRIX FOR x(0 BY 0.1 TO 10)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 120px;"><span class="f_T_Code">FOR y(0 BY 0.1 TO 10) : sin(x)*sin(y)+1.1</span><br>
+<span class="f_CodeExample">&nbsp;</span></p>
+<p>New <span class="f_T_Code">ARRAYS</span> or <span class="f_T_Code">MATRICES</span> can be created by performing <span style="font-style: italic;">element-by-element</span> arithmetic operations on existing <span class="f_T_Code">ARRAYS</span> and <span class="f_T_Code">MATRICES</span>:</p>
+<p style="margin: 0px 0px 10px 24px;"><span class="f_T_Code">P = 1/M &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ each element of matrix P is the reciprocal of the corresponding element of M }</span><br>
+<span class="f_T_Code">Q = P+M</span></p>
+<p>The special operators <span class="f_CodeExample">**</span> and <span class="f_CodeExample">//</span> are defined for specifying conventional matrix-array arithmetic:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">R = N**B &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ R is an ARRAY representing the conventional matrix-array multiplication of B by N }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">S = B//N &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ S is the solution of the equation N**S=B (i.e., S is the result of multiplying B by the inverse of N) }</span><br>
+<span class="f_CodeExample">&nbsp;</span></p>
+<p>Elements of <span class="f_T_Code">MATRICES</span> can be accessed individually by indexing operations:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">U = N[3,9]</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">&nbsp;</span></p>
+<p><span class="f_T_Code">ARRAYS</span> and <span class="f_T_Code">MATRICES</span> may also be used to define domain boundaries. &nbsp;See <a href="pathsandpathnames.html#linelists">&quot;Boundary Paths&quot;</a> in the Problem Descriptor Reference.</p>
+<p>&nbsp;</p>
+<p>All operations on <span class="f_T_Code">ARRAYS</span> and <span class="f_T_Code">MATRICES</span> are checked for compatible sizes, and incompatibilities will be reported as errors.</p>
+<p class="p_Notes"><span class="f_Notes" style="font-weight: bold;">Note</span><span class="f_Notes">:</span><span class="f_Notes"> You must remember that the FlexPDE script is not a procedural program. &nbsp;Objects in the script describe the dependencies of quantities, and are not &quot;current state&quot; records of values that can be explicitly modified by subsequent redefinition or looping.</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Examples:</span></p>
+<p>See the example folder <a href="usage_arraysmatrices_arrays.html">&quot;Samples | Usage | Arrays+Matrices&quot;</a> </p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?using_arrays_and_matrices.html" target="_top">index.html?using_arrays_and_matrices.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

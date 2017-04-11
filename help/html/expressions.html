@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?expressions.html"; }
+  else { parent.lazysync('expressions.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Expressions</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="expressions,conditional expressions,IF">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="theelementsofadescriptor.html">The Elements of a Descriptor</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Expressions</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="predefined.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="theelementsofadescriptor.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="repeatedboundaries.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Value Expressions</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Problem descriptors are composed predominantly of arithmetic expressions made of one or more operators, variables, defined values and pairs of parentheses that evaluate to numerical values. &nbsp;In evaluating value expressions, FlexPDE follows the &nbsp;algebraic rules of precedence in which unary operators are evaluated first, followed by binary operators in the following order:</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">power</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">multiplication and division</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">addition and subtraction</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">relational operators (&lt;, &lt;=, =, &lt;&gt;, &gt;=, &gt;)</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">relational combinations (AND, OR)</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">When included in expressions, subexpressions enclosed in pairs of parentheses are evaluated first, without regard to the precedence of any operators which precede or follow them. &nbsp;Parentheses may be nested to any level, with inner subexpressions being evaluated first and proceeding outward. &nbsp;Parentheses must always be used in pairs.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p class="p_Heading4"><span class="f_Heading4">Examples:</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">a = b*(c+d)</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">div(k*grad(u))</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span style="font-family: 'Arial'; font-weight: bold; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Conditional-Value Expressions</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Problem descriptors can contain conditional expressions of the form </span></p>
+<p style="margin: 0px 60px 0px 60px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code_reserved">IF</span><span class="f_T_Code"> condition </span><span class="f_T_Code_reserved">THEN</span><span class="f_T_Code"> subexpression </span><span class="f_T_Code_reserved">ELSE</span><span class="f_T_Code"> subexpression .</span></p>
+<p style="margin: 0px 0px 0px 60px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">This form selects one of the two alternative values as the value of the expression. &nbsp;It is used in expressions like </span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">y = </span><span class="f_T_Code_reserved">IF</span><span class="f_T_Code"> a </span><span class="f_T_Code_reserved">THEN</span><span class="f_T_Code"> b </span><span class="f_T_Code_reserved">ELSE</span><span class="f_T_Code"> c</span><span style="color: #000000;"> </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">analogous to the expression </span><span class="f_T_Code">&quot;y = a ? b : c&quot; </span><span style="color: #000000;">in the C programming language. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">It is </span><span style="font-family: 'Arial'; font-style: italic; font-weight: bold; color: #000000;">not</span><span style="color: #000000;"> the procedural alternative construct </span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">IF</span><span class="f_T_Code"> a </span><span class="f_T_Code_reserved">THEN</span><span class="f_T_Code"> y=b </span><span class="f_T_Code_reserved">ELSE</span><span class="f_T_Code"> y=c &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ Wrong ! }</span><span class="f_T_Code_comment"> </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">familiar in procedural programming languages. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">The </span><span class="f_T_Code">THEN</span><span style="color: #000000;"> or </span><span class="f_T_Code">ELSE</span><span style="color: #000000;"> subexpressions my contain nested </span><span class="f_T_Code">IF...THEN...ELSE</span><span style="font-weight: bold;"> </span><span style="color: #000000;">expressions. &nbsp;Each </span><span class="f_T_Code">ELSE</span><span style="color: #000000;"> will bind to the nearest previous </span><span class="f_T_Code">IF</span><span style="color: #000000;">.</span></p>
+<p><span style="color: #000000;">Conditional expressions used in material parameters can cause numerical trouble in the solution of a PDE system, because they imply an instantaneous change in the result value. &nbsp;This instantaneous change violates assumptions of continuity upon which the solver algorithms are based.</span></p>
+<p><span style="color: #000000;">See</span><span class="f_T_Code"> </span><span class="f_T_Code"><a href="unitfunctions.html">URAMP</a></span><span style="color: #000000;">,</span><span class="f_T_Code"> </span><span class="f_T_Code"><a href="therampfunction.html">RAMP</a></span><span style="color: #000000;"> and</span><span class="f_T_Code"> </span><span class="f_T_Code"><a href="theswagefunction.html">SWAGE</a></span><span style="color: #000000;"> for switching functions that transition smoothly between alternative values.</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?expressions.html" target="_top">index.html?expressions.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

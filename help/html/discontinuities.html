@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?discontinuities.html"; }
+  else { parent.lazysync('discontinuities.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Avoid Discontinuities!</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Discontinuities,Initial Conditions,oscillation,Boundary Conditions,Boundary Conditions Discontinuous">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   Technical Notes&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Technical Notes | &nbsp; &nbsp; &nbsp; Avoid Discontinuities</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="eigen.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="flexpdehelp.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="import.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Discontinuities can cause serious numerical difficulty. &nbsp;This is most glaringly true in time-dependent problems, but can be a factor in steady-state problems as well.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Steady-State</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">The nodal finite element model used in FlexPDE assumes that all variables are continuous throughout the problem domain. &nbsp;This follows from the fact that the mesh nodes that sample the values of the variables are shared between the cells that they adjoin. &nbsp;Internally, the solution variables are interpolated by low-order polynomials over each cell of the finite element mesh. &nbsp;A discontinuous change in boundary conditions along the boundary path, particularly between differing </span><span class="f_T_Code">VALUE</span><span style="color: #000000;"> conditions, will require intense mesh refinement to resolve the transition.  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">Whenever possible, use </span><span class="f_T_Code"><a href="therampfunction.html">RAMP</a></span><span style="color: #000000;">, <a href="unitfunctions.html">URAMP</a>, <a href="theswagefunction.html">SWAGE</a>, part of a sine or supergaussian, or some other smooth function to make a transition in value conditions over a physically meaningful distance.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">If the quantity you have chosen as a system variable is in fact expected to be discontinuous at an interface, consider choosing a different variable which is continuous, and from which the real variable can be computed.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Time-Dependent</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">It is a common tendency in posing problems for numerical solution to specify initial conditions or boundary conditions as discontinuous functions, such as &quot;at time=2 seconds, the boundary temperature is raised instantaneously to 200 degrees.&quot; &nbsp;A little thought will reveal that such statements are totally artificial. &nbsp;They violate the constraints of physics, and they pose impossible conditions for numerical solution. &nbsp;Not quite so obvious is the case where a boundary condition is applied at the start of the problem which is inconsistent with the initial values. &nbsp;This is in fact a statement that &quot;at time=0 the boundary temperature is raised instantaneously to a new value&quot;, and so is the same as the statement above.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">To raise a temperature &quot;instantaneously&quot; requires an infinite heat flux. &nbsp;To move a material position &quot;instantaneously&quot; requires an infinite force. &nbsp;In the real world, nothing happens &quot;instantaneously&quot;. &nbsp;Viscosity diffuses velocity gradients, elastic deformation softens displacement velocities, thermal diffusion smoothes temperature changes. &nbsp;At some scale, all changes in nature are smooth.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">In the mathematical view, the Fourier transform of a step function is (1/frequency). &nbsp;This means that a discontinuity excites an infinite spectrum of spatial and temporal frequencies, with weights that diminish quite slowly at higher frequencies. &nbsp;An &quot;accurate&quot; numerical model of such a system would require an infinite number of nodes and infinitesimal time steps, to satisfy sampling requirements of two samples per cycle. &nbsp;Any frequency components for which the sampling requirement is not met will be modeled wrong, and will cause oscillations or inaccuracies in the solution.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">How then have numerical solutions been achieved to these problems over the decades? &nbsp;The answer is that artificial numerical diffusion processes have secretly filtered the frequency spectrum of the solution to include only low-frequency components. &nbsp;Or the answers have been wrong. &nbsp;Right enough to satisfy the user, and wrong enough to satisfy the calculation.  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">It is useful in this context to note that the effect of a diffusion term </span><span class="f_T_Code">D*div(grad(U))</span><span style="color: #000000;"> is to apply an attenuation of </span><span class="f_T_Code">1/(1+D*K*K)</span><span style="color: #000000;"> to the </span><span class="f_T_Code">K</span><span style="color: #000000;">-th frequency component of </span><span class="f_T_Code">U</span><span style="color: #000000;">. &nbsp;Conversely, any side effect of a numerical approximation which damps high frequency components is similar to a diffusion operator in the PDE.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">We have attempted in FlexPDE to eliminate as many sources of artificial solution behavior as possible. &nbsp;Automatic timestep control and adaptive gridding are mechanisms which try to follow accurately the solution of the posed PDE. &nbsp;Discontinuities cannot be accurately modeled, and are therefore, strictly speaking, ill-posed problems. &nbsp;They cause tiny timesteps and intense mesh refinement in the early phases, causing long running times.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">What can be done?  </span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="30"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;">Start your problem with initial conditions which are self-consistent; this means the values should correspond to a steady state solution with some set of boundary conditions. If you cannot by inspection determine these values, use a steady-state FlexPDE run with </span><span class="f_T_Code">TRANSFER</span><span style="color: #000000;"> to precompute the initial values.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="30"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;">Use </span><span class="f_T_Code">RAMP</span><span style="color: #000000;">, </span><span class="f_T_Code">URAMP</span><span style="color: #000000;">, </span><span class="f_T_Code">SWAGE</span><span style="color: #000000;"> or other smooth function of time to turn the source value on over a meaningful interval of time.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="30"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;">Whenever possible, instead of an instantaneously applied value condition, use a flux boundary condition which reflects the maximum physical initial flux that could arise from such a step condition (see the sample problem </span><span class="f_T_Code">SAMPLES|Applications|Misc|Diffusion.pde</span><span style="color: #000000;"> for an example). </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="30"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="color: #000000;">Volume source functions and Natural boundary conditions are not as sensitive as direct conditions on the variables, because they appear in the numerical solution as integrals over some interval, and are thus somewhat &quot;smoothed&quot;.</span></td></tr></table></div><p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">It may seem like an imposition that we should require such adulteration of your pure PDE, but the alternative is that we apply these adulterations behind your back, in unknown quantities and with unknown affect on your solution. &nbsp;At least this way, you're in control.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?discontinuities.html" target="_top">index.html?discontinuities.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?transfer_import_definitions.html"; }
+  else { parent.lazysync('transfer_import_definitions.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>TRANSFER Import Definitions</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="TRANSFER,TRANSFER Statement,TRANSFERMESH,TRANSFERMESH Statement,TRANSFERMESHTIME">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a> &gt; <a href="definitions.html">Definitions</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">TRANSFER Import Definitions</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="tabulate_definitions.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="definitions.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="transferfileformat.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>FlexPDE supports a <span class="f_T_Code">TRANSFER</span> facility for exchanging data between FlexPDE problem runs. &nbsp;The format is unique to FlexPDE, and is not supported by other software products.  </p>
+<p>A <span class="f_T_Code">TRANSFER</span> file contains data defined on the same unstructured triangle or tetrahedral mesh as used in the creating FlexPDE computation, and maintains the full information content of the original computation. &nbsp;It also contains a description of the problem domain definition of the creating run.</p>
+<p>The <span class="f_T_Code">TRANSFER</span> input statement has three forms</p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">TRANSFER ( 'filename' , name1 &nbsp;{ , name2 , ... } )</span><br>
+<span class="f_T_Code" style="font-weight: bold;">TRANSFERMESH ( 'filename', name1 { ,name2,.. } )</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">TRANSFERMESHTIME ( 'filename', name1 { ,name2,.. } )</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p>The file specified in the transfer input function must have been written by FlexPDE using the <span class="f_T_Code">TRANSFER</span> output function. &nbsp;The names listed in the input function will become defined as if they had appeared in a <span class="f_T_Code">&quot;name=&quot;</span> &nbsp;definition statement. &nbsp;The names will be positionally correlated with the data fields in the referenced output file.</p>
+<p style="margin: 0px 0px 0px 0px;">With the <span class="f_T_Code">TRANSFER</span> form, the mesh structure of the imported file is stored independently from the computation mesh, and is not influenced by refinement or merging of the computation mesh.  </p>
+<p style="margin: 0px 0px 0px 17px;"><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">The </span><span class="f_T_Code">TRANSFERMESH</span><span style="color: #000000;"> input statement not only imports data definitions stored on disk, but also </span><span style="color: #ff0000;">IMPOSES THE FINITE ELEMENT MESH STRUCTURE</span><span style="color: #000000;"> of the imported file onto the current problem, bypassing the normal mesh generation process.  </span>In order for this imposition to work, the importing descriptor file must have <span style="color: #ff0000;">EXACTLY</span><span style="font-family: 'Arial'; color: #ff0000;"> </span>the same domain definition structure as the exporting file. &nbsp;Be sure to use a copy of the exporting domain definition in your importing descriptor. &nbsp;You may change the boundary conditions, but not the boundary positions and ordering.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">The <span class="f_T_Code">TRANSFERMESHTIME</span> statement acts precisely as the <span class="f_T_Code">TRANSFERMESH</span> statement, except that the problem time is imported from the transfer file as well as the mesh. &nbsp;This statement can be used to resume a time-dependent problem from the state recorded in the transfer file.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-weight: bold;">Note:</span> <span class="f_T_Code">TRANSFER</span> import does not restore the state of <span class="f_T_Code">HISTORY</span> plots.</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-weight: bold; text-decoration: underline;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-weight: bold; text-decoration: underline;">Examples:</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span style="font-family: 'Arial';"><a href="usage_import_export_transfer_export.html">Samples | Usage | Import-Export | Transfer_Export.pde </a></span></p>
+<p style="margin: 0px 60px 0px 17px;"><span style="font-family: 'Arial';"><a href="usage_import_export_transfer_import.html">Samples | Usage | Import-Export | Transfer_Import.pde </a></span></p>
+<p style="margin: 0px 60px 0px 17px;"><span style="font-family: 'Arial';"><a href="usage_import_export_mesh_export_.html">Samples | Usage | Import-Export | Mesh_export.pde</a></span></p>
+<p style="margin: 0px 60px 0px 17px;"><span style="font-family: 'Arial';"><a href="usage_import_export_mesh_import_.html">Samples | Usage | Import-Export | Mesh_import.pde</a></span></p>
+<p style="margin: 0px 60px 0px 17px;"><span style="font-family: 'Arial';"><a href="usage_stoprestart_restart_export.html">Samples | Usage | Stop+Restart | Restart_export.pde</a></span></p>
+<p style="margin: 0px 60px 0px 17px;"><span style="font-family: 'Arial';"><a href="usage_stoprestart_restart_import.html">Samples | Usage | Stop+Restart | Restart_import.pde</a></span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?transfer_import_definitions.html" target="_top">index.html?transfer_import_definitions.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

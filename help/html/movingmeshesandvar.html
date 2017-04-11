@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?movingmeshesandvar.html"; }
+  else { parent.lazysync('movingmeshesandvar.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Moving Meshes</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Moving Meshes,MOVE">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a> &gt; <a href="variables.html">Variables</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Moving Meshes and Variables</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="complex_variables.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="variables.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="variable_arrays.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 6px 0px 0px;"><span style="color: #000000;">FlexPDE can be configured to move the finite element mesh in time-dependent problems.</span></p>
+<p style="margin: 0px 6px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 6px 0px 0px;"><span style="color: #000000;">In order to do this, you must assign a </span><span class="f_T_Code">VARIABLE</span><span style="color: #000000;"> as a surrogate for each coordinate you wish to modify. &nbsp;This specification uses the form </span></p>
+<p style="margin: 0px 6px 0px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 6px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">variable_name = MOVE ( coordinate_name )</span><span class="f_T_Code">  </span></p>
+<p style="margin: 0px 6px 0px 0px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px 6px 0px 0px;">This declaration assigns <span class="f_T_Code">variable_name</span> as a surrogate variable for the <span class="f_T_Code">coordinate_name</span>. &nbsp;You may subsequently assign <span class="f_T_Code">EQUATIONS</span> and boundary conditions to the surrogate variable in the normal way, and these equations and boundary conditions will be imposed on the values of the selected mesh coordinate at the computation nodes.</p>
+<p style="margin: 0px 6px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 6px 0px 0px;"><span style="font-weight: bold;">Example:</span></p>
+<p style="margin: 0px 6px 0px 17px;"><span class="f_T_Code_reserved">VARIABLES</span></p>
+<p style="margin: 0px 6px 0px 33px;"><span class="f_T_Code">U,V</span></p>
+<p style="margin: 0px 6px 0px 33px;"><span class="f_T_Code">Xm = </span><span class="f_T_Code_reserved">MOVE</span><span class="f_T_Code">(X)</span></p>
+<p style="margin: 0px 6px 0px 17px;"><span class="f_Heading4">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">See <a href="movingmeshes.html">Moving Meshes</a> later in this document and the Moving Meshes chapter in the <a href="movingmeshesoverview.html">User Guide</a>.</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?movingmeshesandvar.html" target="_top">index.html?movingmeshesandvar.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

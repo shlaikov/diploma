@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?extrusion_spec.html"; }
+  else { parent.lazysync('extrusion_spec.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Extrusions in 3D</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Three-Dimensional Problems,3D,3D Problems,X-Y,Z-dimension,LAYER,SURFACE,Projection,X-Z,EXTRUSION,BOUNDARIES,REGION">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   Technical Notes&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Technical Notes | &nbsp; &nbsp; &nbsp; Specification of Three-Dimensional Geometries as Extrusions</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="import.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="flexpdehelp.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="em.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;">The specification of three-dimensional geometries as extrusions in FlexPDE is based on the decomposition of the object into two parts:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="30"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The projection of the object onto the base X-Y plane.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="30"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The division of the extrusion of this projection into layers in the Z dimension.</td></tr></table></div><p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">Let us take as a model a sandwich formed by a layer of dielectric material with two rectangular conductive patches, top and bottom, with differing dimensions. &nbsp;We wish to model the dielectric, the conductive patches and the surrounding air.</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-size: 16px; font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-align: center; margin: 0px 0px 0px 0px;"><img src="extrude1.zoom50.png" width="377" height="198" border="0" alt=""></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">First, we form the projection of this figure onto the X-Y plane, showing all relevant interfaces:</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="text-align: center; margin: 0px 0px 0px 0px;"><img src="extrude2.zoom50.png" width="261" height="255" border="0" alt=""></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">The geometry is specified to FlexPDE primarily in terms of this projection. &nbsp;A preliminary description of the 2D base figure is then: </p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">BOUNDARIES</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 1 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{this is the outer boundary of the system}</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(0,0)</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (5,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (5,5) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (0,5) </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2 &nbsp; &nbsp;  </span><span class="f_T_Code_comment">{this region overrides region 1 and describes the larger plate}</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(1,0)</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (4,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (4,5) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1,5) </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 3 &nbsp; &nbsp; </span><span class="f_T_Code_comment"> {this region overrides region 1 &amp; 2 and describes the smaller plate}</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(2,0)</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (3,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (3,5) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (5,3) </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-size: 16px; font-family: 'Courier'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">Note that any part of the projection which will have a different stack of material properties above it must be represented by a region. &nbsp;All parts of the projection which will have the same stack of material properties may be included in a single region, even though they may be disjoint in the projection.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">Next we view the X-Z cross-section of the sandwich:</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="text-align: center; margin: 0px 0px 0px 0px;"><img src="extrude3.zoom50.png" width="346" height="205" border="0" alt=""></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="text-align: center; margin: 0px 0px 0px 0px;"><img src="extrude4.zoom50.png" width="469" height="286" border="0" alt=""></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">The layer structure is specified bottom-up to FlexPDE in the <span class="f_T_Code">EXTRUSION</span> statement:</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">EXTRUSION</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;Bottom&quot; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">Z=0</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;Bottom Air&quot;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;Bottom Air - Metal&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">Z=0.9</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;Bottom Metal&quot;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;Bottom Metal - Dielectric&quot; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code">Z=1</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;dielectric&quot;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;Top Metal - Dielectric&quot; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">Z=2</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;Top Metal&quot;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;Top Metal - Air&quot; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">Z=2.1</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code"> &nbsp;  </span><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;Top Air&quot;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">  </span><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code">  &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">&quot;top&quot; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">Z=3</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">The <span class="f_T_Code">LAYER</span> statements are optional, as are the names of the surfaces. &nbsp;If surfaces and layers are not named, then they must subsequently be referred to by numbers, with surface numbers running in this case from 1 to 6 and layer numbers from 1 to 5.  <span class="f_T_Code">SURFACE 1</span><span style="font-family: 'Courier'; color: #000000;"> </span>is <span class="f_T_Code">Z=0</span>, and <span class="f_T_Code">LAYER 1</span> is between <span class="f_T_Code">SURFACE 1</span> and <span class="f_T_Code">SURFACE 2</span>.</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p class="p_Notes"><span class="f_Notes">Note: a shorthand form to this specification is:</span><br>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code_reserved">EXTRUSION</span><span class="f_T_Code"> Z=(0, 0.9, 1, 2, 2.1, 3)</span><br>
+<span class="f_Notes">In this form layers and surfaces must subsequently be referred to by number.</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">Assume that we have the following <span class="f_T_Code">DEFINITIONS</span> and <span class="f_T_Code">EQUATIONS</span> section:</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">DEFINITIONS</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">K = Kair &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{default the dielectric coefficient &nbsp; to the value for air}</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">Kdiel = 999 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{replace 999 with problem value}</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">Kmetal = &nbsp;999 &nbsp; </span><span class="f_T_Code_comment"> {replace 999 with problem value}</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">EQUATIONS</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">DIV(K*GRAD(V))</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">We now modify the <span class="f_T_Code">BOUNDARIES</span> section to include layering information in the various regions:</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">BOUNDARIES</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 1 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{this is the outer boundary of the system}</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Dielectric&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> K = Kdiel &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment" style="font-style: italic; font-weight: bold;">{all other layers default to Kair}</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(0,0)</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (5,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (5,5) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (0,5) </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2 &nbsp; &nbsp;  </span><span class="f_T_Code_comment">{this region overrides region 1 and describes the larger plate}</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Bottom Metal&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> K = Kmetal</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Dielectric&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> K = Kdiel</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(1,0)</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (4,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (4,5) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1,5) </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 3 &nbsp; &nbsp;  </span><span class="f_T_Code_comment">{this region overrides region 1 &amp; 2 and describes the smaller plate}</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Bottom Metal&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> K = Kmetal</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Dielectric&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> K = Kdiel</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Top Metal&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> Kmetal</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(2,0)</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (3,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (3,5) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (5,3) </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">If layers are not named, then layer numbers must be used in place of the names above. &nbsp;The <span class="f_T_Code">LAYER</span> specifiers act as group headers, and all definitions following a <span class="f_T_Code">LAYER</span> specification refer to that layer, until the group is broken by <span class="f_T_Code">SURFACE</span><span style="font-family: 'Courier'; color: #000000;">, </span><span class="f_T_Code">LAYER</span> or <span class="f_T_Code">START</span>. &nbsp;Definitions which apply to all layers of the region must appear before any <span class="f_T_Code">LAYER</span> specification.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">The specification of boundary conditions proceeds in a similar way. &nbsp;As in the description of 2D problems in FlexPDE, the default boundary condition is always <span class="f_T_Code">NATURAL(variable)=0</span>. &nbsp;In the X-Y projection of our problem, which forms the basis of our 3D description, we have described the bounding lines of the regions. &nbsp;A boundary condition attached to any of these bounding lines will apply to all layers of the vertical surface formed by extruding the line. &nbsp;Boundary conditions along this surface may be specialized to a layer in the same way as the material properties are specialized to a layer. &nbsp;Assume that we wish to apply a potential of <span class="f_T_Code"> V0</span> to one end of the lower plate and <span class="f_T_Code">V1</span> to the opposite end of the upper plate. &nbsp;We will modify the descriptor in the following way:</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">BOUNDARIES</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 1 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ this is the outer boundary of the system }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Dielectric&quot;</span><span class="f_T_Code"> K = Kdiel &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ all other layers default to Kair }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(0,0) </span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO </span><span class="f_T_Code">(5,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (5,5) </span><span class="f_T_Code_reserved">TO </span><span class="f_T_Code">(0,5)  </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ this region overrides region 1, and describes the larger plate }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Bottom Metal&quot;</span><span class="f_T_Code"> K = Kmetal &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Dielectric&quot;</span><span class="f_T_Code"> K = Kdiel &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(1,0)</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Bottom Metal&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">VALUE</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(V)=V0</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (4,0) </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Bottom Metal&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">NATURAL</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(V)=0</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (4,5) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1,5)</span><span class="f_T_Code_reserved"> TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">REGION</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> 3 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment" style="font-style: italic; font-weight: bold;">{ this region overrides regions 1&amp;2, and describes the smaller plate}</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Bottom Metal&quot;</span><span class="f_T_Code"> K = Kmetal &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Dielectric&quot;</span><span class="f_T_Code"> K = Kdiel &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Top Metal&quot;</span><span class="f_T_Code"> K = Kmetal &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(2,0)</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (3,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (3,5) </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Top Metal&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">VALUE</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(V)=V1</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (2,5) </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Top Metal&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">NATURAL</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(V)=0</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">The final requirement for boundary condition specification is the attachment of boundary conditions to the X-Y end faces of the extruded figure. &nbsp;This is done by the <span class="f_T_Code">SURFACE</span> modifier. &nbsp;Suppose we wish to force the bottom surface to <span class="f_T_Code">V=0</span> and the top to <span class="f_T_Code">V=1</span>. &nbsp;We would modify the descriptor as follows: </p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">BOUNDARIES</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">SURFACE</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Bottom&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">VALUE</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(V)=0</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">SURFACE</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">&quot;Top&quot;</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">VALUE</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">(V)=1</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 1 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ this is the outer boundary of the system }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Dielectric&quot;</span><span class="f_T_Code"> K = Kdiel &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ all other layers default to Kair }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(0,0) </span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO </span><span class="f_T_Code">(5,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (5,5) </span><span class="f_T_Code_reserved">TO </span><span class="f_T_Code">(0,5)  </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ this region overrides region 1, and describes the larger plate }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Bottom Metal&quot;</span><span class="f_T_Code"> K = Kmetal &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Dielectric&quot;</span><span class="f_T_Code"> K = Kdiel &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(1,0)</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Bottom Metal&quot;</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(V)=V0</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (4,0) </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Bottom Metal&quot;</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(V)=0</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (4,5) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1,5)</span><span class="f_T_Code_reserved"> TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 3 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ this region overrides regions 1&amp;2, and describes the smaller plate}</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Bottom Metal&quot;</span><span class="f_T_Code"> K = Kmetal &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Dielectric&quot;</span><span class="f_T_Code"> K = Kdiel &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Top Metal&quot;</span><span class="f_T_Code"> K = Kmetal &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(2,0)</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (3,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (3,5) </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Top Metal&quot;</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(V)=V1</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (2,5) </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> </span><span class="f_T_Code_string">&quot;Top Metal&quot;</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(V)=0</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">Observe that since the <span class="f_T_Code">SURFACE</span> statements lie outside any <span class="f_T_Code">REGION</span> specification, they apply to all regions of the surface. &nbsp;To specialize the <span class="f_T_Code">SURFACE</span> statement to a specific region, it should be included within the <span class="f_T_Code">REGION</span> definition.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">In this example, we have used named surfaces and layers. &nbsp;The same effect can be achieved by omitting the layer names and specifying layers and surfaces by number:</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">BOUNDARIES</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code"> 1 </span><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(V)=0</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">SURFACE</span><span class="f_T_Code"> 6 </span><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(V)=1</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 1 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ this is the outer boundary of the system }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 3 K = Kdiel &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ all other layers default to Kair }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(0,0) </span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO </span><span class="f_T_Code">(5,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (5,5) </span><span class="f_T_Code_reserved">TO </span><span class="f_T_Code">(0,5)  </span><span class="f_T_Code_reserved">TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ this region overrides region 1, and describes the larger plate }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 2 K = Kmetal &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 3 K = Kdiel &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(1,0)</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 2 </span><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(V)=V0</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (4,0) </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 2 </span><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(V)=0</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (4,5) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (1,5)</span><span class="f_T_Code_reserved"> TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 3 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ this region overrides regions 1&amp;2, and describes the smaller plate}</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 2 K = Kmetal &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 3 K = Kdiel &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 4 K = Kmetal &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(2,0)</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (3,0) </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> (3,5) </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 4 </span><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(V)=V1</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (2,5) </span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">LAYER</span><span class="f_T_Code"> 4 </span><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(V)=0</span></p>
+<p style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">LINE TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">Remember that in our terminology a <span class="f_T_Code">REGION</span> refers to an area in the projected base plane, while a <span class="f_T_Code">LAYER</span> refers to a section of the Z-extrusion. &nbsp;A particular 3D chunk of the figure is uniquely identified by the intersection of a <span class="f_T_Code">REGION</span> and a <span class="f_T_Code">LAYER</span>.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">A completed form of the descriptor outlined here may be found in the sample problem &quot;Samples | Usage | 3D_Domains | 3D_Extrusion_spec.pde&quot;. &nbsp;A slightly more complex and interesting variation may be found in &quot;Samples | Applications | Electricity | 3D_Capacitor.pde&quot;.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?extrusion_spec.html" target="_top">index.html?extrusion_spec.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

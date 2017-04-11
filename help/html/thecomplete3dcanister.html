@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?thecomplete3dcanister.html"; }
+  else { parent.lazysync('thecomplete3dcanister.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>The Complete 3D Canister</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Canister Example">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="user_guide.html">User Guide</a> &gt; <a href="usingflexpdeinthree_dimensi.html">Using FlexPDE in Three-Dimensional Problems</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">The Complete 3D Canister</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="specifyingplotsoncutplanes2.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="usingflexpdeinthree_dimensi.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="settingboundaryconditionsin.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p><span style="color: #000000;">With all the described modifications installed, the full script for the 3D canister problem is as follows:</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">TITLE</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'Heat flow around an Insulating Canister'</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">COORDINATES</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code" style="font-style: italic; font-weight: bold;">Cartesian3</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">VARIABLES</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">Phi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ the temperature }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">DEFINITIONS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">K = 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ default conductivity }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">R = 0.5 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ blob radius }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">EQUATIONS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code">Div(-k*grad(phi)) = 0 &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">EXTRUSION</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">SURFACE</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'Bottom'</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> &nbsp;z=-1/2</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'underneath'</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">SURFACE</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'Can Bottom'</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> &nbsp;z=-1/4</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'Can'</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">SURFACE</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'Can Top'</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> &nbsp;z=1/4</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'above'</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">SURFACE</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> </span><span class="f_T_Code_string" style="font-style: italic; font-weight: bold;">'Top'</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">   &nbsp; &nbsp; &nbsp; &nbsp;z=1/2</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">BOUNDARIES</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 1 </span><span class="f_T_Code_string">'box'</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(-1,-1) </span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(Phi)=0 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (1,-1)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(Phi)=0 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (1,1)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">VALUE</span><span class="f_T_Code">(Phi)=1 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_reserved">LINE TO</span><span class="f_T_Code"> (-1,1)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">NATURAL</span><span class="f_T_Code">(Phi)=0 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_reserved">LINE TO CLOSE</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LIMITED</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_string">'blob'</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code_comment">{ the embedded blob }</span></p>
+<p style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">LAYER</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> 2 k = 0.001 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment" style="font-style: italic; font-weight: bold;">{ the canister only }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code"> </span><span class="f_T_Code_string">'ring' </span><span class="f_T_Code">(R,0) </span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 96px;"><span class="f_T_Code_reserved">ARC</span><span class="f_T_Code">(</span><span class="f_T_Code_reserved">CENTER</span><span class="f_T_Code">=0,0) </span><span class="f_T_Code_reserved">ANGLE</span><span class="f_T_Code">=360 </span><span class="f_T_Code_reserved">TO</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved">CLOSE</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">PLOTS</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">GRID</span><span class="f_T_Code">(y,z)</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">ON</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> x=0</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">CONTOUR</span><span class="f_T_Code">(Phi)</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">ON</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> x=0</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">VECTOR</span><span class="f_T_Code">(-k*grad(Phi))</span><span class="f_T_Code"> </span><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">ON</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> x=0</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">ELEVATION</span><span class="f_T_Code">(Phi) </span><span class="f_T_Code_reserved">FROM</span><span class="f_T_Code"> (0,-1,</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">0</span><span class="f_T_Code">) </span><span class="f_T_Code_reserved">to</span><span class="f_T_Code"> (0,1,</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;">0</span><span class="f_T_Code">) &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_T_Code_comment">{ note 3D coordinates }</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">END</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">Since we have specified no boundary conditions on the top and bottom extrusion surfaces, they default to zero flux. &nbsp;This is the standard default, for reasons explained in an earlier section.</span></p>
+<p><span style="color: #000000;">The first three of the requested </span><span class="f_T_Code">PLOTS</span><span style="font-family: 'Arial'; font-weight: bold; color: #000000;"> </span><span style="color: #000000;">are:</span></p>
+<p style="text-align: center; margin: 0px 0px 0px 0px;"><img src="3ex301_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+<p style="text-align: center; margin: 0px 0px 0px 0px;"><img src="3ex202_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+<p style="text-align: center; margin: 0px 0px 0px 0px;"><img src="3ex203_001.zoom16.png" width="492" height="369" border="0" alt=""></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?thecomplete3dcanister.html" target="_top">index.html?thecomplete3dcanister.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

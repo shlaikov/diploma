@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?coordinatescaling.html"; }
+  else { parent.lazysync('coordinatescaling.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Coordinate Scaling</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="coordinates,coordinates scaling">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   Technical Notes&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Coordinate Scaling</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="interpretingerrorestimates.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="flexpdehelp.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="makingmovies.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;">FlexPDE treats all spatial coordinates on an equal footing, and tries to create meshes that are balanced in size in all coordinates.</p>
+<p style="margin: 0px 0px 0px 0px;">Sometimes, though, there are problems in which one dimension is expected to have much less variation that the others, and fully meshing the domain with equilateral cells creates an enormous and expensive mesh. &nbsp;In these cases, it would be advantageous to scale the long dimension to bring the coordinate sizes into balance. &nbsp;Similarly, in semiconductor problems, for example, the structure is extremely thin, and would benefit from an expansion of the Z thickness coordinate.  </p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">It is possible that FlexPDE will eventually implement automatic coordinate scaling, but in the meantime, users can implement it manually.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">Consider as an example the heat equation </p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">div(k*grad(T))+Q = C*dt(T)</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">with k the conductivity, <span class="f_T_Code">Q</span> a source and <span class="f_T_Code">C</span> the heat capacity.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">Define a coordinate transformation, </p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">z = s*w</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">where <span class="f_T_Code">w</span> is the physical coordinate, <span class="f_T_Code">z</span> is the FlexPDE coordinate, and s is a scaling factor.</p>
+<p style="margin: 0px 0px 0px 0px;">The expanded physical equation is then<br>
+&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">dx(k*dx(T)) + dy(k*dy(T)) + dw(k*dw(T)) + Q = C*dt(T)</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">We can transform the heat equation using this transformation and observing that</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">dw(f) = (</span><span class="f_T_Code" style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial';">&part;</span><span class="f_T_Code">f/</span><span class="f_T_Code" style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial';">&part;</span><span class="f_T_Code">w) = (</span><span class="f_T_Code" style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial';">&part;</span><span class="f_T_Code">f/</span><span class="f_T_Code" style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial';">&part;</span><span class="f_T_Code">z)*(</span><span class="f_T_Code" style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial';">&part;</span><span class="f_T_Code">z/</span><span class="f_T_Code" style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial';">&part;</span><span class="f_T_Code">w) = s*dz(f)</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">The result is </p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">(1) &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">dx(k*dx(T)) + dy(k*dy(T)) + s*dz(k*s*dz(T)) + Q = C*dt(T)</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-weight: bold; text-decoration: underline;">Flux Conservation</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">In forming the finite element model for this equation, FlexPDE assumes continuity of the surface integrals generated by integration-by-parts of the second-order terms (equivalent in this case to the Divergence Theorem). This is the Natural Boundary Condition for the equation, as discussed elsewhere in the FlexPDE documentation.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">The z-directed flux terms in the transformed equation therefore assume that <span class="f_T_Code">s^2*k*dz(T)</span> is continuous across cell interfaces. &nbsp;This is equivalent to flux conservation in the physical system as long as s is constant throughout the domain.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">In order to guarantee conservation of flux in the presence of differing scale factors in layers, we must have the following equality across an interface between materials 1 and 2:</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">k1*dw(T)</span><span class="f_T_Code" style="font-size: 9px; font-family: 'Trebuchet MS'; vertical-align: sub;">1</span><span class="f_T_Code"> = k2*dw(T)</span><span class="f_T_Code" style="font-size: 9px; font-family: 'Trebuchet MS'; vertical-align: sub;">2</span></p>
+<p style="margin: 0px 0px 0px 0px;">or</p>
+<p style="margin: 0px 0px 0px 0px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">k1*s1*dz(T)</span><span class="f_T_Code" style="font-size: 9px; font-family: 'Trebuchet MS'; vertical-align: sub;">1</span><span class="f_T_Code"> = k2*s2*dz(T)</span><span class="f_T_Code" style="font-size: 9px; font-family: 'Trebuchet MS'; vertical-align: sub;">2</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">This will be satisfied if we divide our transformed equation by <span class="f_T_Code">s</span> :</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">(2) &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code">dx(k*dx(T))/s + dy(k*dy(T))/s + dz(k*s*dz(T)) + Q/s = C*dt(T)/s</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;">where <span class="f_T_Code">s</span> is defined as <span class="f_T_Code">s1</span> in material 1 and <span class="f_T_Code">s2</span> in material 2.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-weight: bold; text-decoration: underline;">Un-Scaling Fluxes</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">Fluxes appropriate to the unscaled system can be recovered by the same modifications as those made in the PDE:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Fluxes in the scaled direction must be <span style="font-style: italic;">multiplied</span> by the scale factor. Integrals of these fluxes need not be further modified, as they are integrated over surfaces in true coordinates.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Fluxes in the unscaled directions are correctly computed in true coordinates, but when integrated over surfaces, they must be <span style="font-style: italic;">divided</span> by the scale factor to account for the scaled area.</td></tr></table></div><p style="margin: 0px 0px 0px 0px;">Flux integrals then appear in the same form as in the scaled PDE:</p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">Total_Real_Flux = Surf_Integral(NORMAL(-k*dx(T)/s, -k*dy(T)/s, -k*dz(T)*s)</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-weight: bold; text-decoration: underline;">Natural Boundary Conditions</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">The natural boundary condition defines the argument of the outermost derivative operator (or the argument of the divergence). &nbsp;In the conservative equation (2):</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Components in the unscaled direction have been divided by <span class="f_T_Code">s</span>. Therefore the natural boundary conditions for these components must be divided by <span class="f_T_Code">s</span>. &nbsp;(e.g. <span class="f_T_Code">NATURAL(T) = x_flux/s</span> &nbsp; &nbsp;on x-normal surfaces.)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>In the scaled direction, the value defined by the natural is <span class="f_T_Code">k*s*dz(T)</span> which is in fact <span class="f_T_Code">k*dw(T)</span>, the flux in the physical coordinate system. The natural in the scaled direction is therefore unmodified by the scaling. &nbsp; (e.g. <span class="f_T_Code">NATURAL(T) = z_flux</span> &nbsp; &nbsp;on z-normal surfaces.)</td></tr></table></div><p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span style="font-weight: bold; text-decoration: underline;">Examples</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><a href="usage_coordinate_scaling_scaled_z.html">&quot;Samples | Usage | Coordinate_Scaling | Scaled_Z.pde&quot;</a> shows the implementation of this technique.  </p>
+<p style="margin: 0px 0px 0px 0px;"><a href="usage_coordinate_scaling_unscaled_z.html">&quot;Samples | Usage | Coordinate_Scaling | UnScaled_Z.pde&quot;</a> provides an unscaled reference for comparison.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?coordinatescaling.html" target="_top">index.html?coordinatescaling.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

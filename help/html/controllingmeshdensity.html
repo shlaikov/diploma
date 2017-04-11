@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?controllingmeshdensity.html"; }
+  else { parent.lazysync('controllingmeshdensity.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Controlling Mesh Density</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Mesh Refinement,Mesh Refinement Controls">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="user_guide.html">User Guide</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Controlling Mesh Density</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="thepulsatingblob.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="user_guide.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="postprocessingwithflexpde.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p><span style="color: #000000;">There are several mechanisms available for controlling the cell density in the mesh created by FlexPDE.</span></p>
+<p><span class="f_Heading4">Implicit Density</span></p>
+<p><span style="color: #000000;">The cell density of the created mesh will follow the spacing of points in the bounding segments. &nbsp;A very small segment in the boundary will cause a region of small cells in the vicinity of the segment.</span></p>
+<p><span class="f_Heading4">Maximum Density</span></p>
+<p><span style="color: #000000;">The global command</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code">SELECT NGRID = &lt;number&gt;  </span><span class="f_T_Code"> </span><br>
+<span class="f_T_Code">&nbsp;</span></p>
+<p><span style="color: #000000;">controls the maximum cell size. &nbsp;The mesh will be generated with approximately </span><span class="f_CodeExample">NGRID</span><span style="color: #000000;"> cells in the largest dimension, and corresponding size in the smaller dimension, subject to smaller size requirements from other criteria.  </span></p>
+<p><span class="f_Heading4">Explicit Density Control</span></p>
+<p><span style="color: #000000;">Cell density in the initial mesh may be controlled with the parameters </span><span class="f_T_Code"><a href="specialparameters.html">MESH_SPACING</a></span><span style="color: #000000;"> and </span><span class="f_T_Code"><a href="specialparameters.html">MESH_DENSITY</a></span><span style="color: #000000;">.  </span><span class="f_T_Code">MESH_SPACING</span><span style="color: #000000;"> controls the maximum cell dimension, while </span><span class="f_T_Code">MESH_DENSITY</span><span style="color: #000000;"> is its inverse, controlling the minimum number of cells per unit distance. &nbsp;The mesh generator examines many competing effects controlling cell size, and accepts the smallest of these effects as the size of a cell. &nbsp;The </span><span class="f_T_Code">MESH_SPACING</span><span style="color: #000000;"> and </span><span class="f_T_Code">MESH_DENSITY</span><span style="color: #000000;"> controls therefore have effect only if they are the smallest of the competing influences, and a large spacing request is effectively ignored.</span></p>
+<p><span style="color: #000000;">The </span><span class="f_T_Code">MESH_SPACING</span><span style="color: #000000;"> and </span><span class="f_T_Code">MESH_DENSITY</span><span style="color: #000000;"> controls can be used with the syntax of either defined parameters or boundary conditions.</span></p>
+<p><span style="color: #000000;">Used as defined parameters, these controls may appear in the </span><span class="f_T_Code">DEFINITONS</span><span style="color: #000000;"> section or may be redefined in subsequent regional redefinition sections. &nbsp;In this use, the controls specify the volume or area mesh density over a region or over the entire domain.</span></p>
+<p><span style="color: #000000;">For controlling the cell density along boundary segments, the controls </span><span class="f_T_Code">MESH_SPACING</span><span style="color: #000000;"> and </span><span class="f_T_Code">MESH_DENSITY</span><span style="color: #000000;"> may be used with the syntax of boundary conditions, and may appear wherever a boundary condition statement may appear. &nbsp;In this usage, the controls specify the cell spacing on the boundary curve or surface.</span></p>
+<p><span style="color: #000000;">The value assigned to </span><span class="f_T_Code">MESH_SPACING</span><span style="color: #000000;"> or </span><span class="f_T_Code">MESH_DENSITY</span><span style="color: #000000;"> controls may be functions of spatial coordinate. &nbsp;In the example of the chapter </span><a href="generatingamesh.html">&quot;Generating a Mesh&quot;</a><span style="color: #000000;">, we could write:</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">REGION</span><span class="f_T_Code"> 2 </span><span class="f_T_Code_string">'blob'</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_T_Code_comment">{ the embedded 'blob' }</span></p>
+<p style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved" style="font-style: italic; font-weight: bold;">MESH_DENSITY</span><span class="f_T_Code" style="font-style: italic; font-weight: bold;"> = 50*EXP(-50*(x^2+y^2))</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 48px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code">(1/2,0) </span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 72px;"><span class="f_T_Code_reserved">ARC</span><span class="f_T_Code">(</span><span class="f_T_Code_reserved">CENTER</span><span class="f_T_Code">=0,0) </span><span class="f_T_Code_reserved">ANGLE</span><span class="f_T_Code">=360</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p><span style="color: #000000;">This results in the following initial mesh:</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="text-align: center; margin: 0px 0px 0px 0px;"><img src="ex1md00.zoom50.png" width="223" height="245" border="0" alt=""></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p><span style="color: #000000;">See also the example problems </span></p>
+<p><span style="color: #000000;"><a href="usage_mesh_control_mesh_spacing_.html">&quot;Samples | Usage | Mesh_Control | Mesh_Spacing.pde&quot;</a> </span></p>
+<p><span style="color: #000000;"><a href="usage_mesh_control_mesh_density_.html">&quot;Samples | Usage | Mesh_Control | Mesh_Density.pde&quot;</a></span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p><span class="f_Heading4">Adaptive Mesh Refinement</span></p>
+<p><span style="color: #000000;">Once the initial mesh is constructed, FlexPDE will continue to estimate the solution error, and will refine the mesh as necessary to meet the target accuracy. &nbsp;In time dependent problems, an adaptive refinement process will also be applied to the initial values of the variables, to refine the mesh where the variables undergo rapid change. &nbsp;Whereas cells created by this adaptive refinement &nbsp;process can later be re-merged, cells created by the initial explicit density controls are permanent, and cannot be un-refined.</span></p>
+<p class="p_Notes" style="margin: 0px 0px 10px 24px;"><span class="f_Notes" style="font-weight: bold;">Note</span><span class="f_Notes">: The adaptive refinement process relies on evaluation of the various sources and derivatives at discrete points within the existing mesh. &nbsp;Sources or other effects which are of extremely small extent, such as thin bands or point-like functions, may not be discernible in this discrete model. &nbsp;Any effects of small extent should be brought to the attention of the gridder by explicitly placing gridding features at these locations. &nbsp;Use </span><span class="f_T_Code">REGIONS</span><span class="f_Notes"> or </span><span class="f_T_Code"><a href="features.html">FEATURES</a></span><span class="f_Notes"> wherever something interesting is known to take place in the problem. </span></p>
+<p>See also the <span class="f_T_Code"><a href="front.html">FRONT</a></span> and <span class="f_T_Code"><a href="resolve.html">RESOLVE</a></span> statements for additional controls.</p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?controllingmeshdensity.html" target="_top">index.html?controllingmeshdensity.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

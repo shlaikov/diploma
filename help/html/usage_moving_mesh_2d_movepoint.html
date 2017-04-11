@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?usage_moving_mesh_2d_movepoint.html"; }
+  else { parent.lazysync('usage_moving_mesh_2d_movepoint.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>2D_movepoint</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sample_problems.html">Sample Problems</a> &gt; usage &gt; moving_mesh&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">2D_movepoint</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="usage_moving_mesh_2d_lagrangian_shock.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="sample_problems.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="usage_moving_mesh_2d_position_blob.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">{ &nbsp;2D_MOVEPOINT.PDE  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;This example is a variation &nbsp;of <a href="usage_moving_mesh_2d_stretch_xy_.html">2D_STRETCH_XY.PDE</a> demonstrating the use of  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;moving and non-moving point declarations. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;A point defined by name and used in the construction of the domain will move  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;when the mesh moves. &nbsp;The &quot;NODE POINT&quot; declaration will also create a movable </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;point. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment"> &nbsp;Points declared explicitly or not used in the mesh construction will remain fixed. </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_comment">}</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> </span><span class="f_T_reserved">TITLE</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;stretching brick&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">SELECT</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;regrid=</span><span class="f_T_reserved">off</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">coordinates</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;cartesian2(</span><span class="f_T_string">'x'</span><span class="f_T_samples">,</span><span class="f_T_string">'y'</span><span class="f_T_samples">)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">VARIABLES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;u  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vx  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;xm = </span><span class="f_T_reserved">move</span><span class="f_T_samples">(x)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vy  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;ym = </span><span class="f_T_reserved">move</span><span class="f_T_samples">(y)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">DEFINITIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Hl = 1/2  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;gwid = 0.15  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;u0= exp(-(x^2+y^2)/gwid^2)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;lmove = Hl + t  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;ms = gwid^2/u0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;P = </span><span class="f_T_reserved">point</span><span class="f_T_samples">(Hl,Hl) &nbsp; </span><span class="f_T_comment">! a point that IS used in domain construction </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Q = </span><span class="f_T_reserved">point</span><span class="f_T_samples">(0.1,0) &nbsp; </span><span class="f_T_comment">! a point that is used in &quot;node point&quot; </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;R = </span><span class="f_T_reserved">point</span><span class="f_T_samples">(-0.2,-0.2) &nbsp; </span><span class="f_T_comment">! a point that is NOT used in domain construction </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">INITIAL</span><span class="f_T_samples"> </span><span class="f_T_reserved">VALUES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;u= u0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vx = x/Hl  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vy = y/Hl  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">EQUATIONS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;U: &nbsp; dt(u)=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vx: &nbsp;div(grad(vx))=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Xm: &nbsp;dt(xm) = vx  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;vy: &nbsp;div(grad(vy))=0  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;Ym: &nbsp;dt(ym) = vy  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">BOUNDARIES</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">REGION</span><span class="f_T_samples"> 1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">mesh_spacing</span><span class="f_T_samples"> = ms  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">START</span><span class="f_T_samples">(-Hl,-Hl)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u) = 0  </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(vx) </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(xm) </span><span class="f_T_reserved">value</span><span class="f_T_samples">(vy)=-1 </span><span class="f_T_reserved">value</span><span class="f_T_samples">(ym)=-lmove  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">Line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (Hl,-Hl)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(vx) = 1 </span><span class="f_T_reserved">value</span><span class="f_T_samples">(xm)=lmove </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(vy) </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(ym)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> P  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0 </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(vx) </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(xm) </span><span class="f_T_reserved">value</span><span class="f_T_samples">(vy)=1 </span><span class="f_T_reserved">value</span><span class="f_T_samples">(ym) = lmove &nbsp;  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (-Hl,Hl)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">value</span><span class="f_T_samples">(u)=0 </span><span class="f_T_reserved">value</span><span class="f_T_samples">(vx)=-1 </span><span class="f_T_reserved">value</span><span class="f_T_samples">(xm)=-lmove </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(vy) </span><span class="f_T_reserved">nobc</span><span class="f_T_samples">(ym)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">line</span><span class="f_T_samples"> </span><span class="f_T_reserved">to</span><span class="f_T_samples"> </span><span class="f_T_reserved">close</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">NODE</span><span class="f_T_samples"> </span><span class="f_T_reserved">POINT</span><span class="f_T_samples"> q  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">TIME</span><span class="f_T_samples"> 0 </span><span class="f_T_reserved">TO</span><span class="f_T_samples"> 0.5 </span><span class="f_T_reserved">by</span><span class="f_T_samples"> 0.01</span><span class="f_T_comment">! 10 </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">MONITORS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">for</span><span class="f_T_samples"> cycle=1  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">grid</span><span class="f_T_samples">(x,y) </span><span class="f_T_reserved">zoom</span><span class="f_T_samples">(-Hl-1/2,-Hl-1/2, 2*Hl+1,2*Hl+1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">grid</span><span class="f_T_samples">(x,y) </span><span class="f_T_reserved">zoom</span><span class="f_T_samples">(-0.6,0.4, 0.2,0.2)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">contour</span><span class="f_T_samples">(vx) </span><span class="f_T_reserved">zoom</span><span class="f_T_samples">(-0.6,0.4, 0.2,0.2)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">contour</span><span class="f_T_samples">(vy) </span><span class="f_T_reserved">zoom</span><span class="f_T_samples">(-0.6,0.4, 0.2,0.2)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(u,u0) </span><span class="f_T_reserved">from</span><span class="f_T_samples">(-10*Hl,0) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (10*Hl,0) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(u,u0) </span><span class="f_T_reserved">from</span><span class="f_T_samples">(0,-10*Hl) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (0,10*Hl) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">PLOTS</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">for</span><span class="f_T_samples"> </span><span class="f_T_reserved">time</span><span class="f_T_samples">=0.1 </span><span class="f_T_reserved">by</span><span class="f_T_samples"> 0.1 </span><span class="f_T_reserved">to</span><span class="f_T_samples"> endtime  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">grid</span><span class="f_T_samples">(x,y) </span><span class="f_T_reserved">zoom</span><span class="f_T_samples">(-Hl-1/2,-Hl-1/2, 2*Hl+1,2*Hl+1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(u-u0)  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;True Total Error&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">contour</span><span class="f_T_samples">(error) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Estimated Step Error&quot;</span><span class="f_T_samples"> painted  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(u,u0) &nbsp; </span><span class="f_T_reserved">from</span><span class="f_T_samples">(-10*Hl,0) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (10*Hl,0) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(dt(xm)) </span><span class="f_T_reserved">from</span><span class="f_T_samples">(-10*Hl,0) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (10*Hl,0) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(u,u0) &nbsp; </span><span class="f_T_reserved">from</span><span class="f_T_samples">(0,-10*Hl) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (0,10*Hl) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples"> &nbsp;  </span><span class="f_T_reserved">elevation</span><span class="f_T_samples">(dt(ym)) </span><span class="f_T_reserved">from</span><span class="f_T_samples">(0,-10*Hl) </span><span class="f_T_reserved">to</span><span class="f_T_samples"> (0,10*Hl) </span><span class="f_T_reserved">range</span><span class="f_T_samples"> (0,1)  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">History</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">at</span><span class="f_T_samples"> P,Q, (0.2,0)  </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;Points a and b move, c does not&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span><span class="f_T_reserved">History</span><span class="f_T_samples">(u) </span><span class="f_T_reserved">at</span><span class="f_T_samples"> R,(-0.2,-0.2) </span><span class="f_T_reserved">as</span><span class="f_T_samples"> </span><span class="f_T_string">&quot;neither point moves&quot;</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_reserved">END</span><span class="f_T_samples">  </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_samples">  </span></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?usage_moving_mesh_2d_movepoint.html" target="_top">index.html?usage_moving_mesh_2d_movepoint.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

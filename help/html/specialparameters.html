@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?specialparameters.html"; }
+  else { parent.lazysync('specialparameters.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Mesh Control Parameters</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="Mesh Generation,Mesh Generation MESH_SPACING,Mesh Generation MESH_DENSITY,MESH_SPACING,MESH_DENSITY">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a> &gt; <a href="definitions.html">Definitions</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Mesh Control Parameters</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="thepassivemodifier.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="definitions.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="initialvalues.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>FlexPDE uses an adaptive initial mesh generation procedure. &nbsp;Cell sizes are generated to conform with local boundary feature sizes, and cell sizes will grow gradually from locales of small cell size to locales of large cell size. &nbsp;Cells sides always match everywhere, and there is never a mismatch between adjacent cells.  </p>
+<p>It is possible, however, to override the default cell size logic by use of the controls <span class="f_T_Code">MESH_SPACING</span> and <span class="f_T_Code">MESH_DENSITY. </span>These parameters have special meaning in controlling the initial mesh layout. &nbsp;They may appear in the context of a parameter definition or redefinition (ie, in the <span class="f_T_Code">DEFINITIONS</span> section or in a <span class="f_T_Code">REGION</span>), or in the context of a boundary condition. &nbsp;There may be more than one control active in any locale, and the control (default or explicit) resulting in the smallest mesh cells will dominate.</p>
+<p><span class="f_T_Code" style="font-weight: bold;">MESH_SPACING</span> dictates the desired spacing between mesh nodes.  </p>
+<p><span class="f_T_Code" style="font-weight: bold;">MESH_DENSITY</span> is the reciprocal of <span class="f_T_Code">MESH_SPACING</span>, and dictates the desired number of mesh nodes per unit distance.  </p>
+<p>Appearing in the <span class="f_T_Code">DEFINITIONS</span> section, these parameters specify a global default mesh density function in the volume of the domain.</p>
+<p>Appearing in a <span class="f_T_Code">REGION</span>, these parameters specify a mesh density function in the volume of the current region (in 3D they may be qualified by <span class="f_T_Code">LAYER</span> or <span class="f_T_Code">SURFACE</span>). </p>
+<p>Appearing in the context of a boundary condition (ie, inside a <span style="font-style: italic;">path</span>) they dictate the mesh density along the curve or sidewall surface currently being defined. In 3D they may be qualified by <span class="f_T_Code">LAYER</span> or <span class="f_T_Code">SURFACE</span> to restrict the application of the density function.</p>
+<p><span class="f_T_Code">MESH_SPACING</span> and <span class="f_T_Code">MESH_DENSITY</span><span style="font-weight: bold;"> </span>specifications may be any function of spatial coordinates (but not of <span class="f_T_Code">VARIABLES</span>).</p>
+<p><span style="font-weight: bold;">Examples:</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code">MESH_DENSITY = exp(-(x^2+y^2+z^2)</span><br>
+<span class="f_T_Code">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;">This will create a Gaussian density distribution around (0,0,0), with spacing ultimately overridden by the size limit implied by <span class="f_T_Code">NGRID</span>.</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 17px;">See the User Guide section &quot;<a href="controllingmeshdensity.html">Controlling Mesh Density</a>&quot; for more information.</p>
+<p style="margin: 0px 0px 0px 17px;">See also </p>
+<p style="margin: 0px 0px 0px 33px;"><a href="usage_mesh_control_mesh_density_.html">&quot;Samples | Usage | Mesh_Control | Mesh_Density.pde&quot;</a></p>
+<p style="margin: 0px 0px 0px 33px;"><a href="usage_mesh_control_mesh_spacing_.html">&quot;Samples | Usage | Mesh_Control | Mesh_Spacing.pde&quot;</a></p>
+<p style="margin: 0px 0px 0px 33px;"><a href="usage_mesh_control_boundary_density.html">&quot;Samples | Usage | Mesh_Control | Boundary_Density.pde&quot;</a></p>
+<p style="margin: 0px 0px 0px 33px;"><a href="usage_mesh_control_boundary_spacing.html">&quot;Samples | Usage | Mesh_Control | Boundary_Spacing.pde&quot;</a></p>
+<p>&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?specialparameters.html" target="_top">index.html?specialparameters.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

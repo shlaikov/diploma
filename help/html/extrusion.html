@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?extrusion.html"; }
+  else { parent.lazysync('extrusion.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Extrusion</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="EXTRUSION,EXTRUSION Section,SURFACE,SURFACE Extrusion,LAYER,LAYER Extrusion,PLANE,CYLINDER,SPHERE,Surface Generators">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">The EXTRUSION Section</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="constraints.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="thesectionsofadescriptor.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="boundaries.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>The layer structure of a three-dimensional problem is specified bottom-up to FlexPDE in the <span class="f_T_Code">EXTRUSION</span> Section:</p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code" style="font-weight: bold;">EXTRUSION</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code" style="font-weight: bold;">SURFACE  &nbsp; &nbsp; &nbsp; &nbsp;&quot;Surface_name_1&quot; &nbsp; &nbsp; &nbsp; &nbsp;Z = expression_1</span></p>
+<p style="margin: 0px 60px 0px 50px;"><span class="f_T_Code" style="font-weight: bold;">LAYER  &nbsp; &nbsp; &nbsp; &nbsp;&quot;Layer_name_1&quot;</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code" style="font-weight: bold;">SURFACE  &nbsp; &nbsp; &nbsp; &nbsp;&quot;Surface_name_2&quot; &nbsp; &nbsp; &nbsp; &nbsp;Z = expression_2</span></p>
+<p style="margin: 0px 60px 0px 50px;"><span class="f_T_Code" style="font-weight: bold;">LAYER  &nbsp; &nbsp; &nbsp; &nbsp;&quot;Layer_name_2&quot;</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code" style="font-weight: bold;">. . .</span></p>
+<p style="margin: 0px 60px 0px 33px;"><span class="f_T_Code" style="font-weight: bold;">SURFACE  &nbsp; &nbsp; &nbsp; &nbsp;&quot;Surface_name_n&quot; &nbsp; &nbsp; &nbsp; &nbsp;Z = expression_n</span></p>
+<p style="margin: 0px 60px 0px 60px;"><span style="font-weight: bold;">&nbsp;</span></p>
+<p>The specification must start with a <span class="f_T_Code">SURFACE</span><span style="font-family: 'Courier'; color: #000000;"> </span>and end with a <span class="f_T_Code">SURFACE</span>.  </p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">LAYERS</span> correspond to the space between the <span class="f_T_Code">SURFACES</span>. </p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p>The <span class="f_T_Code">Layer_names</span> and <span class="f_T_Code">Surface_names</span> in these specifications are optional. The <span class="f_T_Code">LAYER</span> specifications may be omitted if a name is not needed to refer to them.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Surfaces need not be planar, and they may merge, but they must not cross.  <span class="f_T_Code">expression_1</span> is assumed to be everywhere less than or equal to <span class="f_T_Code">expression_2</span>, and so on. &nbsp;Use a <span class="f_T_Code">MIN</span> or <span class="f_T_Code">MAX</span> function when there is a possibility of crossover.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Surface expressions can refer to regionally defined parameters, so that the surface takes on different definitions in different regions. &nbsp;The disjoint expressions must, however, be continuous across region interfaces. (see example <a href="usage_3d_domains_regional_surfaces.html">&quot;Samples | Usage | 3d_Domains | Regional_surfaces.pde&quot;</a>)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>If surface expressions contain conditional values (<span class="f_T_Code">IF...THEN</span><span style="font-family: 'Courier'; color: #000000;"> </span>or<span style="font-family: 'Courier'; color: #000000;"> </span><span class="f_T_Code">MIN</span><span style="font-family: 'Courier'; color: #000000;">, </span><span class="f_T_Code">MAX</span>, etc), then the base plane domain should include <span class="f_T_Code">FEATURES</span> to delineate the breaks, so they can be resolved by the gridder.  </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Surfaces must be everywhere continuous, including across material interfaces. &nbsp;Use of conditionals or regional definitions must guarantee surface continuity.  </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 16px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="17"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Surface expressions can refer to tabular input data (see example <a href="usage_3d_domains_tabular_surfaces.html">&quot;Samples | Usage | 3D_Domains | Tabular_surfaces.pde&quot;</a>).</td></tr></table></div><p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">See the User Guide chapter <a href="usingflexpdeinthree_dimensi.html">Using FlexPDE in Three-Dimensional Problems</a> &nbsp;for more information on 3D extrusions.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p><span class="f_Heading4">Shorthand form</span></p>
+<p>Stripped of labels, the <span class="f_T_Code">EXTRUSION</span> specification may be written:</p>
+<p style="margin: 0px 60px 0px 12px;"><span class="f_T_Code" style="font-weight: bold;">EXTRUSION Z = expression_1, expression_2 {, ...} </span></p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">&nbsp;</span></p>
+<p>In this form layers and surfaces must subsequently be referred to by numbers, with surface numbers running from 1 to n and layer numbers from 1 to (n-1).  <span class="f_T_Code">SURFACE</span> #1 is Z=<span class="f_T_Code">expression_1</span>, and <span class="f_T_Code">LAYER</span> #1 is between <span class="f_T_Code">SURFACE</span> #1 and <span class="f_T_Code">SURFACE</span> #2.</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><a name="surfacefunctions"></a><span class="f_Heading4">Built-In Surface Generators</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">FlexPDE version 6 defines three surface generation functions &nbsp; </p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="324" style="width:324px;"><p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">PLANE ( point1 , point2 , point3 )</span></p>
+</td>
+<td valign="top" width="452" style="width:452px;"><p>Defines a plane surface containing the three stated points.  </p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="324" style="width:324px;"><p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">CYLINDER ( point1 , point2 , radius )</span></p>
+</td>
+<td valign="top" width="452" style="width:452px;"><p>Defines the top surface of a cylinder with axis along the line from <span style="font-family: 'Arial'; font-weight: bold; color: #000000;">point1</span> to <span class="f_T_Code" style="font-weight: bold;">point2</span> and with the given radius (see note below).  <span class="f_T_Code" style="font-weight: bold;">point1</span> and <span class="f_T_Code" style="font-weight: bold;">point2</span> must be at the same z coordinate. &nbsp;Z-Tilted cylinders are not supported.  </p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="324" style="width:324px;"><p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code" style="font-weight: bold;">SPHERE ( point , radius )</span></p>
+</td>
+<td valign="top" width="452" style="width:452px;"><p>Defines the top surface of a sphere of the given <span class="f_T_Code" style="font-weight: bold;">radius</span> with center at the specified center <span class="f_T_Code" style="font-weight: bold;">point</span> (see note below).</p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">Each <span class="f_T_Code">point</span> specification is a parenthesized coordinate double<span class="f_T_Code"> </span><span class="f_T_Code">( xn , yn )</span><span class="f_T_Code"> </span>or triple <span class="f_T_Code">( xn , yn , zn )</span>. &nbsp;If <span class="f_T_Code">zn</span> is omitted, it is assumed zero.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">These functions can be used to simplify the layout of extrusion surfaces.  </p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_T_Code">CYLINDER</span> and <span class="f_T_Code">SPHERE</span> construct the top surface of the specified figure (see note below). To generate both the upper and lower halves of &nbsp;the <span class="f_T_Code">CYLINDER</span> and <span class="f_T_Code">SPHERE</span>, simply construct the figure at Z=0 and add and subtract the surface function from the desired Z coordinate of the center or axis.</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><span class="f_Heading4">Example:</span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">DEFINITIONS</span><br>
+<span class="f_T_Code"> &nbsp;Zsphere = </span><span class="f_T_Code_reserved">SPHERE</span><span class="f_T_Code">((0,0,0), 10) </span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code_reserved">EXTRUSION</span><span class="f_T_Code"> &nbsp; </span></p>
+<p style="margin: 0px 0px 0px 24px;"><span class="f_T_Code"> &nbsp;Zcenter-Zsphere, Zcenter+Zsphere</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p class="p_Notes"><span class="f_Notes" style="font-weight: bold;">Note</span><span class="f_Notes">:  </span><span class="f_Notes">These functions generate surfaces defined throughout X,Y space.  </span><span class="f_T_Code">CYLINDER</span><span class="f_Notes"> and </span><span class="f_T_Code">SPHERE</span><span class="f_Notes"> include Z=constant skirts to extend the surface definitions. The diameters of the </span><span class="f_T_Code">CYLINDER</span><span class="f_Notes"> and </span><span class="f_T_Code">SPHERE</span><span class="f_Notes">, as well as the extent of the </span><span class="f_T_Code">CYLINDER</span><span class="f_Notes"> along its axis and of the </span><span class="f_T_Code">PLANE</span><span class="f_Notes"> must be provided by </span><span class="f_T_Code">REGION</span><span class="f_Notes">  </span><span class="f_T_Code">BOUNDARIES</span><span class="f_Notes"> or </span><span class="f_T_Code">FEATURES.</span></p>
+<p style="margin: 0px 0px 0px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;"><img src="3d_hemicylinder00.zoom30.png" width="285" height="165" border="0" alt=""><img src="3d_hemisphere00.zoom30.png" width="285" height="165" border="0" alt=""></p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?extrusion.html" target="_top">index.html?extrusion.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

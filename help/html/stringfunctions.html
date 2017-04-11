@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?stringfunctions.html"; }
+  else { parent.lazysync('stringfunctions.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>String Functions</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="String,String Functions,Functions,Functions String,$">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="theelementsofadescriptor.html">The Elements of a Descriptor</a> &gt; <a href="built_infunctions.html">Built-in Functions</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">String Functions</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="unitfunctions.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="built_infunctions.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="thefitfunction.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>FlexPDE provides support for dynamically constructing text strings.</p>
+<p><span class="f_T_Code" style="font-weight: bold;">$number &nbsp; &nbsp; &nbsp; &nbsp;(i.e. &lt;dollar&gt; number)</span></p>
+<p style="margin: 0px 0px 0px 17px;">This function returns a text string representing the integer value of <span class="f_T_Code" style="font-weight: bold;">number</span>.  <span class="f_T_Code" style="font-weight: bold;">number</span> may be a literal value, a name or a parenthesized expression. &nbsp;If <span class="f_T_Code" style="font-weight: bold;">number</span> has integral value, the string will have integer format. &nbsp;Otherwise, the string will be formatted as a real number with a default length of 6 characters.</p>
+<p style="margin: 0px 0px 0px 17px;">&nbsp;</p>
+<p><span class="f_T_Code" style="font-weight: bold;">$[width]number &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p style="margin: 0px 0px 0px 17px;">This form acts as the form above, except that the string size will be <span class="f_T_Code">width</span>.</p>
+<p style="margin: 0px 0px 0px 17px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 0px;">These functions may be used in conjunction with the concatenation operator &quot;+&quot; to build boundary or region names or plot labels. &nbsp;For example</p>
+<p style="margin: 0px 60px 0px 60px;"><span style="font-weight: bold;">&nbsp;</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code_reserved">REPEAT</span><span class="f_T_Code"> i=1 </span><span class="f_T_Code_reserved">to</span><span class="f_T_Code"> 4 </span><span class="f_T_Code_reserved">do</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code"> &nbsp; </span><span class="f_T_Code_reserved">START</span><span class="f_T_Code"> &nbsp; &quot;LOOP&quot;+$i &nbsp;(x,y) </span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code"> &nbsp; </span><span class="f_T_Code_comment">{ path_info ... }</span></p>
+<p style="margin: 0px 60px 0px 17px;"><span class="f_T_Code_reserved">ENDREPEAT</span></p>
+<p style="margin: 0px 0px 0px 17px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 17px;">This is equivalent to </p>
+<p style="margin: 0px 0px 0px 17px;">&nbsp;</p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code"> &quot;LOOP1&quot; (x,y) &lt;path_info&gt; ...</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code"> &quot;LOOP2&quot; (x,y) &lt;path_info&gt; ...</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code"> &quot;LOOP3&quot; (x,y) &lt;path_info&gt; ...</span></p>
+<p style="margin: 0px 0px 0px 17px;"><span class="f_T_Code_reserved">START</span><span class="f_T_Code"> &quot;LOOP4&quot; (x,y) &lt;path_info&gt; ...</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold; text-decoration: underline;">Example:</span></p>
+<p style="margin: 0px 0px 0px 17px;">See &quot;Samples | Usage | Repeat.pde&quot;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?stringfunctions.html" target="_top">index.html?stringfunctions.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

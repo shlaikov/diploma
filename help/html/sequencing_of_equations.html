@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (top.location.search.lastIndexOf("toc=0")<=0) {
+  if (top.frames.length==0) { top.location.href="index.html?sequencing_of_equations.html"; }
+  else { parent.lazysync('sequencing_of_equations.html'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Sequencing of Equations</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="THEN,THEN Equation Sequencing,FINALLY,FINALLY Equation Sequencing,EQUATIONS,EQUATIONS Sequencing">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link type="text/css" href="styles.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   <!-- 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #6F6F6F; 
+}
+   -->
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+</head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px; color: #6F6F6F; background: url(header_bg.jpg);">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="problem_descriptor_reference.html">Problem Descriptor Reference</a> &gt; <a href="thesectionsofadescriptor.html">The Sections of a Descriptor</a> &gt; <a href="equations.html">Equations</a>&nbsp;&gt;</p>
+   <p class="p_Heading1"><span class="f_Heading1">Sequencing of Equations</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    <a href="javascript: print();"
+    		onmouseover="document.images.prntr.src='print1.gif'" 
+        onmouseout="document.images.prntr.src='print2.gif'"
+        ><img name="prntr" border="0" alt="Print this Topic" title="Print this Topic" src="print2.gif"
+        ></a>
+     <a href="associationbetweenequations.html"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="equations.html"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="modalanalysisandassociated.html"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>New in version 6 is the ability to sequence sets of equations.</p>
+<p>The sets are defined using the <span class="f_T_Code">THEN</span> and <span class="f_T_Code">FINALLY</span> sections following the <span class="f_T_Code">EQUATIONS</span> section.</p>
+<p style="margin: 0px 0px 10px 24px;"><span class="f_T_Code" style="font-weight: bold;">EQUATIONS</span><br>
+<span class="f_T_Code" style="font-weight: bold;"> &nbsp; &nbsp;&lt;set A&gt;</span><br>
+<span class="f_T_Code" style="font-weight: bold;">THEN</span><br>
+<span class="f_T_Code" style="font-weight: bold;"> &nbsp; &nbsp;&lt;set B&gt;</span><br>
+<span class="f_T_Code" style="font-weight: bold;">{ THEN</span><br>
+<span class="f_T_Code" style="font-weight: bold;"> &nbsp; &nbsp;&lt;set C&gt; ... }</span><br>
+<span class="f_T_Code" style="font-weight: bold;">{ FINALLY</span><br>
+<span class="f_T_Code" style="font-weight: bold;"> &nbsp; &nbsp;&lt;set D&gt; }</span></p>
+<p>Any number of <span class="f_T_Code">THEN</span> equation sets may be designated and these sets along with the main <span class="f_T_Code">EQUATIONS</span> section will be run sequentially and repetitively (including regrids) until the solution meets the normal error criteria. Once the <span class="f_T_Code">EQUATIONS</span> and <span class="f_T_Code">THEN</span> sets are finished, the last set defined in the <span class="f_T_Code">FINALLY</span> section will be solved.</p>
+<p>Each set of equations is solved for the variables defined by the equations of that set, with the other variables held constant at their current values. &nbsp;Solutions of the <span class="f_T_Code">EQUATIONS</span> set will be held constant during the solution of the first <span class="f_T_Code">THEN</span> set, etc.</p>
+<p>Each <span class="f_T_Code">VARIABLE</span> may be defined only once in the complete list of equations.</p>
+<p>In time-dependent problems, the full set of equations is solved once during each timestep. &nbsp;The <span class="f_T_Code">FINALLY</span> clause is ignored in time-dependent problems.</p>
+<p class="p_Notes"><span class="f_Notes" style="font-weight: bold;">Note</span><span class="f_Notes">:</span><span class="f_Notes"> This facility finds its greatest utility in steady-state problems and time-dependent problems with one-way coupling. &nbsp;In time-dependent problems with two-way coupling, use of sequenced equations may falsify propagation speeds, or lead to instability</span><span style="font-style: italic;">.</span></p>
+<p><span style="font-style: italic;">&nbsp;</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Example: </span></p>
+<p style="margin: 0px 0px 10px 24px;"><span class="f_T_Code_reserved">EQUATIONS</span><br>
+<span class="f_T_Code"> &nbsp;u: &nbsp;div(grad(u)) + s = 0</span><br>
+<span class="f_T_Code_reserved">THEN</span><br>
+<span class="f_T_Code"> &nbsp;v: &nbsp;div(grad(v)) + u = 0</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Examples:</span></p>
+<p>Samples | Usage | Sequenced_Equations | Theneq.pde<br>
+Samples | Usage | Sequenced_Equations | Theneq+time.pde</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<!--ZOOMSTOP-->
+<p>&nbsp;</p><hr size="1"><p class="fsmall">Page url: 
+<a href="index.html?sequencing_of_equations.html" target="_top">index.html?sequencing_of_equations.html</a>
+</p>
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>
