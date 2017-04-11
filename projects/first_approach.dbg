@@ -1,0 +1,116 @@
+
+================================================================
+===  FlexPDE Version 6.40/L64  11:46:46 Sep 20 2016  © 1996-2014 PDE Solutions Inc.
+===  /home/alexikz/GitHub/diploma/projects/first_approach.pde 17:17:45 4/11/17
+================================================================
+    1| TITLE 'Heat transport'
+    2| 
+    3| 
+    4| VARIABLES
+    5| temp
+    6| 
+    7| DEFINITIONS
+    8| k
+    9| q = 100
+   10| T0 = 300
+   11| 
+   12| EQUATIONS
+   13| temp: div(k * grad(temp)) = 0
+   14| 
+   15| 
+   16| BOUNDARIES
+   17| REGION 1 'substrate'
+   18| k = 25
+   19| start( 100, 100)
+   20|     natural(temp) = 0 line to ( 130, 100)
+   21|     natural(temp) = 0 line to ( 130, 120)
+   22|     line to ( 100, 120)
+   23|     natural(temp) = 0 line to ( 100, 100)
+   24|     line to finish
+   25| REGION 2 'contact'
+   26| k = 2
+   27| start( 100, 120)
+   28|     natural(temp) = 0 line to ( 100, 121)
+   29|     value(temp) = T0 line to ( 112.5, 121)
+   30|     value(temp) =  q/k line to ( 117.5, 121)
+   31|     value(temp) = T0 line to ( 130, 121)
+   32| 	natural(temp) = 0 line to ( 130, 120)
+   33|     line to finish
+   34| 
+   35| 
+   36| MONITORS
+   37| PLOTS
+   38| contour(temp)
+   39| surface(temp) 
+   40| END 
+
+SUMMARIZE 3 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              K      1                    1         72
+              K      2                    1         72
+              Q      0                    1         72
+             T0      0                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         10           10          720
+     1          1       Var  1      Jacobian         10           10          720
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          2                     Source          1            2          144
+     1          2                   Galerkin         10           10          720
+     1          2       Var  1      Jacobian         10           10          720
+     1          2              Surf Galerkin          9            9          648
+     1          2       Var  1 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ K              
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          2              Surf Galerkin          1         72
+     1          2       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          1          1           72
+     1          1          2          1          1           72
+     2          1          1          1          1           72
+     2          1          2          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+Orthomin/ILU FINAL ITERATION 30 of 254, RNORM=0.000176815, XNORM=1208.09, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 27 of 1019, RNORM=2.66369e-10, XNORM=0.00108467, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.002934
+Orthomin/ILU FINAL ITERATION 37 of 1019, RNORM=9.31943e-07, XNORM=8.63799, 0 MS/IT 0.0600601 uS/NODE
+Orthomin/ILU FINAL ITERATION 20 of 1019, RNORM=1.15831e-10, XNORM=3.32275e-06, 0 MS/IT 0.111111 uS/NODE
+RMS Spatial Errors  3.250e-4
+Orthomin/ILU FINAL ITERATION 40 of 1019, RNORM=3.03055e-07, XNORM=22.4824, 0 MS/IT 0.0974659 uS/NODE
+RMS Spatial Errors  0.001503
+Orthomin/ILU FINAL ITERATION 26 of 1019, RNORM=0.000102497, XNORM=7.52609, 0 MS/IT 0.0658588 uS/NODE
+Orthomin/ILU FINAL ITERATION 37 of 1019, RNORM=4.18993e-10, XNORM=0.00330361, 0 MS/IT 0.0462792 uS/NODE
+RMS Spatial Errors  6.434e-5
+Orthomin/ILU FINAL ITERATION 38 of 1019, RNORM=8.31616e-06, XNORM=20.0132, 0 MS/IT 0.0827541 uS/NODE
+Orthomin/ILU FINAL ITERATION 33 of 1019, RNORM=3.44982e-10, XNORM=4.06265e-05, 0 MS/IT 0.0476463 uS/NODE
+RMS Spatial Errors  2.291e-4
+Orthomin/ILU FINAL ITERATION 29 of 1019, RNORM=8.02404e-05, XNORM=6.86768, 0 MS/IT 0.0937031 uS/NODE
+Orthomin/ILU FINAL ITERATION 40 of 1019, RNORM=1.97846e-10, XNORM=0.000806279, 0 MS/IT 0.0679348 uS/NODE
+RMS Spatial Errors  2.322e-5
+DO_NEXTSTAGE pde 0x7f07a00466a0  MAXSTAGE=0
