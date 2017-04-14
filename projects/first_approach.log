@@ -1,9 +1,0 @@
-FlexPDE Version 6.40/L64  11:46:46 Sep 20 2016
-(Times listed are wall-clock times, not charged CPU).
-
-START /home/alexikz/GitHub/diploma/projects/first_approach.pde  17:19:32 4/13/17
-Using 1 Thread(s)
- +00:00:00| GRID 1 Nodes=389 Cells=176 RMS ERR= 0.020135 MAX ERR= 0.026656 MEM=560
- +00:00:00| GRID 2 Nodes=697 Cells=326 RMS ERR= 0.005024 MAX ERR= 0.007067 MEM=818
- +00:00:00| GRID 3 Nodes=815 Cells=382 RMS ERR= 0.003676 MAX ERR= 0.005133 MEM=930
- +00:00:00| --DONE-- 17:19:32 4/13/17
