@@ -64,6 +64,6 @@ MONITORS
 PLOTS
 contour(temp)
 surface(temp) 
-contour(U)
+contour(U) export FORMAT "#x #y #1"
 surface(U) 
 END 

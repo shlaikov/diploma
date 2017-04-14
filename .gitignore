@@ -1,6 +1,7 @@
 projects/*.dbg
 projects/*.log
 projects/*.pg6
+projects/*.p03
 
 ReadMe.html
 ReadMe.rtf
